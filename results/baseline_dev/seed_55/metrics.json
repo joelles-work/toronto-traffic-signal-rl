@@ -1,0 +1,11 @@
+{
+  "seed": 55,
+  "generated": 3594,
+  "completed": 3594,
+  "unfinished_or_uninserted": 0,
+  "mean_time_loss_s": 190.15821368948247,
+  "mean_depart_delay_s": 116.82404006677797,
+  "mean_total_delay_proxy_s": 306.98225375626043,
+  "collisions": 0,
+  "teleports": 0
+}

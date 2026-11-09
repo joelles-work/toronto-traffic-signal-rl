@@ -1,0 +1,23 @@
+Loading net-file from 'C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\baseline_dev\idealized.net.xml' ... done (1ms).
+Loading additional-files from 'C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\baseline_dev\fixed.add.xml' ... done (0ms).
+Loading route-files incrementally from 'C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\baseline_dev\seed_33\routes.rou.xml'
+Loading done.
+Simulation version 1.28.0 started with time: 0.00.
+Simulation ended at time: 7200.00.
+Reason: The final simulation step has been reached.
+Performance:
+ Duration: 2.65s
+ Real time factor: 2719.03
+ UPS: 353385.951662
+Vehicles:
+ Inserted: 3594
+ Running: 0
+ Waiting: 0
+Statistics (avg of 3594):
+ RouteLength: 992.49
+ Speed: 5.84
+ Duration: 260.37
+ WaitingTime: 123.74
+ TimeLoss: 187.70
+ DepartDelay: 119.92
+ DepartDelayWaiting: 0.00

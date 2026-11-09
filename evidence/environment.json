@@ -1,0 +1,8 @@
+{
+  "platform": "Windows-10-10.0.19044-SP0",
+  "python": "3.14.6",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_cpus": 20,
+  "torch": "2.15.0+cpu",
+  "cuda_available": false
+}

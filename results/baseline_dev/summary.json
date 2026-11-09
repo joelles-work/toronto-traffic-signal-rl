@@ -1,0 +1,79 @@
+{
+  "label": "vehicle_only_idealized_fixed_cycle_PM",
+  "split": "dev",
+  "geometry": "Uncalibrated four-arm orthogonal junction; 500 m arms, three dedicated movement lanes per approach, 13.89 m/s.",
+  "pedestrians_simulated": false,
+  "warmup_seconds": 0,
+  "demand_seconds": 3600,
+  "maximum_end_seconds": 7200,
+  "tuning": "One preset configuration; no parameter search, no DQN/PPO training, no test simulations.",
+  "runs": [
+    {
+      "seed": 11,
+      "generated": 3594,
+      "completed": 3594,
+      "unfinished_or_uninserted": 0,
+      "mean_time_loss_s": 183.41931552587647,
+      "mean_depart_delay_s": 110.45579298831386,
+      "mean_total_delay_proxy_s": 293.87510851419034,
+      "collisions": 0,
+      "teleports": 0
+    },
+    {
+      "seed": 22,
+      "generated": 3594,
+      "completed": 3594,
+      "unfinished_or_uninserted": 0,
+      "mean_time_loss_s": 178.6242431830829,
+      "mean_depart_delay_s": 106.1339287701725,
+      "mean_total_delay_proxy_s": 284.75817195325544,
+      "collisions": 0,
+      "teleports": 0
+    },
+    {
+      "seed": 33,
+      "generated": 3594,
+      "completed": 3594,
+      "unfinished_or_uninserted": 0,
+      "mean_time_loss_s": 187.70140511964385,
+      "mean_depart_delay_s": 119.92099332220367,
+      "mean_total_delay_proxy_s": 307.6223984418475,
+      "collisions": 0,
+      "teleports": 0
+    },
+    {
+      "seed": 44,
+      "generated": 3594,
+      "completed": 3594,
+      "unfinished_or_uninserted": 0,
+      "mean_time_loss_s": 161.94770172509737,
+      "mean_depart_delay_s": 105.93368670005565,
+      "mean_total_delay_proxy_s": 267.88138842515303,
+      "collisions": 0,
+      "teleports": 0
+    },
+    {
+      "seed": 55,
+      "generated": 3594,
+      "completed": 3594,
+      "unfinished_or_uninserted": 0,
+      "mean_time_loss_s": 190.15821368948247,
+      "mean_depart_delay_s": 116.82404006677797,
+      "mean_total_delay_proxy_s": 306.98225375626043,
+      "collisions": 0,
+      "teleports": 0
+    }
+  ],
+  "mean_time_loss_s": {
+    "mean": 180.37017584863662,
+    "sample_std": 11.194705153267128
+  },
+  "mean_depart_delay_s": {
+    "mean": 111.85368836950472,
+    "sample_std": 6.314704789845993
+  },
+  "mean_total_delay_proxy_s": {
+    "mean": 292.22386421814133,
+    "sample_std": 16.62786978576139
+  }
+}

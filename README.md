@@ -1,0 +1,74 @@
+# Toronto traffic signal research
+
+Local setup for the supplied proposal, "Evaluating Deep Reinforcement Learning for Traffic Signal Control Under Real Toronto Demand".
+
+## Run the setup check
+
+From PowerShell in this folder:
+
+```powershell
+.\.venv\Scripts\python.exe check_setup.py
+```
+
+The check uses a temporary synthetic network and tests Python imports and TraCI communication. It does not validate Toronto geometry, demand, timing plans, pedestrian safety, or controller performance.
+
+Open the installed SUMO interface:
+
+```powershell
+.\.venv\Scripts\sumo-gui.exe
+```
+
+Recreate the environment:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+For Python scripts, set `os.environ['SUMO_HOME'] = sumo.SUMO_HOME` after importing `sumo` and before importing `sumo_rl`. The check demonstrates this without changing system settings.
+
+## Progress report and completed prototype
+
+The current two-page report is `output/report/Progress_Report_Jowel_Akkeh.pdf`. Its editable IEEEtran source is `output/report/main.tex`; the local LaTeX compiler was unavailable, so this source has not been compiled. The PDF is generated with ReportLab in a two-column IEEE-style layout and was rendered and visually checked.
+
+The local Toronto turning-movement data was found at `C:\Users\joelle11\Downloads\tmc_raw_data_2020_2029.csv`. Selected counts match the proposal. The frozen manifest reserves June 19, 15:00-17:00 for train and 17:00-18:00 for dev, and retains both proposed tests. This is a documented revision to introduce dev before any controller experiment. No test performance has been measured.
+
+Run the implemented dev prototype:
+
+```powershell
+.\.venv\Scripts\python.exe run_baseline.py
+```
+
+Five fixed seeds each generated and completed 3,594 vehicles. Mean time loss was 180.37 +/- 11.19 s/vehicle; including departure delay gave 292.22 +/- 16.63 s/vehicle (mean +/- sample standard deviation across five seed means). These results use idealized geometry and no pedestrians. They are not calibrated Toronto intersection performance or DRL results. See `results/baseline_dev/summary.json` and per-seed logs for evidence.
+
+Data preparation is reproducible with `prepare_data.py`, but it deliberately refuses to overwrite an existing frozen split. Keep this manifest intact. The original 88 MB input is outside the repository; its full SHA-256 hash is recorded in the manifest. Car, truck, and bus demand is included; pedestrian fields load and are audited, but pedestrian movement and delay are not simulated. Bicycle fields are excluded from the current vehicle-only model.
+
+The signal timing source was recovered from the public report linked in the proposal: https://320mccowan.ca/wp-content/uploads/2020/04/TransportationReport_320McCowan.pdf (PDF p. 147). Only a simplified vehicle-phase interpretation is implemented; field geometry, the full signal interpretation, and pedestrian clearance remain to be verified.
+
+Five successful W&B offline records have been created using `log_wandb.py`. `results/wandb_runs.json` identifies exactly these successful records; an earlier failed staging run must not be used as evidence. They contain a post-hoc import of the actual SUMO output metrics, not learning curves. They are not hosted web links. After logging into your W&B account, sync the five directories named in the index to the intended entity/project. Do not commit API keys. The project is a local Git repository with no remote URL configured. Both hosted repository and W&B evidence links remain required before submission.
+
+`requirements-lock.txt` contains the full resolved simulation/learning environment. The report-generation script uses the separate bundled document runtime's ReportLab. Setup checks and hardware details are retained in `evidence/`.
+
+## Original research specification from the proposal
+
+- Site: Eglinton Avenue East and Danforth Road, TCS 379.
+- Train: June 19, 2024, 15:00-18:00; proposal totals 10,310 vehicles and 1,328 pedestrians.
+- Primary frozen-policy test: November 2, 2024, 15:00-18:00; 9,961 vehicles and 1,598 pedestrians.
+- Secondary frozen-policy test: June 19, 2024, 07:00-10:00; 8,275 vehicles and 661 pedestrians.
+- Compare DQN and PPO against the documented fully fixed-time baseline using matched demand realizations and random seeds.
+- Use the PM, OFF, and AM baseline plans respectively. The proposal identifies OFF as 95 seconds and AM/PM as 120 seconds; individual intervals still need verification against the timing card.
+- Report simulated vehicle and pedestrian mean delay separately. Document definitions, warm-up, unfinished trips, and departures after the evaluation window.
+
+These totals are transcribed from the proposal and have not yet been independently verified.
+
+## Remaining full-study work
+
+1. Verify the full phase-to-movement interpretation of the TCS 379 timing card against field geometry; source demand has been extracted and validated.
+2. Obtain TorontoSUMONetworks geometry, extract the site, and verify lanes, connections, crossings, and phase mappings.
+3. Build demand files and reconcile each movement and pedestrian count with the source records.
+4. Reproduce and verify the published fixed-time plans, including pedestrian clearance, yellow, and all-red intervals.
+5. Implement constrained DQN/PPO control with the same operational requirements. Review SUMO-RL signal transitions before using it at this site.
+6. Train on the designated period, freeze policies, and run matched-seed independent evaluations.
+7. Produce reproducible metrics, uncertainty estimates, figures, and a report with model limitations.
+
+A vehicle-only prototype baseline is implemented and evaluated on dev. No calibrated Toronto model, trained policy, pedestrian delay, or test performance has been produced.

@@ -1,0 +1,6 @@
+Success.
+SUMO_HOME: C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\sumo
+PyTorch: 2.15.0+cpu; CUDA available: False
+Learning libraries: DQN, PPO, sumo_rl
+PASS: Python controlled SUMO through TraCI for 10 simulated seconds.
+This empty synthetic-network check is not a Toronto simulation or research result.

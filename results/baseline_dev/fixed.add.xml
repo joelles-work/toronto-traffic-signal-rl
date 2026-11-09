@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+  <tlLogic id="C" type="static" programID="prototype_PM" offset="0">
+    <phase duration="7" state="rrrrrGrrrrrG" />
+    <phase duration="3" state="rrrrryrrrrry" />
+    <phase duration="1" state="rrrrrrrrrrrr" />
+    <phase duration="53" state="rrrGGgrrrGGg" />
+    <phase duration="4" state="rrryyyrrryyy" />
+    <phase duration="3" state="rrrrrrrrrrrr" />
+    <phase duration="42" state="GGgrrrGGgrrr" />
+    <phase duration="4" state="yyyrrryyyrrr" />
+    <phase duration="3" state="rrrrrrrrrrrr" />
+  </tlLogic>
+</additional>

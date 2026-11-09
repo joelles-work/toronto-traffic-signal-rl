@@ -1,0 +1,65 @@
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\begin{document}
+\title{Evaluating Deep Reinforcement Learning for Traffic Signal Control Under Real Toronto Demand}
+\author{\IEEEauthorblockN{Jowel Akkeh}\IEEEauthorblockA{Department of Civil Engineering, Lassonde School of Engineering\\York University, Toronto, Canada}}
+\maketitle
+\begin{abstract}This check-in reports an implemented demand loader, frozen chronological split, and five fixed-cycle prototype runs. Mean dev time loss is $180.37\pm11.19$ s/vehicle. Geometry and pedestrian fidelity remain unresolved; no DRL or test result is claimed. Hosted evidence links remain required.\end{abstract}
+\section{METHOD (IMPLEMENTED)}
+\paragraph{Data and validation} The implemented loader reads the local Toronto multimodal turning-movement file, selects TCS 379 (Danforth Road / Eglinton Avenue East), and validates nonnegative, nonmissing counts in 36 vehicle-movement fields and four pedestrian fields. Cars, trucks, and buses are retained separately. The two study dates each contain 56 fifteen-minute records. The extracted daily totals match the proposal [1]: 40,294 vehicles and 4,665 pedestrians on June 19, 2024; 36,110 vehicles and 4,949 pedestrians on November 2, 2024. These are demand observations; measured intersection delay is unavailable.
+
+\paragraph{Frozen split} Before the first demand-driven controller run, source row identifiers and SHA-256 file hashes were saved in data/split\_manifest.json. The proposal did not specify a development partition. Its June afternoon period was therefore divided chronologically: 15:00-17:00 for training and 17:00-18:00 for development (Table I). The proposed primary and secondary tests remain reserved. Their counts were audited, but no test simulation or controller-performance measurement was made. Simulation episodes have separate generated arrivals and reset traffic state; no trips are shared between partitions. Adjacent same-day train/dev demand may remain correlated.
+
+\begin{table}[ht]
+\centering\footnotesize
+\caption{Frozen demand partitions (2024)}
+\begin{tabular}{lrrr}\hline
+Partition / period & Intervals & Vehicles & Peds \\
+Train: June 19, 15-17 & 8 & 6,716 & 810 \\
+Dev: June 19, 17-18 & 4 & 3,594 & 518 \\
+Test: Nov. 2, 15-18 & 12 & 9,961 & 1,598 \\
+Test: June 19, 07-10 & 12 & 8,275 & 661 \\
+\hline\end{tabular}
+\end{table}
+\paragraph{Implemented model} The running baseline is a vehicle-only SUMO 1.28.0 prototype with a four-arm orthogonal junction, 500 m approach and departure edges, a 13.89 m/s speed limit, and three dedicated movement lanes on every approach (right, through, left). This constructed geometry has not been checked against the field intersection or TorontoSUMONetworks. For each observed class and movement count, exactly that number of vehicles is generated, with independent uniform scheduled arrivals inside its fifteen-minute interval. This converts observed counts into synthetic arrival times; observed platoons and upstream coordination are not reproduced.
+
+\paragraph{Control} A single preset 120 s fixed cycle is run. Its duration sequence is 7, 3, 1, 53, 4, 3, 42, 4, and 3 s: simultaneous east-west protected-left green/yellow, all-red, east-west green/yellow/all-red, and north-south green/yellow/all-red. The durations follow a simplified interpretation of the published PM timing card [2], combining walk and flashing-clearance stages into vehicle greens. Opposing left turns during general green yield in SUMO. Detector calls are absent. Pedestrian records load but no persons or crossing signals are simulated. Accordingly, this is not a validated reproduction of the complete City baseline.
+
+\paragraph{Metrics and execution} For each run, vehicle time loss is the arithmetic mean of SUMO tripinfo timeLoss over all completed vehicles. SUMO defines this as lost time relative to ideal driving speed [3]; it is a delay proxy, not a field-calibrated measure of intersection control delay. A second proxy adds each vehicle's departDelay to its timeLoss before averaging, so vehicles waiting outside the simulated network are not hidden. Demand lasts 3,600 s; runs end at 7,200 s to drain queues, with no warm-up and teleporting disabled. Completed and outstanding counts are checked. Pedestrian delay is unavailable, not zero.
+
+\section{FIRST EXPERIMENTS}
+\paragraph{Protocol} Five independent simulation seeds (11, 22, 33, 44, 55) were fixed in the split manifest. Each run uses the same observed dev counts, with different within-interval arrival times and SUMO randomness. One geometry/control configuration was evaluated; no parameter search, architecture selection, reward tuning, or RL training was performed. DQN and PPO packages import successfully, but neither has a trained model or reported result. Future choices will be made on dev, with comparable tuning effort for all controllers. Test evaluation is deferred until model and analysis settings are frozen.
+
+\paragraph{Development result} Table II reports the five seed-level means. Mean vehicle time loss is 180.37 $\pm$ 11.19 s/vehicle (mean $\pm$ sample standard deviation across five runs). Mean departure delay is 111.85 $\pm$ 6.31 s/vehicle. The combined proxy is 292.22 $\pm$ 16.63 s/vehicle. All 3,594 generated vehicles completed in each run. SUMO reported zero collisions, zero teleports, and no vehicles awaiting insertion or still running at termination. No improvement over another controller is claimed; no significance test is warranted for this single-controller experiment.
+
+\begin{table}[ht]
+\centering\footnotesize
+\caption{Dev results in seconds per vehicle}
+\begin{tabular}{lrrr}\hline
+Seed & Time loss & Entry delay & Combined \\
+11 & 183.42 & 110.46 & 293.88 \\
+22 & 178.62 & 106.13 & 284.76 \\
+33 & 187.70 & 119.92 & 307.62 \\
+44 & 161.95 & 105.93 & 267.88 \\
+55 & 190.16 & 116.82 & 306.98 \\
+Mean $\pm$ SD & 180.37 $\pm$ 11.19 & 111.85 $\pm$ 6.31 & 292.22 $\pm$ 16.63 \\
+\hline\end{tabular}
+\end{table}
+\paragraph{Hardware and repeatability} Experiments ran on Windows with Python 3.14.6, an Intel64 Family 6 Model 154 processor and 20 logical CPUs. PyTorch 2.15.0+cpu reports no CUDA device. SUMO-RL 1.4.5 and Stable-Baselines3 2.9.2 are installed. The exact resolved package versions and machine information are saved in requirements-lock.txt and evidence/environment.json. Per-seed routes, command arguments, SUMO logs, statistics, trip records, and metrics are retained under results/baseline\_dev/. Variability here represents simulation randomness conditional on one observed dev hour, not day-to-day uncertainty.
+
+\section{EVIDENCE AND REVISED PLAN}
+\paragraph{Evidence available} The project folder is initialized as a local Git repository. Reproduction entry points are prepare\_data.py, run\_baseline.py, and log\_wandb.py; the frozen split and aggregate results are machine-readable. Five completed W\&B offline runs record the per-seed metrics, configuration, and evidence artifacts as a post-hoc import of saved SUMO outputs. Their identifiers and local directories are listed in results/wandb\_runs.json. The initial failed W\&B artifact-staging attempt is excluded from this successful-run index.
+
+\paragraph{Hosted evidence still missing} No remote repository URL or hosted W\&B run URL is available in the current workspace. Offline W\&B directories do not satisfy the assignment's hosted-run link requirement. Publication/synchronization and verification of both hosted links remain required before submission. The report does not supply invented URLs.
+
+\paragraph{What remains incomplete and why} The full proposal implementation is incomplete: verified Toronto geometry, pedestrian crossings and delay, faithful City signal mapping, and trained DQN/PPO controllers are absent. The large 111.85 s/vehicle average entry delay exposes an important boundary/capacity limitation of the constructed model. All demand does eventually complete, but the resulting delay cannot be interpreted as the actual intersection's performance. The existing experiments establish data loading and an end-to-end prototype, not the proposed multimodal comparison.
+
+\paragraph{Revised plan} First verify lane counts, turn connections, storage, and crossing geometry against source drawings and TorontoSUMONetworks. Validate the timing card's phase-to-movement mapping and pedestrian walk/clearance intervals. Add pedestrians and inspect entry queues, residual vehicles, warm-up, and arrival assumptions. Then rerun a fixed-time baseline on the same frozen dev partition. Train DQN/PPO on the training partition, choosing state, reward, constraints, and training budget only on dev. Preserve operational clearance constraints and comparable tuning budgets. Freeze the final models before evaluating both reserved test periods; report five-seed means and standard deviations and paired uncertainty for small differences. If any model is changed after viewing test performance, explicitly relabel that test as development data.
+
+\begin{thebibliography}{3}
+\bibitem{r1} J. Akkeh, "Evaluating Deep Reinforcement Learning for Traffic Signal Control Under Real Toronto Demand," project proposal, York University, 2026. Data: local Toronto file tmc\_raw\_data\_2020\_2029.csv; source hash and selected record identifiers are in the split manifest.
+\bibitem{r2} City of Toronto, "Current Signal Timing Information: Eglinton Ave E \& Danforth Rd, TCS 379," Oct. 31, 2019, reproduced in WSP Canada Group Limited, 320 McCowan Road Transportation Impact Study, Feb. 14, 2020, App. B, PDF p. 147. Public source PDF.
+\bibitem{r3} Eclipse SUMO, "TripInfo," SUMO documentation, accessed Nov. 9, 2026. Official metric definitions.
+\end{thebibliography}
+\end{document}

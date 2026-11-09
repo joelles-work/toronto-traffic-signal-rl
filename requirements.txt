@@ -1,0 +1,6 @@
+eclipse-sumo==1.28.0
+traci==1.28.0
+sumolib==1.28.0
+sumo-rl==1.4.5
+stable-baselines3==2.9.2
+wandb==0.31.0
