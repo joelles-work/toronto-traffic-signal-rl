@@ -1,0 +1,77 @@
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261111_182806-k6i9vqa0
+wandb: View this run in the terminal with `wandb leet`
+{"algorithm": "DQN", "training_seed": 101, "decisions": 64, "budget": 2048, "episodes_completed": 0, "elapsed_s": 11.088248200016096, "updated_utc": "2026-11-11T23:28:26.720902+00:00", "last_episode": null, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 128, "budget": 2048, "episodes_completed": 1, "elapsed_s": 20.2193324000109, "updated_utc": "2026-11-11T23:28:35.851963+00:00", "last_episode": {"decision": 81, "flow_seed": 333145565, "reward": -1968.783333, "decisions": 81, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 192, "budget": 2048, "episodes_completed": 2, "elapsed_s": 27.88991959998384, "updated_utc": "2026-11-11T23:28:43.522528+00:00", "last_episode": {"decision": 165, "flow_seed": 1013110313, "reward": -2463.204167, "decisions": 84, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 256, "budget": 2048, "episodes_completed": 3, "elapsed_s": 37.32338570000138, "updated_utc": "2026-11-11T23:28:52.955970+00:00", "last_episode": {"decision": 249, "flow_seed": 747949815, "reward": -2145.404167, "decisions": 84, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 320, "budget": 2048, "episodes_completed": 3, "elapsed_s": 46.50674789992627, "updated_utc": "2026-11-11T23:29:02.139308+00:00", "last_episode": {"decision": 249, "flow_seed": 747949815, "reward": -2145.404167, "decisions": 84, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 384, "budget": 2048, "episodes_completed": 4, "elapsed_s": 54.08933809993323, "updated_utc": "2026-11-11T23:29:09.721879+00:00", "last_episode": {"decision": 329, "flow_seed": 385925396, "reward": -1917.35, "decisions": 80, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 448, "budget": 2048, "episodes_completed": 5, "elapsed_s": 59.99532370001543, "updated_utc": "2026-11-11T23:29:15.627850+00:00", "last_episode": {"decision": 409, "flow_seed": 144803508, "reward": -1860.408333, "decisions": 80, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+{"algorithm": "DQN", "training_seed": 101, "decisions": 512, "budget": 2048, "episodes_completed": 6, "elapsed_s": 65.74711260001641, "updated_utc": "2026-11-11T23:29:21.379625+00:00", "last_episode": {"decision": 487, "flow_seed": 842678394, "reward": -1695.316667, "decisions": 78, "unfinished": 0, "collisions": 0, "teleports": 0}, "status": "training"}
+wandb: 
+wandb: Run summary:
+wandb:         collisions 0
+wandb:     episode_reward -1695.31667
+wandb:              error no element found: li...
+wandb:             status failed
+wandb:          teleports 0
+wandb: training_decisions 487
+wandb:         unfinished 0
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261111_182806-k6i9vqa0
+wandb: Find logs at: .\wandb\offline-run-20261111_182806-k6i9vqa0\logs
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\rl\train.py", line 127, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\rl\train.py", line 102, in main
+    model.learn(total_timesteps=budget,callback=callback,progress_bar=False)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\dqn\dqn.py", line 275, in learn
+    return super().learn(
+           ~~~~~~~~~~~~~^
+        total_timesteps=total_timesteps,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        progress_bar=progress_bar,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\common\off_policy_algorithm.py", line 347, in learn
+    rollout = self.collect_rollouts(
+        self.env,
+    ...<5 lines>...
+        log_interval=log_interval,
+    )
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\common\off_policy_algorithm.py", line 580, in collect_rollouts
+    new_obs, rewards, dones, infos = env.step(actions)
+                                     ~~~~~~~~^^^^^^^^^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\common\vec_env\base_vec_env.py", line 222, in step
+    return self.step_wait()
+           ~~~~~~~~~~~~~~^^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\common\vec_env\dummy_vec_env.py", line 59, in step_wait
+    obs, self.buf_rews[env_idx], terminated, truncated, self.buf_infos[env_idx] = self.envs[env_idx].step(  # type: ignore[assignment]
+                                                                                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.actions[env_idx]
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\.venv\Lib\site-packages\stable_baselines3\common\monitor.py", line 96, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\joelle11\Documents\ChatGPT\SUMO Project\rl\environment.py", line 153, in step
+    stats=ET.parse(self.output_files['statistics.xml']).getroot()
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joelle11\AppData\Local\Programs\Python\Python314\Lib\xml\etree\ElementTree.py", line 1227, in parse
+    tree.parse(source, parser)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\joelle11\AppData\Local\Programs\Python\Python314\Lib\xml\etree\ElementTree.py", line 581, in parse
+    self._root = parser._parse_whole(source)
+                 ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+xml.etree.ElementTree.ParseError: no element found: line 47, column 0
+shutdown can only be called once

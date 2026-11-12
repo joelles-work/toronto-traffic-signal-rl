@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "differences_s": {
+    "vehicle_time_loss_s": 0.0,
+    "vehicle_depart_delay_s": 0.0,
+    "vehicle_combined_delay_proxy_s": 0.0,
+    "pedestrian_time_loss_s": 0.0
+  }
+}

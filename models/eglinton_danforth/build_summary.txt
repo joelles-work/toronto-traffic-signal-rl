@@ -1,0 +1,154 @@
+{
+  "seed": 11,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      74,
+      73
+    ],
+    "s": [
+      59,
+      59
+    ],
+    "e": [
+      49,
+      47
+    ],
+    "w": [
+      79,
+      78
+    ]
+  },
+  "vehicle_route_pairs": {
+    "n_s": 485,
+    "w_n": 220,
+    "e_w": 781,
+    "s_n": 537,
+    "w_e": 965,
+    "e_s": 171,
+    "n_w": 125,
+    "e_n": 92,
+    "n_e": 65,
+    "s_e": 144,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{
+  "status": "Georeferenced geometry revision, not calibrated or historically validated for 2024",
+  "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-79.250,43.734,-79.242,43.741",
+  "source_sha256": "a9071b022658e12b795b97ee504d1aece8910938356469b60a45e6180065f667",
+  "attribution": "Map data (c) OpenStreetMap contributors, ODbL 1.0",
+  "junction": "TCS379",
+  "incoming": {
+    "s": [
+      "37229991#1",
+      "-439060999#1",
+      "-439061001",
+      "-439061000",
+      "-439232197#1",
+      "-170990873#1"
+    ],
+    "n": [
+      "474021761",
+      "170990874"
+    ],
+    "w": [
+      "37229923#1",
+      "358916875#0"
+    ],
+    "e": [
+      "-1491580516#1",
+      "-1344569661",
+      "37229929",
+      "445716031#0"
+    ]
+  },
+  "outgoing": {
+    "n": [
+      "-445716030#0",
+      "-439060443#2"
+    ],
+    "s": [
+      "170990873#1",
+      "439232197#0",
+      "439061000",
+      "439061001",
+      "439060999#0",
+      "37229995"
+    ],
+    "e": [
+      "37229921#1",
+      "1344569661",
+      "37229936#0"
+    ],
+    "w": [
+      "37229935#1",
+      "287653266#0"
+    ]
+  },
+  "vehicle_lanes_at_stopline": {
+    "s": 2,
+    "n": 3,
+    "w": 4,
+    "e": 3
+  },
+  "crossing_segments": {
+    ":TCS379_c0": "n",
+    ":TCS379_c1": "e",
+    ":TCS379_c2": "s",
+    ":TCS379_c3": "w"
+  },
+  "crossing_signal_indices": {
+    "20": "w",
+    "17": "n",
+    "18": "e",
+    "19": "s"
+  },
+  "vehicle_count": 3594,
+  "pedestrians": {
+    "count": 518,
+    "source": "Observed dev count totals by crossing leg; uniform arrival times and balanced directions are modeled."
+  },
+  "transit_curbs": "red visual overlays only; access rules remain unvalidated",
+  "assumptions": [
+    "SUMO-generated lane widths and corner radii",
+    "guessed 2 m sidewalks",
+    "guessed crossing geometry on source road alignment",
+    "static simplified PM plan",
+    "no transit stop schedule"
+  ],
+  "east_median": "Independent EB/WB nodes, source-aligned spine, 2.4 m modeled median gap; width not surveyed",
+  "east_separation_check": {
+    "overlap_area_m2": 0.0,
+    "minimum_vehicle_surface_gap_m": 2.385007210184051,
+    "only_shared_node": "TCS379"
+  },
+  "route_pairs": {
+    "n_s": "474021761 170990874 170990873#1 439232197#0 439061000 439061001 439060999#0 37229995",
+    "w_n": "37229923#1 358916875#0 -445716030#0 -439060443#2",
+    "e_w": "-1491580516#1 -1344569661 37229929 445716031#0 37229935#1 287653266#0",
+    "s_n": "37229991#1 -439060999#1 -439061001 -439061000 -439232197#1 -170990873#1 -445716030#0 -439060443#2",
+    "w_e": "37229923#1 358916875#0 37229921#1 1344569661 37229936#0",
+    "e_s": "-1491580516#1 -1344569661 37229929 445716031#0 170990873#1 439232197#0 439061000 439061001 439060999#0 37229995",
+    "n_w": "474021761 170990874 37229935#1 287653266#0",
+    "e_n": "-1491580516#1 -1344569661 37229929 445716031#0 -445716030#0 -439060443#2",
+    "n_e": "474021761 170990874 37229921#1 1344569661 37229936#0",
+    "s_e": "37229991#1 -439060999#1 -439061001 -439061000 -439232197#1 -170990873#1 37229921#1 1344569661 37229936#0",
+    "w_s": "37229923#1 358916875#0 170990873#1 439232197#0 439061000 439061001 439060999#0 37229995"
+  }
+}

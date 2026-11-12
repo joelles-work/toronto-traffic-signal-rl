@@ -1,0 +1,402 @@
+{
+  "help": "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/help_show?name=datastore_search",
+  "success": true,
+  "result": {
+    "include_total": true,
+    "limit": 0,
+    "records_format": "objects",
+    "resource_id": "262469c2-abfe-4756-9068-4ea5c7ba1af7",
+    "total_estimation_threshold": null,
+    "records": [],
+    "fields": [
+      {
+        "id": "_id",
+        "type": "int"
+      },
+      {
+        "id": "count_id",
+        "type": "int4",
+        "info": {
+          "notes": "Unique identifier for each count. Join to tmc_summary_data or tmc_most_recent_summary_data for rollup statistics."
+        }
+      },
+      {
+        "id": "count_date",
+        "type": "date",
+        "info": {
+          "notes": "Date the count was conducted. For Turning Movement Counts, studies are conducted on one day only."
+        }
+      },
+      {
+        "id": "location_name",
+        "type": "text",
+        "info": {
+          "notes": "Human-readable name of the location where the count was conducted (e.g. Bloor Street / Yonge Street)"
+        }
+      },
+      {
+        "id": "longitude",
+        "type": "float8",
+        "info": {
+          "notes": "Longitude GPS coordinate"
+        }
+      },
+      {
+        "id": "latitude",
+        "type": "float8",
+        "info": {
+          "notes": "Latitude GPS coordinate"
+        }
+      },
+      {
+        "id": "centreline_type",
+        "type": "text",
+        "info": {
+          "notes": "Intersection node or Midblock segment. Spatial geometry can be found by using centreline_type and centreline_id to lookup spatial information in the Toronto Centreline and Intersection File datasets. If the centreline_type is Intersection, cross-reference centreline_id with INTERSECTION_ID in the Intersection File dataset (https://open.toronto.ca/dataset/intersection-file-city-of-toronto/). If the centreline_type is Midblock, cross-reference centreline_id with CENTRELINE_ID in the  Toronto Centreline dataset (https://open.toronto.ca/dataset/toronto-centreline-tcl/)."
+        }
+      },
+      {
+        "id": "centreline_id",
+        "type": "int4",
+        "info": {
+          "notes": "Unique location identifier that corresponds to the Toronto Centreline or Intersection File datasets. Join to the Toronto Centreline dataset for segments. Join to the Intersection File dataset for nodes."
+        }
+      },
+      {
+        "id": "px",
+        "type": "int4",
+        "info": {
+          "notes": "If there is a traffic control signal at the location, this is the unique identifier for the signal. Join to Traffic Signals Tabular (https://open.toronto.ca/dataset/traffic-signals-tabular/)."
+        }
+      },
+      {
+        "id": "start_time",
+        "type": "timestamp",
+        "info": {
+          "notes": "Start time of the 15-minute interval"
+        }
+      },
+      {
+        "id": "end_time",
+        "type": "timestamp",
+        "info": {
+          "notes": "End time of the 15-minute interval"
+        }
+      },
+      {
+        "id": "n_appr_cars_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "n_appr_cars_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the north leg (approach), in a southbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "n_appr_cars_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "s_appr_cars_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "s_appr_cars_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the south leg (approach), in a northbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "s_appr_cars_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "e_appr_cars_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "e_appr_cars_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the east leg (approach), in a westbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "e_appr_cars_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "w_appr_cars_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "w_appr_cars_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the west leg (approach), in a eastbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "w_appr_cars_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of cars that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "n_appr_truck_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "n_appr_truck_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the north leg (approach), in a southbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "n_appr_truck_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "s_appr_truck_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "s_appr_truck_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the south leg (approach), in a northbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "s_appr_truck_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "e_appr_truck_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "e_appr_truck_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the east leg (approach), in a westbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "e_appr_truck_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "w_appr_truck_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "w_appr_truck_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the west leg (approach), in a eastbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "w_appr_truck_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of trucks that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "n_appr_bus_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "n_appr_bus_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the north leg (approach), in a southbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "n_appr_bus_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the north leg (approach), in a southbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "s_appr_bus_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "s_appr_bus_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the south leg (approach), in a northbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "s_appr_bus_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the south leg (approach), in a northbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "e_appr_bus_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "e_appr_bus_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the east leg (approach), in a westbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "e_appr_bus_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the east leg (approach), in a westbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "w_appr_bus_r",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a right turn."
+        }
+      },
+      {
+        "id": "w_appr_bus_t",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the west leg (approach), in a eastbound direction of travel, and continue through."
+        }
+      },
+      {
+        "id": "w_appr_bus_l",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of buses that enter the intersection from the west leg (approach), in a eastbound direction of travel, and make a left turn."
+        }
+      },
+      {
+        "id": "n_appr_peds",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of pedestrians that cross the north leg (approach) of the intersection."
+        }
+      },
+      {
+        "id": "s_appr_peds",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of pedestrians that cross the south leg (approach) of the intersection."
+        }
+      },
+      {
+        "id": "e_appr_peds",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of pedestrians that cross the east leg (approach) of the intersection."
+        }
+      },
+      {
+        "id": "w_appr_peds",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of pedestrians that cross the west leg (approach) of the intersection."
+        }
+      },
+      {
+        "id": "n_appr_bike",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of bicycles that enter the intersection from the north leg (approach). NOTE: For counts conducted September 2023 and after, this includes bicycles on the road riding into the intersection from the north leg, i.e. in a southbound direction, plus bicycles riding in the crosswalk area across the west leg."
+        }
+      },
+      {
+        "id": "s_appr_bike",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of bicycles that enter the intersection from the north leg (approach). NOTE: For counts conducted September 2023 and after, this includes bicycles on the road riding into the intersection from the south leg, i.e. in a northbound direction, plus bicycles riding in the crosswalk area across the east leg."
+        }
+      },
+      {
+        "id": "e_appr_bike",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of bicycles that enter the intersection from the north leg (approach). NOTE: For counts conducted September 2023 and after, this includes bicycles on the road riding into the intersection from the east leg, i.e. in a westbound direction, plus bicycles riding in the crosswalk area across the north leg."
+        }
+      },
+      {
+        "id": "w_appr_bike",
+        "type": "int4",
+        "info": {
+          "notes": "Volume of bicycles that enter the intersection from the north leg (approach). NOTE: For counts conducted September 2023 and after, this includes bicycles on the road riding into the intersection from the west leg, i.e. in a eastbound direction, plus bicycles riding in the crosswalk area across the south leg."
+        }
+      }
+    ],
+    "_links": {
+      "start": "/api/3/action/datastore_search?resource_id=262469c2-abfe-4756-9068-4ea5c7ba1af7&limit=0",
+      "next": "/api/3/action/datastore_search?resource_id=262469c2-abfe-4756-9068-4ea5c7ba1af7&limit=0&offset=0"
+    },
+    "total": 367883,
+    "total_was_estimated": false
+  }
+}

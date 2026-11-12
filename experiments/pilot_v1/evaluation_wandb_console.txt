@@ -1,0 +1,22 @@
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261111_225102-dp44s9ne
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:              DQN/all_runs_eligible True
+wandb:         DQN/pedestrian_time_loss_s 46.92898
+wandb: DQN/vehicle_combined_delay_proxy_s 166.20733
+wandb:         DQN/vehicle_depart_delay_s 111.09175
+wandb:            DQN/vehicle_time_loss_s 55.11558
+wandb:              PPO/all_runs_eligible True
+wandb:         PPO/pedestrian_time_loss_s 46.61379
+wandb: PPO/vehicle_combined_delay_proxy_s 211.31256
+wandb:         PPO/vehicle_depart_delay_s 152.5548
+wandb:            PPO/vehicle_time_loss_s 58.75776
+wandb:                                 +5 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261111_225102-dp44s9ne
+wandb: Find logs at: .\wandb\offline-run-20261111_225102-dp44s9ne\logs
+shutdown can only be called once

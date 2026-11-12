@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes><vType id="cars" vClass="passenger" length="5" sigma="0.5" />
+  <vType id="truck" vClass="truck" length="10" sigma="0.5" />
+  <vType id="bus" vClass="bus" length="12" sigma="0.5" />
+  <vType id="pedestrian" vClass="pedestrian" maxSpeed="1.2" speedFactor="1" speedDev="0" />
+  </routes>

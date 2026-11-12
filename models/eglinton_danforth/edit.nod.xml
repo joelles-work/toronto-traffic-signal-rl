@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-09T16:29:01.409364-05:00 by Eclipse SUMO netconvert 1.28.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="models/eglinton_danforth/intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="models/eglinton_danforth/edit_base.net.xml"/>
+        <plain-output-prefix value="models/eglinton_danforth/edit"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="12"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="1"/>
+    </pedestrian>
+
+</netconvertConfiguration>
+-->
+
+<nodes version="1.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <location netOffset="-640832.18,-4843762.77" convBoundary="255.52,200.88,726.39,719.10" origBoundary="-79.261302,43.726448,-79.239315,43.791299" projParameter="+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <node id="12196577853" x="726.39" y="514.65" type="dead_end"/>
+    <node id="2853060868" x="261.99" y="356.91" type="dead_end"/>
+    <node id="2853060870" x="255.83" y="369.89" type="dead_end"/>
+    <node id="2912237938" x="431.68" y="425.52" type="priority"/>
+    <node id="2912239188" x="323.79" y="391.77" type="priority"/>
+    <node id="3272055262" x="313.54" y="201.26" type="dead_end"/>
+    <node id="3272055264" x="308.85" y="214.49" type="dead_end"/>
+    <node id="3637340025" x="290.44" y="366.15" type="priority"/>
+    <node id="418523271" x="444.17" y="719.10" type="dead_end"/>
+    <node id="418523765" x="338.39" y="272.98" type="priority"/>
+    <node id="418525306" x="429.23" y="510.75" type="priority"/>
+    <node id="433599636" x="376.58" y="364.86" type="priority"/>
+    <node id="433599692" x="462.72" y="430.32" type="priority"/>
+    <node id="433601568" x="332.02" y="256.43" type="priority"/>
+    <node id="4366839749" x="357.29" y="312.85" type="priority"/>
+    <node id="4366839750" x="368.40" y="342.81" type="priority"/>
+    <node id="4588565502" x="481.26" y="436.17" type="priority"/>
+    <node id="TCS379" x="392.73" y="406.37" type="traffic_light" tl="TCS379"/>
+</nodes>

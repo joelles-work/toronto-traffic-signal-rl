@@ -1,0 +1,196 @@
+{
+  "result": "PASS",
+  "cycle_s": 120,
+  "signal_links": 21,
+  "checks": [
+    "PM duration sequence",
+    "all-red and yellow stages",
+    "no conflicting protected greens in SUMO foe matrix",
+    "crossing green serves the correct leg",
+    "one full-width crossing per leg",
+    "clearance sufficient at modeled walking speed"
+  ],
+  "phases": [
+    {
+      "begin_s": 0,
+      "end_s": 7,
+      "name": "advance",
+      "state": "rrrrrrrrGrrrrrrrGrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 7,
+      "end_s": 10,
+      "name": "advance_y",
+      "state": "rrrrrrrryrrrrrrryrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 10,
+      "end_s": 11,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 11,
+      "end_s": 42,
+      "name": "ew_walk",
+      "state": "rrrrgGGGgrrrgGGGgGrGr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "G",
+        "e": "r",
+        "s": "G"
+      }
+    },
+    {
+      "begin_s": 42,
+      "end_s": 64,
+      "name": "ew_clear",
+      "state": "rrrrgGGGgrrrgGGGgrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 64,
+      "end_s": 68,
+      "name": "ew_y",
+      "state": "rrrryyyyyrrryyyyyrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 68,
+      "end_s": 71,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 71,
+      "end_s": 79,
+      "name": "ns_walk",
+      "state": "gGGgrrrrrgGGrrrrrrGrG",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "G",
+        "n": "r",
+        "e": "G",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 79,
+      "end_s": 113,
+      "name": "ns_clear",
+      "state": "gGGgrrrrrgGGrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 113,
+      "end_s": 117,
+      "name": "ns_y",
+      "state": "yyyyrrrrryyyrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 117,
+      "end_s": 120,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    }
+  ],
+  "clearances": [
+    {
+      "leg": "n",
+      "crossing": ":TCS379_c0",
+      "length_m": 16.0,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 13.333333333333334,
+      "clearance_s": 22
+    },
+    {
+      "leg": "e",
+      "crossing": ":TCS379_c1",
+      "length_m": 21.6,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 18.000000000000004,
+      "clearance_s": 34
+    },
+    {
+      "leg": "s",
+      "crossing": ":TCS379_c2",
+      "length_m": 12.8,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 10.666666666666668,
+      "clearance_s": 22
+    },
+    {
+      "leg": "w",
+      "crossing": ":TCS379_c3",
+      "length_m": 23.99,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 19.991666666666667,
+      "clearance_s": 34
+    }
+  ],
+  "limits": [
+    "Static model conflict audit, not certification of field signal operation",
+    "City timing card advance-phase interpretation and surveyed geometry still require external verification"
+  ]
+}

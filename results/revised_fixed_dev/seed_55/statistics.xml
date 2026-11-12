@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-09T16:51:43.867523-05:00 by Eclipse SUMO sumo 1.28.0
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\models\eglinton_danforth\intersection.net.xml"/>
+        <route-files value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\revised_fixed_dev\seed_55\routes.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\revised_fixed_dev\seed_55\tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <personinfo-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\revised_fixed_dev\seed_55\personinfo.xml"/>
+        <statistic-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\results\revised_fixed_dev\seed_55\statistics.xml"/>
+    </output>
+
+    <time>
+        <end value="7200"/>
+    </time>
+
+    <processing>
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
+
+    <random_number>
+        <seed value="55"/>
+    </random_number>
+
+</sumoConfiguration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <performance clockBegin="367021.06" clockEnd="367023.14" clockDuration="2.08" traciDuration="0.00" realTimeFactor="3464.87" vehicleUpdatesPerSecond="151184.79" personUpdatesPerSecond="16793.07" begin="0.00" end="7200.00" duration="7200.00"/>
+    <vehicles loaded="3594" inserted="3594" running="0" waiting="0"/>
+    <teleports total="0" jam="0" yield="0" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0" emergencyBraking="0"/>
+    <persons loaded="518" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="3594" routeLength="509.75" speed="7.66" duration="87.41" waitingTime="37.74" timeLoss="55.06" departDelay="107.88" departDelayWaiting="0.00" totalTravelTime="314162.00" totalDepartDelay="387723.67"/>
+    <pedestrianStatistics number="518" routeLength="24.99" duration="67.37" timeLoss="46.54"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>

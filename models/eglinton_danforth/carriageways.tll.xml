@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-09T16:51:07.174193-05:00 by Eclipse SUMO netconvert 1.28.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\models\eglinton_danforth\intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\models\eglinton_danforth\geometry_base.net.xml"/>
+        <plain-output-prefix value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\models\eglinton_danforth\carriageways"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="12"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="1"/>
+    </pedestrian>
+
+</netconvertConfiguration>
+-->
+
+<tlLogics version="1.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/tllogic_file.xsd">
+    <tlLogic id="TCS379" type="static" programID="0" offset="0">
+        <phase duration="26" state="rrrGGgrrrrGGGgGrrGrr"/>
+        <phase duration="5"  state="rrrGGgrrrrGGGgrrrrrr"/>
+        <phase duration="4"  state="rrryygrrrryyygrrrrrr"/>
+        <phase duration="6"  state="rrrrrGrrrrrrrGrrrrrr"/>
+        <phase duration="4"  state="rrrrryrrrrrrryrrrrrr"/>
+        <phase duration="26" state="GGgrrrgGGgrrrrrGGrGG"/>
+        <phase duration="5"  state="GGgrrrgGGgrrrrrrrrrr"/>
+        <phase duration="4"  state="yygrrryyygrrrrrrrrrr"/>
+        <phase duration="6"  state="rrGrrrrrrGrrrrrrrrrr"/>
+        <phase duration="4"  state="rryrrrrrryrrrrrrrrrr"/>
+    </tlLogic>
+
+    <connection from="-170990873#1" to="37229921#1" fromLane="1" toLane="1" tl="TCS379" linkIndex="6"/>
+    <connection from="-170990873#1" to="-445716030#0" fromLane="1" toLane="1" tl="TCS379" linkIndex="7"/>
+    <connection from="-170990873#1" to="-445716030#0" fromLane="2" toLane="2" tl="TCS379" linkIndex="8"/>
+    <connection from="-170990873#1" to="37229935#1" fromLane="2" toLane="3" tl="TCS379" linkIndex="9"/>
+    <connection from="170990874" to="170990873#1" fromLane="1" toLane="1" tl="TCS379" linkIndex="0"/>
+    <connection from="170990874" to="170990873#1" fromLane="2" toLane="2" tl="TCS379" linkIndex="1"/>
+    <connection from="170990874" to="37229921#1" fromLane="3" toLane="3" tl="TCS379" linkIndex="2"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="1" toLane="1" tl="TCS379" linkIndex="10"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="2" toLane="2" tl="TCS379" linkIndex="11"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="3" toLane="3" tl="TCS379" linkIndex="12"/>
+    <connection from="358916875#0" to="-445716030#0" fromLane="4" toLane="2" tl="TCS379" linkIndex="13"/>
+    <connection from="445716031#0" to="37229935#1" fromLane="1" toLane="1" tl="TCS379" linkIndex="3"/>
+    <connection from="445716031#0" to="37229935#1" fromLane="2" toLane="2" tl="TCS379" linkIndex="4"/>
+    <connection from="445716031#0" to="170990873#1" fromLane="3" toLane="2" tl="TCS379" linkIndex="5"/>
+</tlLogics>

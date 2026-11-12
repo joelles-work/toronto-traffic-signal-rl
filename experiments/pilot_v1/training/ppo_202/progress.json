@@ -1,0 +1,19 @@
+{
+  "algorithm": "PPO",
+  "training_seed": 202,
+  "decisions": 2048,
+  "budget": 2048,
+  "episodes_completed": 24,
+  "elapsed_s": 253.4612634999212,
+  "updated_utc": "2026-11-11T23:40:23.034515+00:00",
+  "last_episode": {
+    "decision": 1973,
+    "flow_seed": 835646886,
+    "reward": -1930.895833,
+    "decisions": 81,
+    "unfinished": 0,
+    "collisions": 0,
+    "teleports": 0
+  },
+  "status": "training"
+}

@@ -1,0 +1,4 @@
+{
+  "status": "failed preliminary attempt; not used as a completed policy",
+  "reason": "Diagnostic profiling and training shared a statistics filename. Process-specific temporary output fixes this; data, reward, budget, and controller constraints unchanged."
+}

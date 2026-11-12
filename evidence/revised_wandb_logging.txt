@@ -1,0 +1,106 @@
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165215-mbsq53u8
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:                     collisions 0
+wandb:              emergency_braking 1
+wandb:         pedestrian_time_loss_s 46.26759
+wandb:     pedestrian_walk_duration_s 67.09459
+wandb:          pedestrians_completed 518
+wandb:          pedestrians_generated 518
+wandb:                           seed 11
+wandb:                          split dev
+wandb:                      teleports 0
+wandb: vehicle_combined_delay_proxy_s 161.28275
+wandb:                             +4 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165215-mbsq53u8
+wandb: Find logs at: .\wandb\offline-run-20261109_165215-mbsq53u8\logs
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165218-d2vlfkae
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:                     collisions 0
+wandb:              emergency_braking 2
+wandb:         pedestrian_time_loss_s 45.98959
+wandb:     pedestrian_walk_duration_s 66.8166
+wandb:          pedestrians_completed 518
+wandb:          pedestrians_generated 518
+wandb:                           seed 22
+wandb:                          split dev
+wandb:                      teleports 0
+wandb: vehicle_combined_delay_proxy_s 182.58096
+wandb:                             +4 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165218-d2vlfkae
+wandb: Find logs at: .\wandb\offline-run-20261109_165218-d2vlfkae\logs
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-6kidhrt5
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:                     collisions 0
+wandb:              emergency_braking 1
+wandb:         pedestrian_time_loss_s 49.47029
+wandb:     pedestrian_walk_duration_s 70.2973
+wandb:          pedestrians_completed 518
+wandb:          pedestrians_generated 518
+wandb:                           seed 33
+wandb:                          split dev
+wandb:                      teleports 0
+wandb: vehicle_combined_delay_proxy_s 168.30759
+wandb:                             +4 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-6kidhrt5
+wandb: Find logs at: .\wandb\offline-run-20261109_165219-6kidhrt5\logs
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-mochptii
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:                     collisions 0
+wandb:              emergency_braking 2
+wandb:         pedestrian_time_loss_s 46.37763
+wandb:     pedestrian_walk_duration_s 67.20463
+wandb:          pedestrians_completed 518
+wandb:          pedestrians_generated 518
+wandb:                           seed 44
+wandb:                          split dev
+wandb:                      teleports 0
+wandb: vehicle_combined_delay_proxy_s 155.92222
+wandb:                             +4 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-mochptii
+wandb: Find logs at: .\wandb\offline-run-20261109_165219-mochptii\logs
+wandb: Tracking run with wandb version 0.31.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-4cyuyv2t
+wandb: View this run in the terminal with `wandb leet`
+wandb: 
+wandb: Run summary:
+wandb:                     collisions 0
+wandb:              emergency_braking 0
+wandb:         pedestrian_time_loss_s 46.53979
+wandb:     pedestrian_walk_duration_s 67.3668
+wandb:          pedestrians_completed 518
+wandb:          pedestrians_generated 518
+wandb:                           seed 55
+wandb:                          split dev
+wandb:                      teleports 0
+wandb: vehicle_combined_delay_proxy_s 162.94314
+wandb:                             +4 ...
+wandb: 
+wandb: You can sync this run to the cloud by running:
+wandb: wandb sync C:\Users\joelle11\Documents\ChatGPT\SUMO Project\wandb\offline-run-20261109_165219-4cyuyv2t
+wandb: Find logs at: .\wandb\offline-run-20261109_165219-4cyuyv2t\logs
+shutdown can only be called once

@@ -1,0 +1,58 @@
+{
+  "training": [
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 101,
+      "id": "hl446gqz",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183055-hl446gqz",
+      "hosted_url": null
+    },
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 202,
+      "id": "vdjs9sb5",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183055-vdjs9sb5",
+      "hosted_url": null
+    },
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 303,
+      "id": "uzv9htl8",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183055-uzv9htl8",
+      "hosted_url": null
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 101,
+      "id": "11cio3sl",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183602-11cio3sl",
+      "hosted_url": null
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 202,
+      "id": "wf2tnjdl",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183608-wf2tnjdl",
+      "hosted_url": null
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 303,
+      "id": "0n0m4kcz",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183607-0n0m4kcz",
+      "hosted_url": null
+    }
+  ],
+  "evaluation": {
+    "kind": "dev_comparison",
+    "id": "dp44s9ne",
+    "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_225102-dp44s9ne",
+    "hosted_url": null
+  }
+}

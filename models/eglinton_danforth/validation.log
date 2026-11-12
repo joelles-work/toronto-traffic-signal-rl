@@ -1,0 +1,25 @@
+Loading net-file from 'models/eglinton_danforth/intersection.net.xml' ... done (7ms).
+Loading additional-files from 'models/eglinton_danforth/visuals.add.xml' ... done (7ms).
+Loading route-files incrementally from 'models/eglinton_danforth/traffic.rou.xml'
+Loading done.
+Simulation version 1.28.0 started with time: 0.00.
+Warning: Vehicle 'v3320' performs emergency braking on lane ':TCS379_23_0' with decel=9.00, wished=4.50, severity=1.00, time=3371.00.
+Simulation ended at time: 7200.00.
+Reason: The final simulation step has been reached.
+Performance:
+ Duration: 1.68s
+ Real time factor: 4285.71
+ UPS: 166937.500000
+ UPS-Persons: 2991.071429
+Vehicles:
+ Inserted: 3594
+ Running: 0
+ Waiting: 0
+ Emergency Braking: 1
+Persons:
+ Inserted: 40
+ Running: 0
+DijkstraRouter answered 3955 queries and explored 15.75 edges on average.
+DijkstraRouter spent 0.00s answering queries (0.00ms on average).
+DijkstraRouter answered 40 queries and explored 35.48 edges on average.
+DijkstraRouter spent 0.00s answering queries (0.00ms on average).

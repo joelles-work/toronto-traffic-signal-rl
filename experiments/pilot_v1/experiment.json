@@ -1,0 +1,96 @@
+{
+  "name": "pilot_v1",
+  "status": "initial bounded pilot; not final model selection",
+  "training_split": "June 19 2024 15:00-17:00",
+  "dev_split": "June 19 2024 17:00-18:00",
+  "test_policy": "No test data are copied, generated, simulated, or scored by this experiment.",
+  "assets": {
+    "dev.csv": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b",
+    "intersection.net.xml": "538cfae22b033ef617ef1dc414d512d6820133a20c342494ebeb5cc23e178485",
+    "provenance.json": "343cbb36b94dbd7884e9a3f2c6876ee285cfa1b502cac89dcc8dfd1e93826b7d",
+    "signal_runtime_validation.json": "f9569ad60d57f62e441572f6a5e57cd0b31e257f54779980a1610455d720144c",
+    "signal_validation.json": "e10d52002a0930b68d02bce891453f1150001a877cf1fd887a6a0868e676a9de",
+    "split_manifest.json": "6ff5996f6ca0123f723e3a344447ea1100e0a44ec0bdd99db9377cca65f139a6",
+    "train.csv": "acf38b42d388b75030ba1f4eeedffe8d66bc397f9776555e4ca6a112680a547c",
+    "types.rou.xml": "b4f0ba836fdef49f5f0a19be57334418071c9a56bce5134f8a77709a4a31e539"
+  },
+  "training_seeds": [
+    101,
+    202,
+    303
+  ],
+  "dev_demand_seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "decision_budget_per_model": 2048,
+  "algorithms": [
+    "DQN",
+    "PPO"
+  ],
+  "observation": "Per-leg approach count, queue, pending entry count, pedestrian waiting count, pedestrian maximum waiting time, plus previous action one-hot; fixed scales, no fitted dev statistics.",
+  "actions": {
+    "east_west_walk_seconds": [
+      7,
+      19,
+      25,
+      31,
+      32
+    ],
+    "north_south_walk_seconds": [
+      32,
+      20,
+      14,
+      8,
+      7
+    ],
+    "fixed_time_action": 3,
+    "cycle_seconds": 120,
+    "minimum_walk_seconds": 7
+  },
+  "reward": "Negative integral of approach vehicle queues + pending vehicle insertions + stopped pedestrians, sampled every 5 s, divided by 1200 per cycle; equal weight per road user.",
+  "constraints": "Fixed stage order; 7 s protected EW-left advance, 3 s advance yellow, 1 s red; 22/34 s pedestrian clearances; 4 s main yellows and 3 s all-reds.",
+  "training_window_seconds": 7200,
+  "dev_window_seconds": 3600,
+  "maximum_drain_seconds": 3600,
+  "DQN": {
+    "learning_rate": 0.0003,
+    "buffer_size": 20000,
+    "learning_starts": 180,
+    "batch_size": 64,
+    "gamma": 0.99,
+    "train_freq": 1,
+    "gradient_steps": 1,
+    "target_update_interval": 256,
+    "exploration_fraction": 0.6,
+    "exploration_final_eps": 0.05,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ]
+    }
+  },
+  "PPO": {
+    "learning_rate": 0.0003,
+    "n_steps": 256,
+    "batch_size": 64,
+    "n_epochs": 10,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "ent_coef": 0.01,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ]
+    }
+  },
+  "comparison": "Last checkpoints only; deterministic dev inference. Fixed-time and every saved policy share the five dev demand realizations. No search over architectures or training budgets in this pilot.",
+  "metrics": "Vehicle timeLoss and departDelay separately and combined; pedestrian walk timeLoss; completion, collisions, teleports, emergency braking. Unfinished demand invalidates an all-demand delay comparison.",
+  "statistics": "Mean and sample SD across five demand seeds for each training seed; training variability reported separately across three policy seeds.",
+  "python": "3.14.6"
+}

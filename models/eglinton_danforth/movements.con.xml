@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<connections>
+  <crossing node="418523271" edges="474021761 -439060443#2" discard="true" />
+  <crossing node="418523765" edges="-439061001 439061001" discard="true" />
+  <crossing node="433599636" edges="-170990873#1 170990873#1" discard="true" />
+  <crossing node="433601568" edges="-439060999#1 439060999#0" discard="true" />
+  <crossing node="4366839749" edges="-439061000 439061000" discard="true" />
+  <crossing node="4366839750" edges="-439232197#1 439232197#0" discard="true" />
+  <crossing node="TCS379" edges="445716031#0" discard="true" />
+  <crossing node="TCS379" edges="37229921#1" discard="true" />
+  <crossing node="TCS379" edges="358916875#0" discard="true" />
+  <crossing node="TCS379" edges="37229935#1" discard="true" />
+  <crossing node="TCS379" edges="445716031#0 37229921#1" priority="1" width="4" />
+  <crossing node="TCS379" edges="358916875#0 37229935#1" priority="1" width="4" />
+  <delete from="-170990873#1" to="-445716030#0" />
+  <delete from="-170990873#1" to="37229921#1" />
+  <delete from="-170990873#1" to="37229935#1" />
+  <connection from="-170990873#1" to="37229921#1" fromLane="1" toLane="1" />
+  <connection from="-170990873#1" to="-445716030#0" fromLane="1" toLane="1" />
+  <connection from="-170990873#1" to="-445716030#0" fromLane="2" toLane="2" />
+  <delete from="170990874" to="170990873#1" />
+  <delete from="170990874" to="37229921#1" />
+  <connection from="170990874" to="37229935#1" fromLane="1" toLane="1" />
+  <connection from="170990874" to="170990873#1" fromLane="1" toLane="1" />
+  <connection from="170990874" to="170990873#1" fromLane="2" toLane="2" />
+  <connection from="170990874" to="37229921#1" fromLane="3" toLane="3" />
+  <delete from="358916875#0" to="-445716030#0" />
+  <delete from="358916875#0" to="37229921#1" />
+  <connection from="358916875#0" to="170990873#1" fromLane="1" toLane="1" />
+  <connection from="358916875#0" to="37229921#1" fromLane="1" toLane="1" />
+  <connection from="358916875#0" to="37229921#1" fromLane="2" toLane="2" />
+  <connection from="358916875#0" to="37229921#1" fromLane="3" toLane="3" />
+  <connection from="358916875#0" to="-445716030#0" fromLane="4" toLane="2" />
+  <delete from="445716031#0" to="170990873#1" />
+  <delete from="445716031#0" to="37229935#1" />
+  <connection from="445716031#0" to="-445716030#0" fromLane="1" toLane="1" />
+  <connection from="445716031#0" to="37229935#1" fromLane="1" toLane="1" />
+  <connection from="445716031#0" to="37229935#1" fromLane="2" toLane="2" />
+  <connection from="445716031#0" to="37229935#1" fromLane="2" toLane="3" />
+  <connection from="445716031#0" to="170990873#1" fromLane="3" toLane="2" />
+</connections>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+  <input>
+    <net-file value="models/eglinton_danforth/intersection.net.xml" />
+    <route-files value="models/eglinton_danforth/traffic.rou.xml" />
+    <additional-files value="models/eglinton_danforth/visuals.add.xml" />
+  </input>
+  <time>
+    <end value="7200" />
+  </time>
+  <processing>
+    <time-to-teleport value="-1" />
+  </processing>
+  <random_number>
+    <seed value="11" />
+  </random_number>
+  <gui_only>
+    <gui-settings-file value="models/eglinton_danforth/view.xml" />
+    <delay value="100" />
+  </gui_only>
+</configuration>

@@ -1,0 +1,50 @@
+{
+  "seed": 44,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      73,
+      74
+    ],
+    "s": [
+      59,
+      59
+    ],
+    "e": [
+      48,
+      48
+    ],
+    "w": [
+      78,
+      79
+    ]
+  },
+  "vehicle_route_pairs": {
+    "e_w": 781,
+    "w_e": 965,
+    "s_n": 537,
+    "n_e": 65,
+    "n_s": 485,
+    "n_w": 125,
+    "e_s": 171,
+    "s_e": 144,
+    "e_n": 92,
+    "w_n": 220,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}

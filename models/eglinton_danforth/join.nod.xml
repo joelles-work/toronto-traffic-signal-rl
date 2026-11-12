@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <join id="TCS379" nodes="433599680 433599687 3637338962 3637338963 3637338964 3637338965 3637338966 3637340026" type="traffic_light" reset="true"/>
+</nodes>

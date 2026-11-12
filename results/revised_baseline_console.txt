@@ -1,0 +1,576 @@
+{
+  "result": "PASS",
+  "cycle_s": 120,
+  "signal_links": 21,
+  "checks": [
+    "PM duration sequence",
+    "all-red and yellow stages",
+    "no conflicting protected greens in SUMO foe matrix",
+    "crossing green serves the correct leg",
+    "one full-width crossing per leg",
+    "clearance sufficient at modeled walking speed"
+  ],
+  "phases": [
+    {
+      "begin_s": 0,
+      "end_s": 7,
+      "name": "advance",
+      "state": "rrrrrrrrGrrrrrrrGrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 7,
+      "end_s": 10,
+      "name": "advance_y",
+      "state": "rrrrrrrryrrrrrrryrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 10,
+      "end_s": 11,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 11,
+      "end_s": 42,
+      "name": "ew_walk",
+      "state": "rrrrgGGGgrrrgGGGgGrGr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "G",
+        "e": "r",
+        "s": "G"
+      }
+    },
+    {
+      "begin_s": 42,
+      "end_s": 64,
+      "name": "ew_clear",
+      "state": "rrrrgGGGgrrrgGGGgrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 64,
+      "end_s": 68,
+      "name": "ew_y",
+      "state": "rrrryyyyyrrryyyyyrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 68,
+      "end_s": 71,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 71,
+      "end_s": 79,
+      "name": "ns_walk",
+      "state": "gGGgrrrrrgGGrrrrrrGrG",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "G",
+        "n": "r",
+        "e": "G",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 79,
+      "end_s": 113,
+      "name": "ns_clear",
+      "state": "gGGgrrrrrgGGrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 113,
+      "end_s": 117,
+      "name": "ns_y",
+      "state": "yyyyrrrrryyyrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    },
+    {
+      "begin_s": 117,
+      "end_s": 120,
+      "name": "red",
+      "state": "rrrrrrrrrrrrrrrrrrrrr",
+      "protected_conflicts": [],
+      "crossing_entries": {
+        "w": "r",
+        "n": "r",
+        "e": "r",
+        "s": "r"
+      }
+    }
+  ],
+  "clearances": [
+    {
+      "leg": "n",
+      "crossing": ":TCS379_c0",
+      "length_m": 16.0,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 13.333333333333334,
+      "clearance_s": 22
+    },
+    {
+      "leg": "e",
+      "crossing": ":TCS379_c1",
+      "length_m": 21.6,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 18.000000000000004,
+      "clearance_s": 34
+    },
+    {
+      "leg": "s",
+      "crossing": ":TCS379_c2",
+      "length_m": 12.8,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 10.666666666666668,
+      "clearance_s": 22
+    },
+    {
+      "leg": "w",
+      "crossing": ":TCS379_c3",
+      "length_m": 23.99,
+      "modeled_speed_mps": 1.2,
+      "minimum_traversal_s": 19.991666666666667,
+      "clearance_s": 34
+    }
+  ],
+  "limits": [
+    "Static model conflict audit, not certification of field signal operation",
+    "City timing card advance-phase interpretation and surveyed geometry still require external verification"
+  ]
+}
+{
+  "seed": 11,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      74,
+      73
+    ],
+    "s": [
+      59,
+      59
+    ],
+    "e": [
+      49,
+      47
+    ],
+    "w": [
+      79,
+      78
+    ]
+  },
+  "vehicle_route_pairs": {
+    "n_s": 485,
+    "w_n": 220,
+    "e_w": 781,
+    "s_n": 537,
+    "w_e": 965,
+    "e_s": 171,
+    "n_w": 125,
+    "e_n": 92,
+    "n_e": 65,
+    "s_e": 144,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{"seed": 11, "split": "dev", "vehicles_generated": 3594, "vehicles_completed": 3594, "pedestrians_generated": 518, "pedestrians_completed": 518, "vehicle_time_loss_s": 49.37453811908737, "vehicle_depart_delay_s": 111.90821368948247, "vehicle_combined_delay_proxy_s": 161.28275180856983, "pedestrian_time_loss_s": 46.267586872586875, "pedestrian_walk_duration_s": 67.0945945945946, "collisions": 0, "teleports": 0, "emergency_braking": 1}
+{
+  "seed": 22,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      74,
+      73
+    ],
+    "s": [
+      58,
+      60
+    ],
+    "e": [
+      47,
+      49
+    ],
+    "w": [
+      79,
+      78
+    ]
+  },
+  "vehicle_route_pairs": {
+    "w_e": 965,
+    "e_w": 781,
+    "n_e": 65,
+    "w_n": 220,
+    "e_n": 92,
+    "s_e": 144,
+    "s_n": 537,
+    "e_s": 171,
+    "n_s": 485,
+    "n_w": 125,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{"seed": 22, "split": "dev", "vehicles_generated": 3594, "vehicles_completed": 3594, "pedestrians_generated": 518, "pedestrians_completed": 518, "vehicle_time_loss_s": 56.60535058430718, "vehicle_depart_delay_s": 125.97560934891486, "vehicle_combined_delay_proxy_s": 182.58095993322203, "pedestrian_time_loss_s": 45.98959459459459, "pedestrian_walk_duration_s": 66.81660231660231, "collisions": 0, "teleports": 0, "emergency_braking": 2}
+{
+  "seed": 33,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      74,
+      73
+    ],
+    "s": [
+      58,
+      60
+    ],
+    "e": [
+      47,
+      49
+    ],
+    "w": [
+      78,
+      79
+    ]
+  },
+  "vehicle_route_pairs": {
+    "e_s": 171,
+    "e_w": 781,
+    "w_e": 965,
+    "w_n": 220,
+    "n_s": 485,
+    "n_e": 65,
+    "s_e": 144,
+    "s_n": 537,
+    "n_w": 125,
+    "e_n": 92,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{"seed": 33, "split": "dev", "vehicles_generated": 3594, "vehicles_completed": 3594, "pedestrians_generated": 518, "pedestrians_completed": 518, "vehicle_time_loss_s": 59.595556483027266, "vehicle_depart_delay_s": 108.71203394546467, "vehicle_combined_delay_proxy_s": 168.30759042849192, "pedestrian_time_loss_s": 49.47028957528958, "pedestrian_walk_duration_s": 70.29729729729729, "collisions": 0, "teleports": 0, "emergency_braking": 1}
+{
+  "seed": 44,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      73,
+      74
+    ],
+    "s": [
+      59,
+      59
+    ],
+    "e": [
+      48,
+      48
+    ],
+    "w": [
+      78,
+      79
+    ]
+  },
+  "vehicle_route_pairs": {
+    "e_w": 781,
+    "w_e": 965,
+    "s_n": 537,
+    "n_e": 65,
+    "n_s": 485,
+    "n_w": 125,
+    "e_s": 171,
+    "s_e": 144,
+    "e_n": 92,
+    "w_n": 220,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{"seed": 44, "split": "dev", "vehicles_generated": 3594, "vehicles_completed": 3594, "pedestrians_generated": 518, "pedestrians_completed": 518, "vehicle_time_loss_s": 54.94067890929327, "vehicle_depart_delay_s": 100.98154424040067, "vehicle_combined_delay_proxy_s": 155.92222314969393, "pedestrian_time_loss_s": 46.37762548262548, "pedestrian_walk_duration_s": 67.20463320463321, "collisions": 0, "teleports": 0, "emergency_braking": 2}
+{
+  "seed": 55,
+  "split": "dev",
+  "vehicles": 3594,
+  "pedestrians": 518,
+  "pedestrians_by_leg": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "modeled_direction_counts": {
+    "n": [
+      74,
+      73
+    ],
+    "s": [
+      60,
+      58
+    ],
+    "e": [
+      47,
+      49
+    ],
+    "w": [
+      78,
+      79
+    ]
+  },
+  "vehicle_route_pairs": {
+    "w_e": 965,
+    "e_w": 781,
+    "w_n": 220,
+    "n_s": 485,
+    "n_e": 65,
+    "s_n": 537,
+    "s_e": 144,
+    "e_n": 92,
+    "n_w": 125,
+    "e_s": 171,
+    "w_s": 9
+  },
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "dictionary": "evidence/traffic_count_dictionary.json",
+  "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+}
+{"seed": 55, "split": "dev", "vehicles_generated": 3594, "vehicles_completed": 3594, "pedestrians_generated": 518, "pedestrians_completed": 518, "vehicle_time_loss_s": 55.06177796327212, "vehicle_depart_delay_s": 107.88135781858654, "vehicle_combined_delay_proxy_s": 162.94313578185864, "pedestrian_time_loss_s": 46.539787644787644, "pedestrian_walk_duration_s": 67.36679536679537, "collisions": 0, "teleports": 0, "emergency_braking": 0}
+{
+  "controller": "fixed_PM_geometry_revision",
+  "split": "dev",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "network": "models/eglinton_danforth/intersection.net.xml",
+  "runs": [
+    {
+      "seed": 11,
+      "split": "dev",
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "vehicle_time_loss_s": 49.37453811908737,
+      "vehicle_depart_delay_s": 111.90821368948247,
+      "vehicle_combined_delay_proxy_s": 161.28275180856983,
+      "pedestrian_time_loss_s": 46.267586872586875,
+      "pedestrian_walk_duration_s": 67.0945945945946,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1
+    },
+    {
+      "seed": 22,
+      "split": "dev",
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "vehicle_time_loss_s": 56.60535058430718,
+      "vehicle_depart_delay_s": 125.97560934891486,
+      "vehicle_combined_delay_proxy_s": 182.58095993322203,
+      "pedestrian_time_loss_s": 45.98959459459459,
+      "pedestrian_walk_duration_s": 66.81660231660231,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2
+    },
+    {
+      "seed": 33,
+      "split": "dev",
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "vehicle_time_loss_s": 59.595556483027266,
+      "vehicle_depart_delay_s": 108.71203394546467,
+      "vehicle_combined_delay_proxy_s": 168.30759042849192,
+      "pedestrian_time_loss_s": 49.47028957528958,
+      "pedestrian_walk_duration_s": 70.29729729729729,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1
+    },
+    {
+      "seed": 44,
+      "split": "dev",
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "vehicle_time_loss_s": 54.94067890929327,
+      "vehicle_depart_delay_s": 100.98154424040067,
+      "vehicle_combined_delay_proxy_s": 155.92222314969393,
+      "pedestrian_time_loss_s": 46.37762548262548,
+      "pedestrian_walk_duration_s": 67.20463320463321,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2
+    },
+    {
+      "seed": 55,
+      "split": "dev",
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "vehicle_time_loss_s": 55.06177796327212,
+      "vehicle_depart_delay_s": 107.88135781858654,
+      "vehicle_combined_delay_proxy_s": 162.94313578185864,
+      "pedestrian_time_loss_s": 46.539787644787644,
+      "pedestrian_walk_duration_s": 67.36679536679537,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0
+    }
+  ],
+  "assumptions": [
+    "Uniform arrivals within observed 15-minute intervals",
+    "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
+    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+  ],
+  "limitations": [
+    "Source-aligned model geometry is uncalibrated for field delay and 2024 conditions",
+    "Pedestrian directional balance, within-interval arrival times, and walking speeds are modeled",
+    "No warm-up; empty initial traffic state; up to 3600 s drain after 3600 s demand",
+    "Delay proxies include route effects; transit lane permissions and stops are not validated"
+  ],
+  "vehicle_time_loss_s": {
+    "mean": 55.11558041179744,
+    "sample_std": 3.7176152507831812
+  },
+  "vehicle_depart_delay_s": {
+    "mean": 111.09175180856984,
+    "sample_std": 9.224719630355123
+  },
+  "vehicle_combined_delay_proxy_s": {
+    "mean": 166.20733222036728,
+    "sample_std": 10.163620273271711
+  },
+  "pedestrian_time_loss_s": {
+    "mean": 46.92897683397683,
+    "sample_std": 1.4347127464645488
+  },
+  "pedestrian_walk_duration_s": {
+    "mean": 67.75598455598455,
+    "sample_std": 1.4347127464645444
+  }
+}

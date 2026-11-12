@@ -2,6 +2,32 @@
 
 Local setup for the supplied proposal, "Evaluating Deep Reinforcement Learning for Traffic Signal Control Under Real Toronto Demand".
 
+## Current check-in (November 11, 2026)
+
+The current two-page paper is `output/checkin/Progress_Report_Jowel_Akkeh.pdf`. Its editable text, IEEEtran source, result tables, and submission checklist are alongside it. It supersedes the older prototype paper under `output/report/`.
+
+The bounded DQN/PPO pilot is complete: three training seeds per algorithm, 2,048 cycle decisions per model, and matched evaluation on five dev demand seeds. DQN reproduced the fixed-time policy. PPO did not establish an improvement: its mean combined vehicle delay proxy was 211.31 s/vehicle, compared with 166.21 s/vehicle for fixed-time. The paper reports uncertainty, failures, and a revised plan. No test-period controller performance was measured.
+
+See `experiments/pilot_v1/README.md` for frozen inputs, safeguards, training settings, and reproduction commands. `experiments/pilot_v1/dev_summary.json` contains the numerical results. Six model checkpoints are under `experiments/pilot_v1/training/`. Offline W&B evidence is indexed by `experiments/pilot_v1/wandb_runs.json`.
+
+`Watch_Trained_DQN.cmd` and `Watch_Trained_PPO.cmd` replay training seed 101 on dev demand seed 11 in SUMO-GUI. They do not select a best seed. The original fixed-time drawing remains available through `Open_SUMO_Intersection.cmd`.
+
+Hosted GitHub/W&B links are the remaining submission dependency. The user has not created the remote projects yet; no hosted links are fabricated in the draft. Further training or final test evaluation is outside this check-in's current scope.
+
+## Open the drawn intersection
+
+Double-click **Open_SUMO_Intersection.cmd** in this folder. It opens **Eglinton_Danforth.sumocfg** with the locally installed SUMO-GUI, without needing Windows file associations. This is the georeferenced geometry revision with separated eastern carriageways, sidewalks, crossings, 3,594 observed dev vehicles, and 518 observed dev pedestrians. Arrival times and pedestrian directions are modeled. Press the green Play button to run traffic; the simulation starts paused. Field dimensions and historical 2024 fidelity remain uncalibrated. See `models/eglinton_danforth/README.md` for provenance and assumptions.
+
+The signal/demand audit and updated five-seed baseline are documented in `evidence/SIGNAL_AND_DEMAND_CHECK.md`. Current results are in `results/revised_fixed_dev/summary.json`. The original progress-report PDF below records the earlier prototype; it has not been rewritten around the revised geometry.
+
+Alternatively open SUMO-GUI, select File > Open Simulation, and choose `Eglinton_Danforth.sumocfg`. The revised drawing is stored in `models/eglinton_danforth/intersection.net.xml`. The original `Eglinton_Danforth_Prototype.sumocfg` and `results/baseline_dev/idealized.net.xml` remain unchanged for the earlier experiments.
+
+## Downloaded TorontoSUMONetworks source
+
+The complete requested repository is cloned at `external/TorontoSUMONetworks`, including its Python scripts, configuration files, data assets, documentation, MIT license, and Git history. Source: https://github.com/Jahandad-Baloch/TorontoSUMONetworks . The downloaded revision and file count are recorded in `evidence/toronto_source.json`. Its requirements.txt dependencies are installed in this project's `.venv`. This external clone is ignored by the parent repository and remains a separate Git checkout.
+
+The upstream pipeline still needs adaptation: main.py has a missing comma between its final task entries, and route/network_manager.py imports `scripts.*` modules absent from this checkout. Dashboard and analysis imports also include packages not listed in upstream requirements.txt. The directly openable prototype SUMO file does not depend on this upstream entry point. Downloading the source has not made its Toronto network-building pipeline fully operational.
+
 ## Run the setup check
 
 From PowerShell in this folder:

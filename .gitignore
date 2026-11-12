@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 wandb/
 tmp/
+external/
+experiments/**/runtime/
+experiments/**/demand/
+experiments/**/checkpoint.zip

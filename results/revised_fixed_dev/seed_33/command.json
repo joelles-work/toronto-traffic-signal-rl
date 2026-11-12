@@ -1,0 +1,23 @@
+[
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\.venv\\Lib\\site-packages\\sumo\\bin\\sumo.exe",
+  "-n",
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\models\\eglinton_danforth\\intersection.net.xml",
+  "-r",
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\results\\revised_fixed_dev\\seed_33\\routes.rou.xml",
+  "--seed",
+  "33",
+  "--end",
+  "7200",
+  "--time-to-teleport",
+  "-1",
+  "--no-step-log",
+  "true",
+  "--tripinfo-output",
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\results\\revised_fixed_dev\\seed_33\\tripinfo.xml",
+  "--tripinfo-output.write-unfinished",
+  "true",
+  "--personinfo-output",
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\results\\revised_fixed_dev\\seed_33\\personinfo.xml",
+  "--statistic-output",
+  "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\results\\revised_fixed_dev\\seed_33\\statistics.xml"
+]

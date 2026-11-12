@@ -1,0 +1,28 @@
+Success.
+Warning: Discarding unusable type 'waterway.stream' (first occurrence for edge '660816653').
+Warning: from-edge '37229987' of restriction relation could not be determined
+Warning: Ignoring restriction relation '6737481'.
+Warning: from-edge '37229990' of restriction relation could not be determined
+Warning: Ignoring restriction relation '6737482'.
+Warning: from-edge '287652974' of restriction relation could not be determined
+Warning: Ignoring restriction relation '6834502'.
+Warning: from-edge '37229927' of restriction relation could not be determined
+Warning: Ignoring restriction relation '6834503'.
+Warning: Cannot apply turn sign information for edge '-1288863915#2' because there are 2 signed directions but only 1 targets
+Warning: Cannot apply turn sign information for edge '-1344569661' because there are 3 signed directions but only 1 targets
+Warning: Cannot apply turn sign information for edge '1380179680#2' because there are 2 signed directions but only 1 targets
+Warning: Cannot apply turn sign information for edge '287653266#2' because there are 3 signed connections with directions 's' but target edge '37229931#0' has only 2 suitable lanes
+Warning: Cannot apply turn sign information for edge '37229929' because there are 3 signed directions but only 1 targets
+Warning: Cannot apply turn sign information for edge '37229930#2' because there are 3 signed connections with directions 's' but target edge '37229933#0' has only 2 suitable lanes
+Warning: Cannot apply turn sign information for edge '439061001' because there are 2 signed directions but only 1 targets
+Warning: The traffic light '11224161620' does not control any links; it will not be build.
+Warning: Could not build program '0' for traffic light '11224161620'
+Warning: The traffic light '4035865642' does not control any links; it will not be build.
+Warning: Could not build program '0' for traffic light '4035865642'
+Warning: Speed of straight connection '-37229937#6_1->37229932#0_1' reduced by 7.61 due to turning radius of 14.91 (length=6.23, angle=40.31).
+Warning: Speed of straight connection '-37229937#6_1->37229932#0_2' reduced by 6.46 due to turning radius of 18.96 (length=8.02, angle=40.31).
+Warning: Speed of straight connection '-37229937#6_2->37229932#0_3' reduced by 5.23 due to turning radius of 23.80 (length=10.16, angle=40.31).
+Warning: Speed of straight connection '37229928#1_1->-37229918#4_1' reduced by 7.19 due to turning radius of 16.34 (length=7.02, angle=40.89).
+Warning: Speed of straight connection '37229928#1_1->-37229918#4_2' reduced by 6.20 due to turning radius of 19.92 (length=8.64, angle=40.89).
+Warning: 8 total messages of type: Cannot apply turn sign information for edge '%' because there are % signed directions but only % targets
+Warning: 11 total messages of type: Speed of % connection '%' reduced by % due to turning radius of % (length=%, angle=%).

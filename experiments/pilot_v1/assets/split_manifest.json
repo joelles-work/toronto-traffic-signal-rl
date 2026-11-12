@@ -1,0 +1,84 @@
+{
+  "source_name": "tmc_raw_data_2020_2029.csv",
+  "source_sha256": "44e8250ce56324f9cb6d59e7ed2c627f598fe12feafa708489d79c17993f9c89",
+  "site": "TCS 379, Danforth Rd / Eglinton Ave E",
+  "revision": "Reserve 17:00-18:00 of the proposal training period for development; train on 15:00-17:00.",
+  "policy": "Choose configurations on dev; no test simulation until final model freeze. Separate episodes reset queues; no shared trips across boundaries.",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "splits": {
+    "train": {
+      "row_ids": [
+        "313483",
+        "327879",
+        "195586",
+        "313484",
+        "195587",
+        "259268",
+        "327880",
+        "259269"
+      ],
+      "intervals": 8,
+      "vehicles": 6716,
+      "pedestrians": 810,
+      "sha256": "acf38b42d388b75030ba1f4eeedffe8d66bc397f9776555e4ca6a112680a547c"
+    },
+    "dev": {
+      "row_ids": [
+        "271631",
+        "271632",
+        "327881",
+        "220342"
+      ],
+      "intervals": 4,
+      "vehicles": 3594,
+      "pedestrians": 518,
+      "sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"
+    },
+    "test_primary": {
+      "row_ids": [
+        "184410",
+        "289857",
+        "342806",
+        "224337",
+        "289858",
+        "276406",
+        "211204",
+        "197843",
+        "224338",
+        "356604",
+        "224339",
+        "211205"
+      ],
+      "intervals": 12,
+      "vehicles": 9961,
+      "pedestrians": 1598,
+      "sha256": "33a2c59b705595ab29af102e17f14a798e037c0d94ec643c3facd6ebff0cfcdb"
+    },
+    "test_secondary": {
+      "row_ids": [
+        "286719",
+        "259267",
+        "195583",
+        "272267",
+        "327877",
+        "286720",
+        "313480",
+        "169589",
+        "169590",
+        "327878",
+        "233452",
+        "208503"
+      ],
+      "intervals": 12,
+      "vehicles": 8275,
+      "pedestrians": 661,
+      "sha256": "b77c7fc7fd645272493eaa238275f8b19b304ea02c4b6ebf99fbafe5f81ebb50"
+    }
+  }
+}

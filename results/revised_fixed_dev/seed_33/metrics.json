@@ -1,0 +1,16 @@
+{
+  "seed": 33,
+  "split": "dev",
+  "vehicles_generated": 3594,
+  "vehicles_completed": 3594,
+  "pedestrians_generated": 518,
+  "pedestrians_completed": 518,
+  "vehicle_time_loss_s": 59.595556483027266,
+  "vehicle_depart_delay_s": 108.71203394546467,
+  "vehicle_combined_delay_proxy_s": 168.30759042849192,
+  "pedestrian_time_loss_s": 49.47028957528958,
+  "pedestrian_walk_duration_s": 70.29729729729729,
+  "collisions": 0,
+  "teleports": 0,
+  "emergency_braking": 1
+}

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-09T16:29:01.411072-05:00 by Eclipse SUMO netconvert 1.28.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="models/eglinton_danforth/intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="models/eglinton_danforth/edit_base.net.xml"/>
+        <plain-output-prefix value="models/eglinton_danforth/edit"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="12"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="1"/>
+    </pedestrian>
+
+</netconvertConfiguration>
+-->
+
+<edges version="1.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <location netOffset="-640832.18,-4843762.77" convBoundary="255.52,200.88,726.39,719.10" origBoundary="-79.261302,43.726448,-79.239315,43.791299" projParameter="+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"/>
+
+    <edge id="-1344569661" from="4588565502" to="433599692" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="5" speed="16.67">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="4" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-1491580516#1" from="12196577853" to="4588565502" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="726.39,514.65 695.14,504.69 680.00,499.82 656.45,492.25 637.93,486.30 593.04,471.89 550.22,458.12 539.54,454.70 515.81,447.17 493.80,440.18 481.26,436.17">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-170990873#1" from="433599636" to="TCS379" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="376.58,364.86 385.10,386.52">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-439060443#2" from="418525306" to="418523271" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="16.67" shape="429.23,510.75 432.20,521.67 439.49,551.82 444.34,576.91 446.88,598.64 447.77,624.95 447.83,637.25 447.42,655.41 447.33,659.12 446.98,668.88 444.17,719.10">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-439060999#1" from="433601568" to="418523765" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="332.02,256.43 336.39,267.81 338.39,272.98">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-439061000" from="4366839749" to="4366839750" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-439061001" from="418523765" to="4366839749" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-439232197#1" from="4366839750" to="433599636" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="368.40,342.81 369.83,346.17 376.58,364.86">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="-445716030#0" from="TCS379" to="418525306" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="16.67" shape="398.69,425.15 409.96,454.84 416.87,473.40 420.42,483.05 429.23,510.75">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="1344569661" from="433599692" to="4588565502" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="170990873#1" from="TCS379" to="433599636" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="385.10,386.52 376.58,364.86">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="170990874" from="418525306" to="TCS379" name="Danforth Road" priority="11" type="highway.secondary" numLanes="4" speed="16.67" shape="429.23,510.75 420.42,483.05 416.87,473.40 409.96,454.84 398.69,425.15">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="287653266#0" from="2912239188" to="2853060870" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="5" speed="16.67" shape="323.48,392.72 309.86,388.33 255.52,370.84" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="4" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="358916875#0" from="3637340025" to="TCS379" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="5" speed="16.67" shape="290.78,365.21 311.93,372.73 350.09,385.14 377.04,393.31" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="4" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229921#1" from="TCS379" to="433599692" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="404.99,402.91 444.87,415.93 453.50,418.74 463.46,429.65" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229923#1" from="2853060868" to="3637340025" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="262.30,355.96 290.75,365.20" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229929" from="433599692" to="2912237938" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="5" speed="16.67" shape="462.80,431.32 450.16,432.35 431.38,426.47" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="4" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229935#1" from="TCS379" to="2912239188" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="381.54,410.07 344.07,398.88 323.50,392.73" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229936#0" from="4588565502" to="12196577853" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="481.26,436.17 493.80,440.18 515.81,447.17 539.54,454.70 550.22,458.12 593.04,471.89 637.93,486.30 656.45,492.25 680.00,499.82 695.14,504.69 726.39,514.65">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229991#1" from="3272055262" to="433601568" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="314.47,200.88 324.37,225.06 326.66,233.33 336.02,255.19" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="37229995" from="433601568" to="3272055264" name="Danforth Road" priority="11" type="highway.secondary" numLanes="4" speed="13.89" shape="327.11,259.49 317.01,235.74 307.93,214.89" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="439060999#0" from="418523765" to="433601568" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89" shape="338.39,272.98 336.39,267.81 332.02,256.43">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="439061000" from="4366839750" to="4366839749" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="439061001" from="4366839749" to="418523765" name="Danforth Road" priority="11" type="highway.secondary" numLanes="4" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="439232197#0" from="433599636" to="4366839750" name="Danforth Road" priority="11" type="highway.secondary" numLanes="4" speed="13.89" shape="376.58,364.86 369.83,346.17 368.40,342.81">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="445716031#0" from="2912237938" to="TCS379" name="Eglinton Avenue East" priority="12" type="highway.primary" numLanes="4" speed="16.67" shape="431.39,426.48 409.60,419.84" spreadType="center">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="3" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+    <edge id="474021761" from="418523271" to="418525306" name="Danforth Road" priority="11" type="highway.secondary" numLanes="3" speed="16.67" shape="444.17,719.10 446.98,668.88 447.33,659.12 447.42,655.41 447.83,637.25 447.77,624.95 446.88,598.64 444.34,576.91 439.49,551.82 432.20,521.67 429.23,510.75">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+        <lane index="2" disallow="pedestrian tram rail_urban rail rail_electric rail_fast ship container cable_car subway aircraft wheelchair scooter drone"/>
+    </edge>
+</edges>

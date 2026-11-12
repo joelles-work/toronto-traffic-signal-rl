@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-09T16:29:01.411733-05:00 by Eclipse SUMO netconvert 1.28.0
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="models/eglinton_danforth/intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="models/eglinton_danforth/edit_base.net.xml"/>
+        <plain-output-prefix value="models/eglinton_danforth/edit"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="12"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="1"/>
+    </pedestrian>
+
+</netconvertConfiguration>
+-->
+
+<connections version="1.20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <connection from="-1344569661" to="37229929" fromLane="1" toLane="1"/>
+    <connection from="-1344569661" to="37229929" fromLane="2" toLane="2"/>
+    <connection from="-1344569661" to="37229929" fromLane="3" toLane="3"/>
+    <connection from="-1344569661" to="37229929" fromLane="4" toLane="4"/>
+
+    <connection from="-1491580516#1" to="-1344569661" fromLane="1" toLane="1"/>
+    <connection from="-1491580516#1" to="-1344569661" fromLane="2" toLane="2"/>
+    <connection from="-1491580516#1" to="-1344569661" fromLane="3" toLane="3"/>
+    <connection from="-1491580516#1" to="-1344569661" fromLane="3" toLane="4"/>
+
+    <connection from="-170990873#1" to="37229921#1" fromLane="1" toLane="1"/>
+    <connection from="-170990873#1" to="-445716030#0" fromLane="1" toLane="1"/>
+    <connection from="-170990873#1" to="-445716030#0" fromLane="2" toLane="2"/>
+
+    <connection from="-439060443#2"/>
+
+    <connection from="-439060999#1" to="-439061001" fromLane="1" toLane="1"/>
+    <connection from="-439060999#1" to="-439061001" fromLane="2" toLane="2"/>
+
+    <connection from="-439061000" to="-439232197#1" fromLane="1" toLane="1"/>
+    <connection from="-439061000" to="-439232197#1" fromLane="2" toLane="2"/>
+
+    <connection from="-439061001" to="-439061000" fromLane="1" toLane="1"/>
+    <connection from="-439061001" to="-439061000" fromLane="2" toLane="2"/>
+
+    <connection from="-439232197#1" to="-170990873#1" fromLane="1" toLane="1"/>
+    <connection from="-439232197#1" to="-170990873#1" fromLane="2" toLane="2"/>
+
+    <connection from="-445716030#0" to="-439060443#2" fromLane="1" toLane="1"/>
+    <connection from="-445716030#0" to="-439060443#2" fromLane="2" toLane="2"/>
+
+    <connection from="1344569661" to="37229936#0" fromLane="1" toLane="1"/>
+    <connection from="1344569661" to="37229936#0" fromLane="2" toLane="2"/>
+    <connection from="1344569661" to="37229936#0" fromLane="3" toLane="3"/>
+
+    <connection from="170990873#1" to="439232197#0" fromLane="1" toLane="1"/>
+    <connection from="170990873#1" to="439232197#0" fromLane="2" toLane="2"/>
+    <connection from="170990873#1" to="439232197#0" fromLane="2" toLane="3"/>
+
+    <connection from="170990874" to="37229935#1" fromLane="1" toLane="1"/>
+    <connection from="170990874" to="170990873#1" fromLane="1" toLane="1"/>
+    <connection from="170990874" to="170990873#1" fromLane="2" toLane="2"/>
+    <connection from="170990874" to="37229921#1" fromLane="3" toLane="3"/>
+
+    <connection from="358916875#0" to="170990873#1" fromLane="1" toLane="1"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="1" toLane="1"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="2" toLane="2"/>
+    <connection from="358916875#0" to="37229921#1" fromLane="3" toLane="3"/>
+    <connection from="358916875#0" to="-445716030#0" fromLane="4" toLane="2"/>
+
+    <connection from="37229921#1" to="1344569661" fromLane="1" toLane="1"/>
+    <connection from="37229921#1" to="1344569661" fromLane="1" toLane="2"/>
+    <connection from="37229921#1" to="1344569661" fromLane="1" toLane="3"/>
+    <connection from="37229921#1" to="37229929" fromLane="2" toLane="3"/>
+    <connection from="37229921#1" to="37229929" fromLane="3" toLane="4"/>
+
+    <connection from="37229923#1" to="358916875#0" fromLane="1" toLane="1"/>
+    <connection from="37229923#1" to="358916875#0" fromLane="2" toLane="2"/>
+    <connection from="37229923#1" to="358916875#0" fromLane="3" toLane="3"/>
+    <connection from="37229923#1" to="358916875#0" fromLane="3" toLane="4"/>
+
+    <connection from="37229929" to="445716031#0" fromLane="2" toLane="1"/>
+    <connection from="37229929" to="445716031#0" fromLane="3" toLane="2"/>
+    <connection from="37229929" to="445716031#0" fromLane="4" toLane="3"/>
+
+    <connection from="37229935#1" to="287653266#0" fromLane="1" toLane="1"/>
+    <connection from="37229935#1" to="287653266#0" fromLane="2" toLane="2"/>
+    <connection from="37229935#1" to="287653266#0" fromLane="3" toLane="3"/>
+    <connection from="37229935#1" to="287653266#0" fromLane="3" toLane="4"/>
+
+    <connection from="37229936#0"/>
+
+    <connection from="37229991#1" to="-439060999#1" fromLane="1" toLane="1"/>
+    <connection from="37229991#1" to="-439060999#1" fromLane="2" toLane="2"/>
+
+    <connection from="439060999#0" to="37229995" fromLane="1" toLane="1"/>
+    <connection from="439060999#0" to="37229995" fromLane="2" toLane="2"/>
+    <connection from="439060999#0" to="37229995" fromLane="2" toLane="3"/>
+
+    <connection from="439061000" to="439061001" fromLane="1" toLane="1"/>
+    <connection from="439061000" to="439061001" fromLane="2" toLane="2"/>
+    <connection from="439061000" to="439061001" fromLane="2" toLane="3"/>
+
+    <connection from="439061001" to="439060999#0" fromLane="1" toLane="1"/>
+    <connection from="439061001" to="439060999#0" fromLane="2" toLane="2"/>
+
+    <connection from="439232197#0" to="439061000" fromLane="1" toLane="1"/>
+    <connection from="439232197#0" to="439061000" fromLane="2" toLane="2"/>
+
+    <connection from="445716031#0" to="-445716030#0" fromLane="1" toLane="1"/>
+    <connection from="445716031#0" to="37229935#1" fromLane="1" toLane="1"/>
+    <connection from="445716031#0" to="37229935#1" fromLane="2" toLane="2"/>
+    <connection from="445716031#0" to="37229935#1" fromLane="2" toLane="3"/>
+    <connection from="445716031#0" to="170990873#1" fromLane="3" toLane="2"/>
+
+    <connection from="474021761" to="170990874" fromLane="1" toLane="1"/>
+    <connection from="474021761" to="170990874" fromLane="2" toLane="2"/>
+    <connection from="474021761" to="170990874" fromLane="2" toLane="3"/>
+
+    <crossing node="418523271" edges="474021761 -439060443#2" priority="1" width="4.00" outlineShape="437.78,718.74 450.56,719.46 450.66,719.46 450.56,719.46 450.34,723.45 450.78,722.67 450.34,723.45 437.56,722.74"/>
+    <crossing node="418523765" edges="-439061001 439061001" priority="0" width="4.00" outlineShape="345.83,273.73 331.37,280.58 331.02,279.72 330.82,278.95 330.75,278.26 330.77,277.63 330.87,277.05 331.02,276.49 331.07,276.30 344.12,270.12 345.92,273.69 347.64,272.87 344.85,266.40 342.99,267.12 344.12,270.12"/>
+    <crossing node="433599636" edges="-170990873#1 170990873#1" priority="0" width="4.00" outlineShape="383.98,366.20 372.07,370.89 371.68,370.04 371.26,369.37 370.80,368.84 370.33,368.42 369.84,368.08 369.34,367.79 369.21,367.71 382.52,362.48 383.98,366.20 384.08,366.16"/>
+    <crossing node="433601568" edges="-439060999#1 439060999#0" priority="0" width="4.00" outlineShape="339.59,258.28 327.64,262.87 327.54,262.91 327.64,262.87 327.27,262.07 326.88,261.44 326.45,260.95 326.00,260.56 325.53,260.25 325.05,259.99 324.59,259.75 338.15,254.55"/>
+    <crossing node="4366839749" edges="-439061000 439061000" priority="0" width="4.00" outlineShape="364.64,314.26 352.64,318.71 352.31,317.97 351.94,317.40 351.53,316.96 351.09,316.63 350.64,316.37 350.17,316.16 349.69,315.97 349.20,315.77 363.21,310.52 363.26,310.63 363.44,311.08 363.63,311.57 363.84,312.11 364.07,312.72 364.33,313.43"/>
+    <crossing node="4366839750" edges="-439232197#1 439232197#0" priority="0" width="4.00" outlineShape="375.94,343.99 361.14,350.09 360.78,349.24 360.65,348.45 360.63,347.76 360.69,347.14 360.81,346.56 360.97,346.01 361.04,345.81 374.42,340.29"/>
+    <crossing node="TCS379" edges="-445716030#0 170990874" priority="1" width="4.00" linkIndex="17" outlineShape="406.59,427.92 391.63,433.60 390.47,430.80 390.04,429.92 390.21,429.86 405.17,424.18 407.10,423.72 406.98,423.76 406.59,423.97 406.31,424.27 406.12,424.65 406.02,425.13 406.02,425.69 406.11,426.35 406.30,427.09"/>
+    <crossing node="TCS379" edges="445716031#0" priority="1" width="4.00" linkIndex="18" outlineShape="413.22,414.91 410.30,424.05 410.22,424.14 410.26,424.01 409.45,423.80 408.69,423.65 408.02,423.60 407.45,423.63 406.98,423.76 406.59,423.97 406.31,424.27 406.12,424.65 406.09,424.78 406.49,422.84 409.41,413.69 413.22,414.91 409.41,413.69 410.05,411.80"/>
+    <crossing node="TCS379" edges="37229921#1" priority="1" width="4.00" linkIndex="19" outlineShape="417.21,402.80 414.17,412.11 413.22,414.91 409.41,413.69 410.40,410.78 413.42,401.52 413.95,401.75"/>
+    <crossing node="TCS379" edges="170990873#1 -170990873#1" priority="1" width="4.00" linkIndex="20" outlineShape="376.65,382.52 388.56,377.84 389.74,380.55 390.23,381.48 390.03,381.56 378.11,386.25 376.19,386.75 376.35,386.71 376.72,386.50 377.00,386.20 377.18,385.81 377.27,385.33 377.26,384.76 377.15,384.10 376.95,383.36"/>
+    <crossing node="TCS379" edges="358916875#0" priority="1" width="4.00" linkIndex="21" outlineShape="369.36,398.72 373.04,386.46 373.89,386.68 374.65,386.82 375.31,386.88 375.88,386.84 376.35,386.71 376.72,386.50 377.00,386.20 377.18,385.81 377.21,385.65 376.87,387.61 373.20,399.87 372.75,401.39 368.92,400.25"/>
+    <crossing node="TCS379" edges="37229935#1" priority="1" width="4.00" linkIndex="22" outlineShape="366.14,409.54 368.94,400.15 372.75,401.39 368.92,400.25 372.75,401.39 370.00,410.59 369.94,410.78 368.93,410.37"/>
+</connections>

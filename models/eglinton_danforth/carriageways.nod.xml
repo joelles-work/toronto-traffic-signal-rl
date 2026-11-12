@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.20" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+  <location netOffset="-640832.18,-4843762.77" convBoundary="255.52,200.88,726.39,719.10" origBoundary="-79.261302,43.726448,-79.239315,43.791299" projParameter="+proj=utm +zone=17 +ellps=WGS84 +datum=WGS84 +units=m +no_defs" />
+  <node id="2853060868" x="261.99" y="356.91" type="dead_end" />
+  <node id="2853060870" x="255.83" y="369.89" type="dead_end" />
+  <node id="2912239188" x="323.79" y="391.77" type="priority" />
+  <node id="3272055262" x="313.54" y="201.26" type="dead_end" />
+  <node id="3272055264" x="308.85" y="214.49" type="dead_end" />
+  <node id="3637340025" x="290.44" y="366.15" type="priority" />
+  <node id="418523271" x="444.17" y="719.10" type="dead_end" />
+  <node id="418523765" x="338.39" y="272.98" type="priority" />
+  <node id="418525306" x="429.23" y="510.75" type="priority" />
+  <node id="433599636" x="376.58" y="364.86" type="priority" />
+  <node id="433601568" x="332.02" y="256.43" type="priority" />
+  <node id="4366839749" x="357.29" y="312.85" type="priority" />
+  <node id="4366839750" x="368.40" y="342.81" type="priority" />
+  <node id="TCS379" x="392.73" y="406.37" type="traffic_light" tl="TCS379" />
+  <node id="12196577853_WB" x="726.026" y="515.793" type="dead_end" />
+  <node id="4588565502_WB" x="480.895" y="437.313" type="priority" />
+  <node id="433599692_WB" x="462.377" y="431.392" type="priority" />
+  <node id="2912237938_WB" x="432.824" y="421.941" type="priority" />
+  <node id="433599692_EB" x="463.108" y="429.106" type="priority" />
+  <node id="4588565502_EB" x="481.625" y="435.027" type="priority" />
+  <node id="12196577853_EB" x="726.754" y="513.507" type="dead_end" />
+</nodes>

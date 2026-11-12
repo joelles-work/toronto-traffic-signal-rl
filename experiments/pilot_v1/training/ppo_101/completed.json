@@ -1,0 +1,29 @@
+{
+  "algorithm": "PPO",
+  "training_seed": 101,
+  "budget": 2048,
+  "started_utc": "2026-11-11T23:36:01.746529+00:00",
+  "experiment_sha256": "9380e739edfe3e9e7b3f4e121bea23b4981f3d41590933d12f175e158c791cd4",
+  "implementation": {
+    "compare.py": "e6fed36cc919dc51b9b6650417b97f5e9ec9fe5f916d5c2b1e17e0fed1b6ff62",
+    "demand.py": "d912aed585ab1523ecb8798201f025f55394881b2d7fa5e6d6aa4d20ce134063",
+    "environment.py": "3a671d5eef7139c04bb6f550a36ced585cd46b25faf8a29e7fe23c6a464d05f7",
+    "evaluation.py": "adef4069cb802e18674064da7d612a2db47be485b44029de64ab66bab461b9a8",
+    "freeze.py": "dfd8a6bcc51c7e2a297c6b865b092ed221b721e0638a6cbead8bbbbb105da0a6",
+    "smoke.py": "f841c7f4a7659553e251ca1d220ea614a0f8e06abb338e28f62933dacb778673",
+    "train.py": "d71280d137673e7882ae3c572ed016c1a1fc6240c4a0b45055a8eed4df59f1f6",
+    "__init__.py": "98583ef49c3cc5a030ad3986d4005d2c67e36bb0ac8f8c4a3a9b714f553a0fa3"
+  },
+  "training_split": "train",
+  "dev_used_for_learning": false,
+  "test_used": false,
+  "status": "complete",
+  "finished_utc": "2026-11-11T23:40:14.953753+00:00",
+  "elapsed_s": 253.20760979992338,
+  "actual_decisions": 2048,
+  "episodes_completed": 25,
+  "model_sha256": "aad5a72f6662b5552756d50534bbf3d88a159b92a9e737bbbeb2410259eb09a3",
+  "wandb_id": "11cio3sl",
+  "wandb_directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261111_183602-11cio3sl",
+  "wandb_hosted_url": null
+}
