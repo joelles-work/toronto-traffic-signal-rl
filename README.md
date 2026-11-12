@@ -2,17 +2,19 @@
 
 Local setup for the supplied proposal, "Evaluating Deep Reinforcement Learning for Traffic Signal Control Under Real Toronto Demand".
 
-## Current check-in (November 11, 2026)
+## Current check-in (November 12, 2026)
 
-The current two-page paper is `output/checkin/Progress_Report_Jowel_Akkeh.pdf`. Its editable text, IEEEtran source, result tables, and submission checklist are alongside it. It supersedes the older prototype paper under `output/report/`.
+The current two-page paper is `output/checkin/Progress_Report_Jowel_Akkeh.pdf`, with editable text and IEEEtran source alongside it. It reports the consistent 1.39 m/s pedestrian free-flow experiment under `experiments/freeflow_pilot_v1/`.
 
-The bounded DQN/PPO pilot is complete: three training seeds per algorithm, 2,048 cycle decisions per model, and matched evaluation on five dev demand seeds. DQN reproduced the fixed-time policy. PPO did not establish an improvement: its mean combined vehicle delay proxy was 211.31 s/vehicle, compared with 166.21 s/vehicle for fixed-time. The paper reports uncertainty, failures, and a revised plan. No test-period controller performance was measured.
+Both DQN and PPO were trained from scratch at 1.39 m/s using three seeds per algorithm and 2,048 cycle decisions per model. Five fixed-time runs and 15 matched dev evaluations per algorithm completed all 3,594 vehicles and 518 pedestrians in each case. Mean vehicle delay: fixed-time and DQN 156.13 s/vehicle; PPO 178.95 s/vehicle. Mean pedestrian delay: fixed-time/DQN 46.79 s/person; PPO 46.66 s/person. The paper reports training variability and uncertainty; test data remain unused.
 
-See `experiments/pilot_v1/README.md` for frozen inputs, safeguards, training settings, and reproduction commands. `experiments/pilot_v1/dev_summary.json` contains the numerical results. Six model checkpoints are under `experiments/pilot_v1/training/`. Hosted W&B evidence is indexed by `experiments/pilot_v1/wandb_runs.json`.
+See `experiments/freeflow_pilot_v1/README.md` for reproduction commands, frozen inputs and settings, and the excluded logging failure. `dev_summary.json` holds all results; `wandb_runs.json` indexes six verified training runs and the comparison.
 
-`Watch_Trained_DQN.cmd` and `Watch_Trained_PPO.cmd` replay training seed 101 on dev demand seed 11 in SUMO-GUI. They do not select a best seed. These trained-policy replays retain the original frozen 1.2 m/s walking speed. The current fixed-time drawing uses 1.39 m/s desired free-flow walking speed and remains available through `Open_SUMO_Intersection.cmd`.
+Repository: https://github.com/joelles-work/toronto-traffic-signal-rl (private). W&B comparison: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/109ddkqr . Confirm instructor access before submission.
 
-Repository: https://github.com/joelles-work/toronto-traffic-signal-rl (private; instructor access required). W&B project: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379 . Six training runs and the dev comparison are uploaded and verified. The report contains both evidence links. Further training or final test evaluation is outside this check-in's current scope.
+`Watch_Trained_DQN.cmd` and `Watch_Trained_PPO.cmd` replay the new models (training seed 101, dev flow seed 11) at 1.39 m/s, without choosing a best seed. `Open_SUMO_Intersection.cmd` opens the current fixed-time simulation at the same walking speed.
+
+Earlier experiments under `experiments/pilot_v1/` and `experiments/pedestrian_freeflow_v1/` retain the historical 1.2 m/s training and transfer check. They are not the current paper's comparison. The older report under `output/report/` is superseded.
 
 ## Open the drawn intersection
 

@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "signal_states_checked": 7200,
+  "cycles_checked": 60,
+  "pedestrians_traced": 518,
+  "correct_crossing_leg_counts": {
+    "n": 147,
+    "s": 118,
+    "e": 96,
+    "w": 157
+  },
+  "invalid_crossing_entries": [],
+  "entry_check": "Crossing entry must match a WALK green in the current or immediately preceding 1-second state sample.",
+  "scope": "SUMO model and route audit; not an assertion of field calibration or road-safety certification."
+}

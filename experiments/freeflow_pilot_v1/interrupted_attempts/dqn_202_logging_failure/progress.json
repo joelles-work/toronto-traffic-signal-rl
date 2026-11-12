@@ -1,0 +1,19 @@
+{
+  "algorithm": "DQN",
+  "training_seed": 202,
+  "decisions": 640,
+  "budget": 2048,
+  "episodes_completed": 7,
+  "elapsed_s": 121.45010320004076,
+  "updated_utc": "2026-11-12T05:09:12.880358+00:00",
+  "last_episode": {
+    "decision": 593,
+    "flow_seed": 254633288,
+    "reward": -1888.8625,
+    "decisions": 80,
+    "unfinished": 0,
+    "collisions": 0,
+    "teleports": 0
+  },
+  "status": "training"
+}

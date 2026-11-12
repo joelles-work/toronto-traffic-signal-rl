@@ -1,0 +1,20 @@
+{
+  "algorithm": "DQN",
+  "training_seed": 303,
+  "budget": 2048,
+  "started_utc": "2026-11-12T05:07:14.614471+00:00",
+  "experiment_sha256": "3b7691f2edf1e23950a1d0fba07ae8546c63a913f2f11465ca5affeae98dcd09",
+  "implementation": {
+    "compare.py": "4a971364ced9753b458b41aa0aee1eafb5320c28b991fba6733ae249756d7004",
+    "demand.py": "421c11dfb2605859cbf4f6a8cc6838e9947535faa834da96282cae99acce78ac",
+    "environment.py": "425f810dc7c53484f5776eea583997e3b8c77a2af8c5d7746a41aae3a8c47af8",
+    "evaluation.py": "d8eb9329aeee777bdbe41592dc32cce9937793e2933a783011db5835d4de11c2",
+    "freeze.py": "e093d5609dd8743a587920ad731c704c587ac18845b3d05ad5ef56573301612f",
+    "smoke.py": "086a62ac86931d06e4f9596fda651107d78be2383274947b01c019df24bfb8b4",
+    "train.py": "797322001c210abfe6f8a663d04562417d54200ef51cab3841cab6ed1a1a254a",
+    "__init__.py": "d3b1965351c5b7c43181a6068910d9932ef8417021476ffba454d622c0e77d31"
+  },
+  "training_split": "train",
+  "dev_used_for_learning": false,
+  "test_used": false
+}

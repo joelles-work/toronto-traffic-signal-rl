@@ -1,0 +1,22 @@
+{
+  "vehicles_generated": 3594,
+  "vehicles_completed": 3594,
+  "pedestrians_generated": 518,
+  "pedestrians_completed": 518,
+  "unfinished_vehicles": 0,
+  "unfinished_pedestrians": 0,
+  "vehicle_time_loss_s": 52.680431274346134,
+  "vehicle_depart_delay_s": 96.19189482470784,
+  "vehicle_combined_delay_proxy_s": 148.872326099054,
+  "pedestrian_time_loss_s": 46.42762548262548,
+  "collisions": 0,
+  "teleports": 0,
+  "emergency_braking": 3,
+  "complete": true,
+  "eligible_delay_comparison": true,
+  "controller": "DQN",
+  "training_seed": 101,
+  "flow_seed": 44,
+  "simulated_seconds": 4390,
+  "reward": -396.4583333333333
+}

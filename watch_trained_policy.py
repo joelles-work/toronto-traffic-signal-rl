@@ -1,12 +1,12 @@
-"""Replay a trained pilot policy in SUMO-GUI using its frozen dev inputs."""
+"""Replay a trained free-flow pilot policy in SUMO-GUI using its frozen dev inputs."""
 import argparse
 from pathlib import Path
 import torch
 import sumolib
 import traci
 from stable_baselines3 import DQN,PPO
-from rl.freeze import ROOT,PILOT,verify
-import rl.environment as environment
+from rl_freeflow.freeze import ROOT,PILOT,verify
+import rl_freeflow.environment as environment
 
 
 def main():

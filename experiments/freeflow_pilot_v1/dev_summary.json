@@ -1,0 +1,1062 @@
+{
+  "experiment": "freeflow_pilot_v1",
+  "split": "dev",
+  "test_evaluated": false,
+  "decision_budget_per_model": 2048,
+  "training_seeds": [
+    101,
+    202,
+    303
+  ],
+  "demand_seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "controllers": {
+    "fixed": {
+      "runs": 5,
+      "all_runs_eligible": true,
+      "total_unfinished_vehicles": 0,
+      "total_unfinished_pedestrians": 0,
+      "total_collisions": 0,
+      "total_teleports": 0,
+      "total_emergency_braking": 10,
+      "pooled_case_metrics": {
+        "vehicle_time_loss_s": {
+          "mean": 54.24380578742348,
+          "sample_std": 3.7328202363221537
+        },
+        "vehicle_depart_delay_s": {
+          "mean": 101.88857985531442,
+          "sample_std": 4.227110872897116
+        },
+        "vehicle_combined_delay_proxy_s": {
+          "mean": 156.1323856427379,
+          "sample_std": 6.577335192578427
+        },
+        "pedestrian_time_loss_s": {
+          "mean": 46.79403474903475,
+          "sample_std": 1.4086265538479694
+        }
+      }
+    },
+    "DQN": {
+      "runs": 15,
+      "all_runs_eligible": true,
+      "total_unfinished_vehicles": 0,
+      "total_unfinished_pedestrians": 0,
+      "total_collisions": 0,
+      "total_teleports": 0,
+      "total_emergency_braking": 30,
+      "pooled_case_metrics": {
+        "vehicle_time_loss_s": {
+          "mean": 54.24380578742348,
+          "sample_std": 3.4559200036247755
+        },
+        "vehicle_depart_delay_s": {
+          "mean": 101.88857985531442,
+          "sample_std": 3.9135442100952447
+        },
+        "vehicle_combined_delay_proxy_s": {
+          "mean": 156.1323856427379,
+          "sample_std": 6.089429124230473
+        },
+        "pedestrian_time_loss_s": {
+          "mean": 46.79403474903475,
+          "sample_std": 1.3041347766257925
+        }
+      },
+      "by_training_seed": {
+        "101": {
+          "vehicle_time_loss_s": {
+            "mean": 54.24380578742348,
+            "sample_std_across_demand": 3.7328202363221537
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 101.88857985531442,
+            "sample_std_across_demand": 4.227110872897116
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 156.1323856427379,
+            "sample_std_across_demand": 6.577335192578427
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 46.79403474903475,
+            "sample_std_across_demand": 1.4086265538479694
+          }
+        },
+        "202": {
+          "vehicle_time_loss_s": {
+            "mean": 54.24380578742348,
+            "sample_std_across_demand": 3.7328202363221537
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 101.88857985531442,
+            "sample_std_across_demand": 4.227110872897116
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 156.1323856427379,
+            "sample_std_across_demand": 6.577335192578427
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 46.79403474903475,
+            "sample_std_across_demand": 1.4086265538479694
+          }
+        },
+        "303": {
+          "vehicle_time_loss_s": {
+            "mean": 54.24380578742348,
+            "sample_std_across_demand": 3.7328202363221537
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 101.88857985531442,
+            "sample_std_across_demand": 4.227110872897116
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 156.1323856427379,
+            "sample_std_across_demand": 6.577335192578427
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 46.79403474903475,
+            "sample_std_across_demand": 1.4086265538479694
+          }
+        }
+      },
+      "between_training_seed_metrics": {
+        "vehicle_time_loss_s": {
+          "mean": 54.24380578742348,
+          "sample_std_of_five_demand_seed_means": 0.0
+        },
+        "vehicle_depart_delay_s": {
+          "mean": 101.88857985531442,
+          "sample_std_of_five_demand_seed_means": 0.0
+        },
+        "vehicle_combined_delay_proxy_s": {
+          "mean": 156.1323856427379,
+          "sample_std_of_five_demand_seed_means": 0.0
+        },
+        "pedestrian_time_loss_s": {
+          "mean": 46.79403474903475,
+          "sample_std_of_five_demand_seed_means": 0.0
+        }
+      },
+      "paired_comparison_to_fixed": {
+        "vehicle_combined_delay_proxy_s": {
+          "paired_difference_mean_s": 0.0,
+          "two_way_bootstrap_95_percent_interval_s": [
+            0.0,
+            0.0
+          ],
+          "note": "Exploratory crossed resampling of training seeds and paired demand seeds; only three training replicates."
+        },
+        "pedestrian_time_loss_s": {
+          "paired_difference_mean_s": 0.0,
+          "two_way_bootstrap_95_percent_interval_s": [
+            0.0,
+            0.0
+          ],
+          "note": "Exploratory crossed resampling of training seeds and paired demand seeds; only three training replicates."
+        }
+      }
+    },
+    "PPO": {
+      "runs": 15,
+      "all_runs_eligible": true,
+      "total_unfinished_vehicles": 0,
+      "total_unfinished_pedestrians": 0,
+      "total_collisions": 0,
+      "total_teleports": 0,
+      "total_emergency_braking": 25,
+      "pooled_case_metrics": {
+        "vehicle_time_loss_s": {
+          "mean": 55.389172695232794,
+          "sample_std": 4.132495320215723
+        },
+        "vehicle_depart_delay_s": {
+          "mean": 123.55589575217955,
+          "sample_std": 43.37387067691656
+        },
+        "vehicle_combined_delay_proxy_s": {
+          "mean": 178.94506844741235,
+          "sample_std": 46.614357256763014
+        },
+        "pedestrian_time_loss_s": {
+          "mean": 46.65902831402831,
+          "sample_std": 1.466637753542506
+        }
+      },
+      "by_training_seed": {
+        "101": {
+          "vehicle_time_loss_s": {
+            "mean": 59.66413077351141,
+            "sample_std_across_demand": 2.597762185601697
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 181.36687701725097,
+            "sample_std_across_demand": 10.94517160323109
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 241.03100779076237,
+            "sample_std_across_demand": 12.452308101900927
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 46.15388030888031,
+            "sample_std_across_demand": 1.3880130327869256
+          }
+        },
+        "202": {
+          "vehicle_time_loss_s": {
+            "mean": 52.50300055648303,
+            "sample_std_across_demand": 3.7784443592045043
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 95.19726099053979,
+            "sample_std_across_demand": 11.782901068222037
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 147.70026154702282,
+            "sample_std_across_demand": 13.022579277902112
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 46.797895752895755,
+            "sample_std_across_demand": 1.551209295843997
+          }
+        },
+        "303": {
+          "vehicle_time_loss_s": {
+            "mean": 54.00038675570395,
+            "sample_std_across_demand": 1.7546575557243453
+          },
+          "vehicle_depart_delay_s": {
+            "mean": 94.10354924874791,
+            "sample_std_across_demand": 7.6607909884685
+          },
+          "vehicle_combined_delay_proxy_s": {
+            "mean": 148.10393600445187,
+            "sample_std_across_demand": 7.273233088442111
+          },
+          "pedestrian_time_loss_s": {
+            "mean": 47.025308880308884,
+            "sample_std_across_demand": 1.6385928213899763
+          }
+        }
+      },
+      "between_training_seed_metrics": {
+        "vehicle_time_loss_s": {
+          "mean": 55.389172695232794,
+          "sample_std_of_five_demand_seed_means": 3.7771670979298753
+        },
+        "vehicle_depart_delay_s": {
+          "mean": 123.55589575217955,
+          "sample_std_of_five_demand_seed_means": 50.06876488856462
+        },
+        "vehicle_combined_delay_proxy_s": {
+          "mean": 178.94506844741235,
+          "sample_std_of_five_demand_seed_means": 53.76837952157847
+        },
+        "pedestrian_time_loss_s": {
+          "mean": 46.65902831402832,
+          "sample_std_of_five_demand_seed_means": 0.45200670676297766
+        }
+      },
+      "paired_comparison_to_fixed": {
+        "vehicle_combined_delay_proxy_s": {
+          "paired_difference_mean_s": 22.812682804674456,
+          "two_way_bootstrap_95_percent_interval_s": [
+            -11.174340753107034,
+            82.79097999443518
+          ],
+          "note": "Exploratory crossed resampling of training seeds and paired demand seeds; only three training replicates."
+        },
+        "pedestrian_time_loss_s": {
+          "paired_difference_mean_s": -0.1350064350064348,
+          "two_way_bootstrap_95_percent_interval_s": [
+            -0.6702895752895778,
+            0.35637065637065796
+          ],
+          "note": "Exploratory crossed resampling of training seeds and paired demand seeds; only three training replicates."
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 48.90042292710072,
+      "vehicle_depart_delay_s": 101.10604340567613,
+      "vehicle_combined_delay_proxy_s": 150.00646633277685,
+      "pedestrian_time_loss_s": 46.350405405405404,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 4,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "fixed",
+      "training_seed": null,
+      "flow_seed": 11,
+      "simulated_seconds": 4400,
+      "reward": -404.7375
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.69013912075682,
+      "vehicle_depart_delay_s": 108.08273233166389,
+      "vehicle_combined_delay_proxy_s": 163.7728714524207,
+      "pedestrian_time_loss_s": 45.39480694980695,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "fixed",
+      "training_seed": null,
+      "flow_seed": 22,
+      "simulated_seconds": 4405,
+      "reward": -436.0958333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 58.94123817473567,
+      "vehicle_depart_delay_s": 102.05482749026154,
+      "vehicle_combined_delay_proxy_s": 160.99606566499722,
+      "pedestrian_time_loss_s": 49.16507722007722,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "fixed",
+      "training_seed": null,
+      "flow_seed": 33,
+      "simulated_seconds": 4400,
+      "reward": -427.3833333333334
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.680431274346134,
+      "vehicle_depart_delay_s": 96.19189482470784,
+      "vehicle_combined_delay_proxy_s": 148.872326099054,
+      "pedestrian_time_loss_s": 46.42762548262548,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "fixed",
+      "training_seed": null,
+      "flow_seed": 44,
+      "simulated_seconds": 4390,
+      "reward": -396.4583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.006797440178076,
+      "vehicle_depart_delay_s": 102.00740122426267,
+      "vehicle_combined_delay_proxy_s": 157.01419866444073,
+      "pedestrian_time_loss_s": 46.63225868725869,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "fixed",
+      "training_seed": null,
+      "flow_seed": 55,
+      "simulated_seconds": 4410,
+      "reward": -419.0708333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 48.90042292710072,
+      "vehicle_depart_delay_s": 101.10604340567613,
+      "vehicle_combined_delay_proxy_s": 150.00646633277685,
+      "pedestrian_time_loss_s": 46.350405405405404,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 4,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 101,
+      "flow_seed": 11,
+      "simulated_seconds": 4400,
+      "reward": -404.7375
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.69013912075682,
+      "vehicle_depart_delay_s": 108.08273233166389,
+      "vehicle_combined_delay_proxy_s": 163.7728714524207,
+      "pedestrian_time_loss_s": 45.39480694980695,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 101,
+      "flow_seed": 22,
+      "simulated_seconds": 4405,
+      "reward": -436.0958333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 58.94123817473567,
+      "vehicle_depart_delay_s": 102.05482749026154,
+      "vehicle_combined_delay_proxy_s": 160.99606566499722,
+      "pedestrian_time_loss_s": 49.16507722007722,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 101,
+      "flow_seed": 33,
+      "simulated_seconds": 4400,
+      "reward": -427.3833333333334
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.680431274346134,
+      "vehicle_depart_delay_s": 96.19189482470784,
+      "vehicle_combined_delay_proxy_s": 148.872326099054,
+      "pedestrian_time_loss_s": 46.42762548262548,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 101,
+      "flow_seed": 44,
+      "simulated_seconds": 4390,
+      "reward": -396.4583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.006797440178076,
+      "vehicle_depart_delay_s": 102.00740122426267,
+      "vehicle_combined_delay_proxy_s": 157.01419866444073,
+      "pedestrian_time_loss_s": 46.63225868725869,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 101,
+      "flow_seed": 55,
+      "simulated_seconds": 4410,
+      "reward": -419.0708333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 48.90042292710072,
+      "vehicle_depart_delay_s": 101.10604340567613,
+      "vehicle_combined_delay_proxy_s": 150.00646633277685,
+      "pedestrian_time_loss_s": 46.350405405405404,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 4,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 202,
+      "flow_seed": 11,
+      "simulated_seconds": 4400,
+      "reward": -404.7375
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.69013912075682,
+      "vehicle_depart_delay_s": 108.08273233166389,
+      "vehicle_combined_delay_proxy_s": 163.7728714524207,
+      "pedestrian_time_loss_s": 45.39480694980695,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 202,
+      "flow_seed": 22,
+      "simulated_seconds": 4405,
+      "reward": -436.0958333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 58.94123817473567,
+      "vehicle_depart_delay_s": 102.05482749026154,
+      "vehicle_combined_delay_proxy_s": 160.99606566499722,
+      "pedestrian_time_loss_s": 49.16507722007722,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 202,
+      "flow_seed": 33,
+      "simulated_seconds": 4400,
+      "reward": -427.3833333333334
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.680431274346134,
+      "vehicle_depart_delay_s": 96.19189482470784,
+      "vehicle_combined_delay_proxy_s": 148.872326099054,
+      "pedestrian_time_loss_s": 46.42762548262548,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 202,
+      "flow_seed": 44,
+      "simulated_seconds": 4390,
+      "reward": -396.4583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.006797440178076,
+      "vehicle_depart_delay_s": 102.00740122426267,
+      "vehicle_combined_delay_proxy_s": 157.01419866444073,
+      "pedestrian_time_loss_s": 46.63225868725869,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 202,
+      "flow_seed": 55,
+      "simulated_seconds": 4410,
+      "reward": -419.0708333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 48.90042292710072,
+      "vehicle_depart_delay_s": 101.10604340567613,
+      "vehicle_combined_delay_proxy_s": 150.00646633277685,
+      "pedestrian_time_loss_s": 46.350405405405404,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 4,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 303,
+      "flow_seed": 11,
+      "simulated_seconds": 4400,
+      "reward": -404.7375
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.69013912075682,
+      "vehicle_depart_delay_s": 108.08273233166389,
+      "vehicle_combined_delay_proxy_s": 163.7728714524207,
+      "pedestrian_time_loss_s": 45.39480694980695,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 303,
+      "flow_seed": 22,
+      "simulated_seconds": 4405,
+      "reward": -436.0958333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 58.94123817473567,
+      "vehicle_depart_delay_s": 102.05482749026154,
+      "vehicle_combined_delay_proxy_s": 160.99606566499722,
+      "pedestrian_time_loss_s": 49.16507722007722,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 303,
+      "flow_seed": 33,
+      "simulated_seconds": 4400,
+      "reward": -427.3833333333334
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.680431274346134,
+      "vehicle_depart_delay_s": 96.19189482470784,
+      "vehicle_combined_delay_proxy_s": 148.872326099054,
+      "pedestrian_time_loss_s": 46.42762548262548,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 303,
+      "flow_seed": 44,
+      "simulated_seconds": 4390,
+      "reward": -396.4583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 55.006797440178076,
+      "vehicle_depart_delay_s": 102.00740122426267,
+      "vehicle_combined_delay_proxy_s": 157.01419866444073,
+      "pedestrian_time_loss_s": 46.63225868725869,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "DQN",
+      "training_seed": 303,
+      "flow_seed": 55,
+      "simulated_seconds": 4410,
+      "reward": -419.0708333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 57.622676683361156,
+      "vehicle_depart_delay_s": 191.0682025598219,
+      "vehicle_combined_delay_proxy_s": 248.69087924318308,
+      "pedestrian_time_loss_s": 45.6457722007722,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 2,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 101,
+      "flow_seed": 11,
+      "simulated_seconds": 5080,
+      "reward": -688.6583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 62.20511129660545,
+      "vehicle_depart_delay_s": 191.9397161936561,
+      "vehicle_combined_delay_proxy_s": 254.14482749026155,
+      "pedestrian_time_loss_s": 44.869710424710426,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 101,
+      "flow_seed": 22,
+      "simulated_seconds": 5085,
+      "reward": -697.8541666666667
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 62.72880912632165,
+      "vehicle_depart_delay_s": 184.12883973288814,
+      "vehicle_combined_delay_proxy_s": 246.8576488592098,
+      "pedestrian_time_loss_s": 48.369710424710426,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 101,
+      "flow_seed": 33,
+      "simulated_seconds": 4990,
+      "reward": -679.3583333333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 58.44119087367835,
+      "vehicle_depart_delay_s": 170.25282971619365,
+      "vehicle_combined_delay_proxy_s": 228.694020589872,
+      "pedestrian_time_loss_s": 46.57434362934363,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 4,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 101,
+      "flow_seed": 44,
+      "simulated_seconds": 4980,
+      "reward": -629.245833333333
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 57.32286588759043,
+      "vehicle_depart_delay_s": 169.44479688369503,
+      "vehicle_combined_delay_proxy_s": 226.76766277128547,
+      "pedestrian_time_loss_s": 45.30986486486486,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 101,
+      "flow_seed": 55,
+      "simulated_seconds": 4975,
+      "reward": -623.0624999999999
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 47.56001669449082,
+      "vehicle_depart_delay_s": 93.99252086811352,
+      "vehicle_combined_delay_proxy_s": 141.55253756260433,
+      "pedestrian_time_loss_s": 46.537664092664095,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 202,
+      "flow_seed": 11,
+      "simulated_seconds": 4365,
+      "reward": -380.2666666666667
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 53.62504173622705,
+      "vehicle_depart_delay_s": 113.7268614357262,
+      "vehicle_combined_delay_proxy_s": 167.35190317195327,
+      "pedestrian_time_loss_s": 44.97009652509652,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 202,
+      "flow_seed": 22,
+      "simulated_seconds": 4490,
+      "reward": -448.75000000000006
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 57.96458542014469,
+      "vehicle_depart_delay_s": 93.18587924318308,
+      "vehicle_combined_delay_proxy_s": 151.15046466332777,
+      "pedestrian_time_loss_s": 49.26932432432432,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 202,
+      "flow_seed": 33,
+      "simulated_seconds": 4290,
+      "reward": -398.7666666666666
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 51.33645798553144,
+      "vehicle_depart_delay_s": 80.86023094045632,
+      "vehicle_combined_delay_proxy_s": 132.19668892598776,
+      "pedestrian_time_loss_s": 46.738436293436294,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 5,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 202,
+      "flow_seed": 44,
+      "simulated_seconds": 4280,
+      "reward": -348.62083333333345
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.028900946021146,
+      "vehicle_depart_delay_s": 94.22081246521981,
+      "vehicle_combined_delay_proxy_s": 146.24971341124095,
+      "pedestrian_time_loss_s": 46.47395752895753,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 202,
+      "flow_seed": 55,
+      "simulated_seconds": 4380,
+      "reward": -389.62499999999994
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.51806622148025,
+      "vehicle_depart_delay_s": 99.93325542570952,
+      "vehicle_combined_delay_proxy_s": 152.45132164718976,
+      "pedestrian_time_loss_s": 47.085926640926644,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 3,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 303,
+      "flow_seed": 11,
+      "simulated_seconds": 4375,
+      "reward": -408.06666666666666
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 54.51487479131887,
+      "vehicle_depart_delay_s": 83.10137451307735,
+      "vehicle_combined_delay_proxy_s": 137.6162493043962,
+      "pedestrian_time_loss_s": 44.92955598455598,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 303,
+      "flow_seed": 22,
+      "simulated_seconds": 4275,
+      "reward": -360.2791666666667
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 56.569510294936,
+      "vehicle_depart_delay_s": 91.565122426266,
+      "vehicle_combined_delay_proxy_s": 148.134632721202,
+      "pedestrian_time_loss_s": 49.497123552123554,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 1,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 303,
+      "flow_seed": 33,
+      "simulated_seconds": 4290,
+      "reward": -391.31666666666666
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 52.20705342237062,
+      "vehicle_depart_delay_s": 93.29289649415693,
+      "vehicle_combined_delay_proxy_s": 145.49994991652756,
+      "pedestrian_time_loss_s": 47.070482625482626,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 303,
+      "flow_seed": 44,
+      "simulated_seconds": 4365,
+      "reward": -387.5625
+    },
+    {
+      "vehicles_generated": 3594,
+      "vehicles_completed": 3594,
+      "pedestrians_generated": 518,
+      "pedestrians_completed": 518,
+      "unfinished_vehicles": 0,
+      "unfinished_pedestrians": 0,
+      "vehicle_time_loss_s": 54.19242904841402,
+      "vehicle_depart_delay_s": 102.62509738452977,
+      "vehicle_combined_delay_proxy_s": 156.8175264329438,
+      "pedestrian_time_loss_s": 46.5434555984556,
+      "collisions": 0,
+      "teleports": 0,
+      "emergency_braking": 0,
+      "complete": true,
+      "eligible_delay_comparison": true,
+      "controller": "PPO",
+      "training_seed": 303,
+      "flow_seed": 55,
+      "simulated_seconds": 4380,
+      "reward": -419.83333333333326
+    }
+  ],
+  "limitations": [
+    "Initial bounded training budget; no architecture/reward search.",
+    "Model geometry, boundary queues, transit operations, initial conditions, and 2024 fidelity remain uncalibrated.",
+    "Dev comparison is for model development, not held-out test performance."
+  ]
+}

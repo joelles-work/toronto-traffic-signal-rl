@@ -10,7 +10,7 @@ from reportlab.lib.units import inch
 from reportlab.platypus import BaseDocTemplate,Frame,PageTemplate,Paragraph,Spacer,Table,TableStyle
 
 ROOT=Path(__file__).resolve().parent
-PILOT=ROOT/'experiments/pilot_v1'
+PILOT=ROOT/'experiments/freeflow_pilot_v1'
 OUT=ROOT/'output/checkin'
 OUT.mkdir(parents=True,exist_ok=True)
 summary=json.loads((PILOT/'dev_summary.json').read_text())
@@ -28,27 +28,31 @@ refs=[
 '[1] City of Toronto, "Traffic volumes - multimodal intersection turning movement counts," Toronto Open Data. <link href="https://open.toronto.ca/dataset/traffic-volumes-at-intersections-for-all-modes/" color="blue">Dataset and dictionary</link>, accessed Nov. 11, 2026.',
 '[2] OpenStreetMap contributors, "Eglinton Avenue East / Danforth Road map extract," ODbL 1.0, downloaded Nov. 9, 2026. <link href="https://www.openstreetmap.org/copyright" color="blue">Attribution and licence</link>.',
 '[3] City of Toronto, "Current Signal Timing Information: TCS 379," Oct. 31, 2019, in WSP, 320 McCowan Road Transportation Impact Study, Feb. 14, 2020, App. B, PDF p. 147. <link href="https://320mccowan.ca/wp-content/uploads/2020/04/TransportationReport_320McCowan.pdf" color="blue">Source report</link>.',
-'[4] Stable-Baselines3, "Using custom environments," v. 2.9.2 documentation. <link href="https://stable-baselines3.readthedocs.io/en/master/guide/custom_env.html" color="blue">Documentation</link>, accessed Nov. 11, 2026.',
+'[4] Stable-Baselines3, "DQN and PPO parameters," v. 2.9.2. <link href="https://stable-baselines3.readthedocs.io/en/master/modules/dqn.html" color="blue">DQN</link>; <link href="https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html" color="blue">PPO</link>, accessed Nov. 12, 2026.',
 '[5] Eclipse SUMO, "Libsumo." <link href="https://sumo.dlr.de/docs/Libsumo.html" color="blue">Documentation</link>, accessed Nov. 11, 2026.',
 '[6] Eclipse SUMO, "TripInfo." <link href="https://sumo.dlr.de/docs/Simulation/Output/TripInfo.html" color="blue">Metric definitions</link>, accessed Nov. 11, 2026.',
 ]
-refs.append('[7] J. Akkeh, "Toronto TCS 379 pilot experiment records," Weights & Biases. <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379" color="blue">Project and training runs</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/dp44s9ne" color="blue">dev comparison</link>, uploaded Nov. 11, 2026.')
+refs.append('[7] J. Akkeh, "Toronto TCS 379 pilot experiment records," Weights & Biases. <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379" color="blue">Project and training runs</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/109ddkqr" color="blue">dev comparison</link>, uploaded Nov. 12, 2026.')
 refs.append('[8] J. Akkeh, "Toronto traffic signal RL check-in," GitHub. <link href="https://github.com/joelles-work/toronto-traffic-signal-rl" color="blue">Code, saved models, and report</link>, Nov. 11, 2026.')
-refs.append('[9] Eclipse SUMO, "Persons: desired maximum walking speed." <link href="https://sumo.dlr.de/docs/Specification/Persons.html" color="blue">Default 1.39 m/s</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/0f8391l6" color="blue">sensitivity run</link>, Nov. 11, 2026.')
+refs.append('[9] Eclipse SUMO, "Persons: desired maximum walking speed." <link href="https://sumo.dlr.de/docs/Specification/Persons.html" color="blue">Default 1.39 m/s</link>, accessed Nov. 12, 2026.')
 refs.append('[10] TorontoSUMONetworks contributors, "TorontoSUMONetworks," GitHub, revision 35dee7b. <link href="https://github.com/Jahandad-Baloch/TorontoSUMONetworks" color="blue">Source project</link>, accessed Nov. 11, 2026.')
+refs.append('[11] A. Raffin et al., "Stable-Baselines3: Reliable Reinforcement Learning Implementations," JMLR, vol. 22, no. 268, pp. 1-8, 2021. <link href="https://jmlr.org/papers/v22/20-1364.html" color="blue">Software paper</link>.')
 tables={}
 tables['Study periods.']=('I','STUDY PERIODS AND COUNTS (2024)',[
     ['Set / date / time','Intervals','Vehicles','People'],
     ['Train: Jun. 19, 15-17',8,'6,716',810],['Dev: Jun. 19, 17-18',4,'3,594',518],
     ['Test: Nov. 2, 15-18',12,'9,961','1,598'],['Test: Jun. 19, 07-10',12,'8,275',661]], [129,36,45,42])
-tables['Model settings.']=('II','MAIN TRAINING SETTINGS',[
-    ['Setting','Value'],
-    ['Neural network','Two hidden layers, 64 neurons each'],
-    ['Learning rate','0.0003 for both methods'],
-    ['Discount / batch size','0.99 / 64 for both methods'],
-    ['Training budget','2,048 cycle decisions per run'],
-    ['DQN','Replay buffer: 20,000; learning starts after 180 decisions; final exploration: 0.05'],
-    ['PPO','256-step rollouts; 10 epochs; GAE lambda: 0.95']], [91,161])
+tables['Model settings.']=('II','TRAINING PRESETS AND THEIR PURPOSE',[
+    ['Setting','Value and purpose'],
+    ['Network','Two layers of 64 neurons: a small shared architecture for 25 inputs and five timing choices.'],
+    ['Learning rate','0.0003: small learning updates; PPO default, also used for DQN to share one preset rate.'],
+    ['Discount / batch','0.99 weights future reward; batches of 64 experiences average each update while limiting CPU cost.'],
+    ['Training budget','2,048 decisions: the same bounded pilot budget for each model.'],
+    ['DQN memory / start','Capacity 20,000 experiences limits replay memory; collect 180 initial experiences before learning starts.'],
+    ['DQN exploration','Final random-action probability 0.05 retains 5% exploration during training. Evaluation uses deterministic choices.'],
+    ['PPO collection','256 new decisions per update gives eight collection blocks within the pilot budget.'],
+    ['PPO updates','10 passes through each block reuse its data; GAE 0.95 balances short- and longer-term reward estimates (library defaults).']], [80,172])
+
 tables['Pilot comparison.']=('III','AVERAGE DELAY ON THE DEVELOPMENT PERIOD',[
     ['Controller','Vehicle delay (s/vehicle)','Pedestrian delay (s/person)'],
     *[[a,*[f'{summary["controllers"][a]["pooled_case_metrics"][k]["mean"]:.2f}' for k in
@@ -111,7 +115,7 @@ def first(canvas,doc):
     for text in ['Jowel Akkeh','Department of Civil Engineering, Lassonde School of Engineering','York University, Toronto, Canada']:
         canvas.setFont('Times-Roman',10);canvas.drawCentredString(W/2,y,text);y-=12
     canvas.setFont('Times-Italic',9)
-    canvas.drawCentredString(W/2,y-3,'GS/ESS 5420 - Individual check-in - November 11, 2026')
+    canvas.drawCentredString(W/2,y-3,'GS/ESS 5420 - Individual check-in - November 12, 2026')
     footer(canvas,doc)
 doc=BaseDocTemplate(str(OUT/'Progress_Report_Jowel_Akkeh.pdf'),pagesize=(W,H),title=title,author='Jowel Akkeh')
 first_frames=[Frame(left+i*(col+gap),bottom,col,554,id=f'f{i}',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0) for i in range(2)]
@@ -126,7 +130,7 @@ def plain(s):return html.unescape(re.sub('<[^>]+>','',s))
 def tex(s):
     return ''.join({'&':r'\&','%':r'\%','$':r'\$','#':r'\#','_':r'\_','{':r'\{','}':r'\}'}.get(c,c) for c in plain(s)).replace('+/-',r'$\pm$')
 source=[r'\documentclass[conference]{IEEEtran}',r'\usepackage[T1]{fontenc}',r'\usepackage{url}',r'\begin{document}',r'\title{'+tex(title)+'}',r'\author{\IEEEauthorblockN{Jowel Akkeh}\IEEEauthorblockA{Department of Civil Engineering, Lassonde School of Engineering\\York University, Toronto, Canada}}',r'\maketitle',r'\begin{abstract}'+tex(abstract)+r'\end{abstract}']
-markdown=['# '+title,'','Jowel Akkeh - GS/ESS 5420 - November 11, 2026','',abstract]
+markdown=['# '+title,'','Jowel Akkeh - GS/ESS 5420 - November 12, 2026','',abstract]
 for section,paragraphs in sections:
     source.append(r'\section{'+tex(section)+'}')
     markdown+=['','## '+section]
@@ -135,12 +139,12 @@ for section,paragraphs in sections:
         markdown+=['',plain(text)]
         if lead in tables:
             number,cap,data,_=tables[lead]
-            source += [r'\begin{table}[ht]\centering\footnotesize',r'\caption{'+tex(cap)+'}',r'\begin{tabular}{'+('l'+'r'*(len(data[0])-1))+r'}\hline']
+            source += [r'\begin{table}[ht]\centering\footnotesize',r'\caption{'+tex(cap)+'}',r'\setlength{\tabcolsep}{2pt}\begin{tabular}{'+''.join('p{'+str(w-4)+'pt}' for w in tables[lead][3])+r'}\hline']
             source += [' & '.join(tex(str(c)) for c in row)+r' \\' for row in data]
             source += [r'\hline\end{tabular}\end{table}']
             markdown+=['','Table '+number+': '+cap,'','| '+' | '.join(str(c) for c in data[0])+' |','| '+' | '.join('---' for c in data[0])+' |']
             markdown += ['| '+' | '.join(str(c) for c in row)+' |' for row in data[1:]]
-source.append(r'\begin{thebibliography}{10}')
+source.append(r'\begin{thebibliography}{11}')
 for i,r in enumerate(refs,1):
     source.append(r'\bibitem{r'+str(i)+'} '+tex(reference_text(re.sub(r'^\[\d+\] ','',r))))
 source += [r'\end{thebibliography}',r'\end{document}']

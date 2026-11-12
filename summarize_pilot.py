@@ -5,7 +5,7 @@ import statistics
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from rl.freeze import ROOT,PILOT,verify
+from rl_freeflow.freeze import ROOT,PILOT,verify
 
 
 def main():
@@ -27,7 +27,7 @@ def main():
     fig.savefig(out/'training_curves.png',dpi=180)
     plt.close(fig)
     lines=['# Check-in pilot results','',
-        'All numbers below are development results, not final test performance. The model remains uncalibrated for field delay and 2024 geometry.','',
+        'All numbers below are development results from consistent training and evaluation at 1.39 m/s pedestrian desired free-flow walking speed, not final test performance.','',
         '| Controller | Evaluations | Vehicle time loss | Entry delay | Combined vehicle proxy | Pedestrian time loss |',
         '|---|---:|---:|---:|---:|---:|']
     for algorithm,item in summary['controllers'].items():
@@ -50,11 +50,11 @@ def main():
         '- Six completed pilot models: 2,048 cycle decisions each; no architecture, reward, or epoch search.',
         '- Test data were not generated or evaluated.',
         '- Each action preserves the 120-second cycle and all yellow, all-red, and pedestrian-clearance stages.',
-        '- A failed preliminary attempt shared a temporary statistics file with a diagnostic run. It was archived and excluded; successful models restarted with per-process output isolation.',
+        '- Training seed 202 initially stopped after a local W&B connection failure. That attempt was archived and excluded, and the seed restarted from scratch with unchanged settings.',
         '- The original prototype and its 180.37 s vehicle time-loss result are not comparable to this revised multimodal model.',
         '- Repeated stochastic episodes do not add independent observed traffic days. Time-blocked cross-validation and field calibration remain future work.',
-        '- Repository publication and W&B synchronization still require authenticated account access; local evidence is complete but hosted URLs are not yet available.','',
-        'Detailed machine-readable results and exploratory paired bootstrap intervals: `experiments/pilot_v1/dev_summary.json`.']
+        '- Hosted evidence: https://github.com/joelles-work/toronto-traffic-signal-rl and https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379 . Per-run URLs are indexed in experiments/freeflow_pilot_v1/wandb_runs.json.','',
+        'Detailed machine-readable results and exploratory paired bootstrap intervals: `experiments/freeflow_pilot_v1/dev_summary.json`.']
     (out/'Pilot_Results.md').write_text('\n'.join(lines),encoding='utf-8')
     print('\n'.join(lines[:13]))
 

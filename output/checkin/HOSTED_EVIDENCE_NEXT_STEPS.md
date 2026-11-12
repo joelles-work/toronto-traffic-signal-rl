@@ -1,21 +1,9 @@
-# Finish the hosted evidence links
+# Hosted check-in evidence
 
-The paper, local source, checkpoints, and hosted W&B evidence are ready. Both evidence links are available; instructor access still needs confirmation.
+GitHub: https://github.com/joelles-work/toronto-traffic-signal-rl (private).
 
-## GitHub — complete
+Current 1.39 m/s W&B comparison: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/109ddkqr
 
-Repository: https://github.com/joelles-work/toronto-traffic-signal-rl
+All six current training records and the comparison are verified finished. Their links are indexed in experiments/freeflow_pilot_v1/wandb_runs.json. Both training and evaluation used 1.39 m/s. Earlier speed experiments remain archived and are not reported as the current comparison.
 
-The repository is private. Confirm instructor access before submission. The report includes the repository link in the references.
-
-## Weights & Biases â€” complete
-
-All seven indexed runs were uploaded to the signed-in entity joelle1-york-university and verified as finished.
-
-- Project: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379
-- Dev comparison: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/dp44s9ne
-- Each training run URL is recorded in experiments/pilot_v1/wandb_runs.json.
-
-The paper includes the project and comparison links in the references. Confirm instructor access before submission; no project visibility was changed during upload. GitHub is also linked in the report. No further training or test-set evaluation is needed for the check-in.
-
-Additional hosted record: pedestrian free-flow sensitivity check (1.39 m/s), verified finished: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/0f8391l6 . There are now eight hosted records in total.
+The paper includes verified GitHub and W&B links. Because the GitHub repository is private, the instructor needs repository access to view it. This access check is an administrative submission step rather than part of the research method. Do not share account passwords or API keys.

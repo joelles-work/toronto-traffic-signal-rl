@@ -1,0 +1,67 @@
+{
+  "training": [
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 101,
+      "id": "79dltnf3",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_000648-79dltnf3",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/79dltnf3",
+      "hosted_state": "finished"
+    },
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 202,
+      "id": "kbwkyj2y",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_001213-kbwkyj2y",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/kbwkyj2y",
+      "hosted_state": "finished"
+    },
+    {
+      "kind": "training",
+      "algorithm": "DQN",
+      "seed": 303,
+      "id": "tnb7zes3",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_000715-tnb7zes3",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/tnb7zes3",
+      "hosted_state": "finished"
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 101,
+      "id": "osclphdp",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_001208-osclphdp",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/osclphdp",
+      "hosted_state": "finished"
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 202,
+      "id": "t45hgcm4",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_001619-t45hgcm4",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/t45hgcm4",
+      "hosted_state": "finished"
+    },
+    {
+      "kind": "training",
+      "algorithm": "PPO",
+      "seed": 303,
+      "id": "dadixe4k",
+      "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_001224-dadixe4k",
+      "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/dadixe4k",
+      "hosted_state": "finished"
+    }
+  ],
+  "evaluation": {
+    "kind": "dev_comparison",
+    "id": "109ddkqr",
+    "directory": "C:\\Users\\joelle11\\Documents\\ChatGPT\\SUMO Project\\wandb\\offline-run-20261112_002027-109ddkqr",
+    "hosted_url": "https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/109ddkqr",
+    "hosted_state": "finished"
+  },
+  "entity": "joelle1-york-university",
+  "project": "toronto-tcs379"
+}

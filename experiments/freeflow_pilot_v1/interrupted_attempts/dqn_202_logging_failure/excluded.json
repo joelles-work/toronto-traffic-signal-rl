@@ -1,0 +1,1 @@
+{"excluded":true,"reason":"Local W&B service connection aborted during training; no final model produced. Seed restarted from scratch with unchanged implementation and hyperparameters.","wandb_id":"u5diy2tm"}

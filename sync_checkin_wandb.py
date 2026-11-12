@@ -1,5 +1,6 @@
 """Upload only the seven indexed check-in runs, then verify their hosted URLs."""
 import json
+import argparse
 import os
 from pathlib import Path
 import subprocess
@@ -13,7 +14,10 @@ import wandb
 
 
 def main():
-    index_path = ROOT / 'experiments/pilot_v1/wandb_runs.json'
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--experiment', choices=['pilot_v1', 'freeflow_pilot_v1'], default='pilot_v1')
+    args = parser.parse_args()
+    index_path = ROOT / 'experiments' / args.experiment / 'wandb_runs.json'
     index = json.loads(index_path.read_text())
     api = wandb.Api(timeout=30)
     entity = api.viewer.entity

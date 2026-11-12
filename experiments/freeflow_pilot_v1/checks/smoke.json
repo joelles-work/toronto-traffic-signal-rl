@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "training_demand": {
+    "vehicles": 6716,
+    "pedestrians": 810
+  },
+  "dev_exact_realization_match": true,
+  "gymnasium_SB3_check": "PASS",
+  "action_phase_states_checked": 600,
+  "baseline_parity_differences_s": {
+    "vehicle_time_loss_s": 0.0,
+    "vehicle_depart_delay_s": 0.0,
+    "vehicle_combined_delay_proxy_s": 0.0,
+    "pedestrian_time_loss_s": 0.0
+  },
+  "elapsed_seconds": 5.54106600000523
+}

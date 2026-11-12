@@ -8,3 +8,4 @@ experiments/**/assets/* -text
 experiments/**/experiment.json -text
 experiments/**/implementation.json -text
 models/**/source/* -text
+rl_freeflow/*.py -text
