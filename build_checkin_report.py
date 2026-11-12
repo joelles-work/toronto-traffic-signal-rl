@@ -35,6 +35,7 @@ refs=[
 refs.append('[7] J. Akkeh, "Toronto TCS 379 pilot experiment records," Weights & Biases. <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379" color="blue">Project and training runs</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/dp44s9ne" color="blue">dev comparison</link>, uploaded Nov. 11, 2026.')
 refs.append('[8] J. Akkeh, "Toronto traffic signal RL check-in," GitHub. <link href="https://github.com/joelles-work/toronto-traffic-signal-rl" color="blue">Code, saved models, and report</link>, Nov. 11, 2026.')
 refs.append('[9] Eclipse SUMO, "Persons: desired maximum walking speed." <link href="https://sumo.dlr.de/docs/Specification/Persons.html" color="blue">Default 1.39 m/s</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/0f8391l6" color="blue">sensitivity run</link>, Nov. 11, 2026.')
+refs.append('[10] TorontoSUMONetworks contributors, "TorontoSUMONetworks," GitHub, revision 35dee7b. <link href="https://github.com/Jahandad-Baloch/TorontoSUMONetworks" color="blue">Source project</link>, accessed Nov. 11, 2026.')
 tables={}
 tables['Study periods.']=('I','STUDY PERIODS AND COUNTS (2024)',[
     ['Set / date / time','Intervals','Vehicles','People'],
@@ -57,6 +58,20 @@ for seed,metrics in ppo['by_training_seed'].items():
     a,b=metrics['vehicle_combined_delay_proxy_s'],metrics['pedestrian_time_loss_s']
     policy_table.append([seed,f'{a["mean"]:.2f} +/- {a["sample_std_across_demand"]:.2f}',f'{b["mean"]:.2f} +/- {b["sample_std_across_demand"]:.2f}'])
 
+
+# IEEE references follow the order in which sources first appear in the text.
+citation_order=[]
+for _,paragraphs in sections:
+    for _,paragraph in paragraphs:
+        for match in re.finditer(r'\[(\d+)\]',paragraph):
+            number=int(match[1])
+            if number not in citation_order:
+                citation_order.append(number)
+citation_map={old:new for new,old in enumerate(citation_order,1)}
+def renumber(text):
+    return re.sub(r'\[(\d+)\]',lambda m:'['+str(citation_map[int(m[1])])+']',text)
+sections=[(name,[(lead,renumber(text)) for lead,text in paragraphs]) for name,paragraphs in sections]
+refs=[renumber(refs[old-1]) for old in citation_order]
 
 body=ParagraphStyle('body',fontName='Times-Roman',fontSize=10,leading=11.5,alignment=TA_JUSTIFY,spaceAfter=5)
 small=ParagraphStyle('small',parent=body,fontSize=8,leading=9.2,alignment=0,spaceAfter=3)
@@ -125,7 +140,7 @@ for section,paragraphs in sections:
             source += [r'\hline\end{tabular}\end{table}']
             markdown+=['','Table '+number+': '+cap,'','| '+' | '.join(str(c) for c in data[0])+' |','| '+' | '.join('---' for c in data[0])+' |']
             markdown += ['| '+' | '.join(str(c) for c in row)+' |' for row in data[1:]]
-source.append(r'\begin{thebibliography}{9}')
+source.append(r'\begin{thebibliography}{10}')
 for i,r in enumerate(refs,1):
     source.append(r'\bibitem{r'+str(i)+'} '+tex(reference_text(re.sub(r'^\[\d+\] ','',r))))
 source += [r'\end{thebibliography}',r'\end{document}']

@@ -14,7 +14,7 @@ The current paper is `Progress_Report_Jowel_Akkeh.pdf`; editable text and IEEEtr
 | Small-data validation limitations | Explicitly disclosed | Only selected observed periods; no time-blocked cross-validation yet; repeated episodes are not independent observed days |
 | IEEE-style, individual report | Draft complete; visually checked | Two-page, two-column PDF and editable IEEEtran source; all pages rendered and inspected |
 | Hosted repository URL | Complete; instructor access needs confirmation | https://github.com/joelles-work/toronto-traffic-signal-rl (private) |
-| Hosted W&B run links | Complete | All six training runs and the dev comparison uploaded and verified; links in report reference [7] and experiments/pilot_v1/wandb_runs.json |
+| Hosted W&B run links | Complete | All six training runs and the dev comparison uploaded and verified; links in the report references and experiments/pilot_v1/wandb_runs.json |
 
 Both hosted links are included in the report. Confirm instructor access before submission. Do not put API keys or passwords into the paper, repository, or chat.
 
