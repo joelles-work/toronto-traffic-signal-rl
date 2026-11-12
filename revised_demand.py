@@ -20,8 +20,9 @@ def write_routes(seed,target):
     result=ET.Element('routes')
     for vt in old.findall('vType'):
         result.append(vt)
-    # A constant walk speed makes the clearance assumption explicit and testable.
-    ET.SubElement(result,'vType',id='pedestrian',vClass='pedestrian',maxSpeed='1.2',speedFactor='1',speedDev='0')
+    # SUMO's default desired free-flow walking speed; not a field measurement.
+    # Signal clearance durations remain those of the documented timing plan.
+    ET.SubElement(result,'vType',id='pedestrian',vClass='pedestrian',maxSpeed='1.39',desiredMaxSpeed='1.39',speedFactor='1',speedDev='0')
     elements=[]
     vehicle_counts={}
     for v in old.findall('vehicle'):
@@ -69,7 +70,7 @@ def write_routes(seed,target):
         'vehicle_route_pairs':vehicle_counts,
         'assumptions':['Uniform arrivals within observed 15-minute intervals',
             'Pedestrian direction split approximately 50/50 per interval; source has no direction split',
-            'Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed'],
+            'Pedestrian approach/departure 0.5 m from junction; desired free-flow walking speed 1.39 m/s (SUMO default, not measured)'],
         'dictionary':'evidence/traffic_count_dictionary.json',
         'source_dev_sha256':manifest['splits']['dev']['sha256']}
     target.with_suffix('.audit.json').write_text(json.dumps(audit,indent=2))

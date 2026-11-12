@@ -3,7 +3,7 @@
   <vType id="cars" vClass="passenger" length="5" sigma="0.5" />
   <vType id="truck" vClass="truck" length="10" sigma="0.5" />
   <vType id="bus" vClass="bus" length="12" sigma="0.5" />
-  <vType id="pedestrian" vClass="pedestrian" maxSpeed="1.2" speedFactor="1" speedDev="0" />
+  <vType id="pedestrian" vClass="pedestrian" maxSpeed="1.39" desiredMaxSpeed="1.39" speedFactor="1" speedDev="0" />
   <vehicle id="v0" type="cars" depart="0.490443" departLane="best">
     <route edges="474021761 170990874 170990873#1 439232197#0 439061000 439061001 439060999#0 37229995" />
   </vehicle>

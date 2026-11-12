@@ -1,0 +1,35 @@
+{
+  "original_frozen_inputs_unchanged": true,
+  "paired_demand_checks": [
+    {
+      "seed": 11,
+      "counts_routes_departures_identical": true,
+      "vehicles": 3594,
+      "pedestrians": 518
+    },
+    {
+      "seed": 22,
+      "counts_routes_departures_identical": true,
+      "vehicles": 3594,
+      "pedestrians": 518
+    },
+    {
+      "seed": 33,
+      "counts_routes_departures_identical": true,
+      "vehicles": 3594,
+      "pedestrians": 518
+    },
+    {
+      "seed": 44,
+      "counts_routes_departures_identical": true,
+      "vehicles": 3594,
+      "pedestrians": 518
+    },
+    {
+      "seed": 55,
+      "counts_routes_departures_identical": true,
+      "vehicles": 3594,
+      "pedestrians": 518
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-11T23:44:53.573275-05:00 by Eclipse SUMO libsumo 1.28.0
+<libsumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/libsumoConfiguration.xsd">
+
+    <input>
+        <net-file value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\experiments\pilot_v1\assets\intersection.net.xml"/>
+        <route-files value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\experiments\pedestrian_freeflow_v1\demand\PPO\dev_22.rou.xml.gz"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\experiments\pedestrian_freeflow_v1\dev\ppo_303\flow_22\tripinfo.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <personinfo-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\experiments\pedestrian_freeflow_v1\dev\ppo_303\flow_22\personinfo.xml"/>
+        <statistic-output value="C:\Users\joelle11\Documents\ChatGPT\SUMO Project\experiments\pedestrian_freeflow_v1\dev\ppo_303\flow_22\statistics.xml"/>
+    </output>
+
+    <time>
+        <end value="7200"/>
+    </time>
+
+    <processing>
+        <time-to-teleport value="-1"/>
+    </processing>
+
+    <report>
+        <xml-validation value="never"/>
+        <no-warnings value="true"/>
+        <duration-log.disable value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <random_number>
+        <seed value="22"/>
+    </random_number>
+
+</libsumoConfiguration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <performance clockBegin="564611.56" clockEnd="564615.84" clockDuration="4.28" traciDuration="0.00" realTimeFactor="1025.70" vehicleUpdatesPerSecond="0.00" personUpdatesPerSecond="0.00" begin="0.00" end="4390.00" duration="4390.00"/>
+    <vehicles loaded="3594" inserted="3594" running="0" waiting="0"/>
+    <teleports total="0" jam="0" yield="0" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0" emergencyBraking="6"/>
+    <persons loaded="518" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="3594" routeLength="509.75" speed="7.74" duration="86.73" waitingTime="37.00" timeLoss="54.25" departDelay="96.45" departDelayWaiting="0.00" totalTravelTime="311714.00" totalDepartDelay="346628.79"/>
+    <pedestrianStatistics number="518" routeLength="24.99" duration="63.27" timeLoss="45.29"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>

@@ -1,23 +1,21 @@
 # Finish the hosted evidence links
 
-The paper, local source, checkpoints, and offline W&B records are ready. The user has not created the remote projects yet. An email address alone does not authorize access to the account.
+The paper, local source, checkpoints, and hosted W&B evidence are ready. Both evidence links are available; instructor access still needs confirmation.
 
-## GitHub
+## GitHub — complete
 
-Connect the GitHub integration in this chat. Then create or select a repository (suggested name: `toronto-sumo-checkin`). A private repository is suitable if the instructor can access it. Publish the prepared source and evidence, verify the repository URL, and insert that actual URL into the report. Do not use the upstream TorontoSUMONetworks URL as though it were this project's repository.
+Repository: https://github.com/joelles-work/toronto-traffic-signal-rl
 
-## Weights & Biases
+The repository is private. Confirm instructor access before submission. The report includes the repository link in reference [8].
 
-Sign in to the intended W&B account on this computer. Use the local W&B login flow if the Python SDK is not authenticated; do not paste passwords or API keys into chat or source files. The W&B entity is a username or team name, not an email address.
+## Weights & Biases â€” complete
 
-`experiments/pilot_v1/wandb_runs.json` identifies exactly six successful training records and one matched-dev comparison. Sync only those seven directories, not every directory under `wandb/`, because older baseline records and excluded failed attempts are also present. The installed CLI supports:
+All seven indexed runs were uploaded to the signed-in entity joelle1-york-university and verified as finished.
 
-```text
-.venv\Scripts\python.exe -m wandb sync --entity ENTITY --project toronto-tcs379 RUN_DIRECTORY
-```
+- Project: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379
+- Dev comparison: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/dp44s9ne
+- Each training run URL is recorded in experiments/pilot_v1/wandb_runs.json.
 
-Replace `ENTITY` with the account/team name and `RUN_DIRECTORY` with one indexed directory. Repeat for the seven indexed records. This command uploads local evidence and can create the destination project. It has not been executed because account authentication is not available yet.
+The paper includes the project and comparison links in reference [7]. Confirm instructor access before submission; no project visibility was changed during upload. GitHub is also linked in the report. No further training or test-set evaluation is needed for the check-in.
 
-After synchronization, verify the actual run and project URLs in the intended account. Insert the verified repository and W&B URLs into Section III of the paper, regenerate the PDF, and repeat the two-page layout check. Offline directory names are not substitutes for the hosted URLs required by the checklist.
-
-The check-in requires no further training or test-set evaluation at this stage.
+Additional hosted record: pedestrian free-flow sensitivity check (1.39 m/s), verified finished: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/0f8391l6 . There are now eight hosted records in total.

@@ -1,0 +1,25 @@
+{
+  "name": "pedestrian_freeflow_v1",
+  "split": "dev",
+  "test_evaluated": false,
+  "desired_walking_speed_m_s": 1.39,
+  "speedFactor": 1,
+  "speedDev": 0,
+  "source": "https://sumo.dlr.de/docs/Specification/Persons.html",
+  "interpretation": "SUMO default desired unconstrained walking speed; not measured at this site. Actual speed may be lower due to signals or interactions.",
+  "change": "Walking speed only; observed counts, exact departures and routes, signal clearance durations, vehicle parameters and checkpoints unchanged.",
+  "policy_status": "Saved policies trained at 1.2 m/s; transfer/sensitivity evaluation, not retraining at 1.39 m/s.",
+  "flow_seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "training_seeds": [
+    101,
+    202,
+    303
+  ],
+  "implementation_sha256": "0aa956606f0081a9113a0e79bf6a5a490c0b60f383bbe86844ad76a87d8a22d3"
+}

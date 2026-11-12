@@ -43,7 +43,7 @@
   "assumptions": [
     "Uniform arrivals within observed 15-minute intervals",
     "Pedestrian direction split approximately 50/50 per interval; source has no direction split",
-    "Pedestrian approach/departure 0.5 m from junction; fixed 1.2 m/s walking speed"
+    "Pedestrian approach/departure 0.5 m from junction; desired free-flow walking speed 1.39 m/s (SUMO default, not measured)"
   ],
   "dictionary": "evidence/traffic_count_dictionary.json",
   "source_dev_sha256": "6de1b6fc816ec7cc4946ed2f0b2a777e2e6dc2e60fb1d545246cb91742190b9b"

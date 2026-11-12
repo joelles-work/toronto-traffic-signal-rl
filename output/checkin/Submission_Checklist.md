@@ -13,9 +13,11 @@ The current paper is `Progress_Report_Jowel_Akkeh.pdf`; editable text and IEEEtr
 | No test-based tuning | Complete | RL code exposes train/dev only; no test controller performance measured |
 | Small-data validation limitations | Explicitly disclosed | Only selected observed periods; no time-blocked cross-validation yet; repeated episodes are not independent observed days |
 | IEEE-style, individual report | Draft complete; visually checked | Two-page, two-column PDF and editable IEEEtran source; all pages rendered and inspected |
-| Hosted repository URL | Pending | User has not created a repository; GitHub connection/publication required |
-| Hosted W&B run links | Pending | Six training runs and one evaluation record are saved offline; account sign-in and synchronization required |
+| Hosted repository URL | Complete; instructor access needs confirmation | https://github.com/joelles-work/toronto-traffic-signal-rl (private) |
+| Hosted W&B run links | Complete | All six training runs and the dev comparison uploaded and verified; links in report reference [7] and experiments/pilot_v1/wandb_runs.json |
 
-Do not submit the draft as though the two hosted-link requirements are complete. Insert verified links after repository publication and W&B sync. Do not put API keys or passwords into the paper, repository, or chat.
+Both hosted links are included in the report. Confirm instructor access before submission. Do not put API keys or passwords into the paper, repository, or chat.
 
 The previous report under `output/report/` documents an earlier prototype and is superseded for this check-in by the current paper under `output/checkin/`.
+
+Pedestrian free-flow follow-up: 35 paired dev evaluations at 1.39 m/s completed; all demand finished without collisions or teleports. Existing policies were trained at 1.2 m/s, so this is a sensitivity evaluation. Evidence: experiments/pedestrian_freeflow_v1 and https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/0f8391l6 .

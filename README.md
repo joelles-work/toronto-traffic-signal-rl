@@ -8,11 +8,11 @@ The current two-page paper is `output/checkin/Progress_Report_Jowel_Akkeh.pdf`. 
 
 The bounded DQN/PPO pilot is complete: three training seeds per algorithm, 2,048 cycle decisions per model, and matched evaluation on five dev demand seeds. DQN reproduced the fixed-time policy. PPO did not establish an improvement: its mean combined vehicle delay proxy was 211.31 s/vehicle, compared with 166.21 s/vehicle for fixed-time. The paper reports uncertainty, failures, and a revised plan. No test-period controller performance was measured.
 
-See `experiments/pilot_v1/README.md` for frozen inputs, safeguards, training settings, and reproduction commands. `experiments/pilot_v1/dev_summary.json` contains the numerical results. Six model checkpoints are under `experiments/pilot_v1/training/`. Offline W&B evidence is indexed by `experiments/pilot_v1/wandb_runs.json`.
+See `experiments/pilot_v1/README.md` for frozen inputs, safeguards, training settings, and reproduction commands. `experiments/pilot_v1/dev_summary.json` contains the numerical results. Six model checkpoints are under `experiments/pilot_v1/training/`. Hosted W&B evidence is indexed by `experiments/pilot_v1/wandb_runs.json`.
 
-`Watch_Trained_DQN.cmd` and `Watch_Trained_PPO.cmd` replay training seed 101 on dev demand seed 11 in SUMO-GUI. They do not select a best seed. The original fixed-time drawing remains available through `Open_SUMO_Intersection.cmd`.
+`Watch_Trained_DQN.cmd` and `Watch_Trained_PPO.cmd` replay training seed 101 on dev demand seed 11 in SUMO-GUI. They do not select a best seed. These trained-policy replays retain the original frozen 1.2 m/s walking speed. The current fixed-time drawing uses 1.39 m/s desired free-flow walking speed and remains available through `Open_SUMO_Intersection.cmd`.
 
-Hosted GitHub/W&B links are the remaining submission dependency. The user has not created the remote projects yet; no hosted links are fabricated in the draft. Further training or final test evaluation is outside this check-in's current scope.
+Repository: https://github.com/joelles-work/toronto-traffic-signal-rl (private; instructor access required). W&B project: https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379 . Six training runs and the dev comparison are uploaded and verified. The report contains both evidence links. Further training or final test evaluation is outside this check-in's current scope.
 
 ## Open the drawn intersection
 
@@ -98,3 +98,7 @@ These totals are transcribed from the proposal and have not yet been independent
 7. Produce reproducible metrics, uncertainty estimates, figures, and a report with model limitations.
 
 A vehicle-only prototype baseline is implemented and evaluated on dev. No calibrated Toronto model, trained policy, pedestrian delay, or test performance has been produced.
+
+## Pedestrian free-flow speed follow-up
+
+Pedestrian volumes are observed in the same 15-minute Toronto counts as vehicles; only exact arrival times and directions are modeled. `experiments/pedestrian_freeflow_v1/` records 35 matched dev evaluations at SUMO's 1.39 m/s desired free-flow walking speed. The original frozen pilot and policies remain at 1.2 m/s; this follow-up is an evaluation sensitivity check, not retraining. Mean vehicle/pedestrian delay: fixed and DQN 156.13/46.79 s; PPO 202.72/46.50 s. All cases completed all demand without collisions or teleports. `pedestrian_freeflow_check.py` reproduces the check. The current openable fixed-time simulation and `revised_demand.py` use 1.39 m/s; signal clearance timings are unchanged.

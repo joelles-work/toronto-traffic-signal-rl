@@ -4,6 +4,7 @@ __pycache__/
 wandb/
 tmp/
 external/
+tools/github-cli/
 experiments/**/runtime/
 experiments/**/demand/
 experiments/**/checkpoint.zip

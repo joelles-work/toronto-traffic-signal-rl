@@ -1,0 +1,88 @@
+{
+  "abstract": "This project uses SUMO to test whether Deep Q-Network (DQN) and Proximal Policy Optimization (PPO) can improve signal timing at Eglinton Avenue East and Danforth Road. The data now load and a fixed-time baseline runs from start to finish. On the development data, DQN matched the baseline, while PPO gave worse vehicle delay on average. This report explains the method, early results, problems found, and next steps. The code and experiment evidence are available through GitHub and W&B.",
+  "sections": [
+    [
+      "METHOD",
+      [
+        [
+          "Data and split.",
+          "I modeled Eglinton Avenue East and Danforth Road, known as signal TCS 379. Toronto's traffic counts show how many cars, trucks, buses, and pedestrians use the intersection in each 15-minute period [1]. They give turning movements and the road each pedestrian crosses, but not exact arrival times or measured delay."
+        ],
+        [
+          "Study periods.",
+          "I used June 19, 2024, from 15:00 to 17:00 for training and 17:00 to 18:00 for development, called dev below. Dev is used to compare models and guide later changes. Table I shows the split. I saved the selected row identifiers and checksums before the experiments so it can be reused. The two test periods have not been used to measure controller performance."
+        ],
+        [
+          "Building the simulation.",
+          "The road layout comes from OpenStreetMap [2] and was checked against Google Maps. Turning lanes, sidewalks, and four crossings are included, but dimensions and the exact 2024 layout remain uncalibrated. Both vehicle and pedestrian totals are observed counts. Exact arrivals and crossing directions are unavailable, so I modeled them within each 15-minute interval. Walking speed was 1.2 m/s in training; the follow-up uses SUMO's 1.39 m/s desired free-flow speed [9], not a measured site speed."
+        ],
+        [
+          "The fixed-time controller.",
+          "I first built a fixed-time controller, which repeats the same timings every cycle. Its 120-second cycle follows a simplified reading of the City's published PM timing card [3]. East-west traffic has 53 seconds of green: 31 seconds of pedestrian WALK followed by 22 seconds for people already crossing to finish. North-south traffic has 42 seconds of green, including 8 seconds of WALK and 34 seconds of crossing clearance. The plan also includes a 7-second east-west left-turn advance and the documented yellow and all-red intervals. Detector-based calls are not included."
+        ],
+        [
+          "What the learning controllers change.",
+          "I then trained DQN and PPO to adjust the time given to the two roads. At the start of each cycle, the controller observes vehicle queues, vehicles waiting to enter the model, and pedestrian waiting. It chooses an east-west WALK time of 7, 19, 25, 31, or 32 seconds. North-south WALK receives the rest of a 39-second total. For example, choosing 31 seconds leaves 8 seconds for north-south WALK and reproduces the baseline. The cycle stays at 120 seconds. Yellow, all-red, and pedestrian clearance times stay fixed, and the controller cannot skip a stage."
+        ],
+        [
+          "Training setup.",
+          "Both methods use Stable-Baselines3 [4]. A custom Python environment connects them to SUMO through its TraCI-compatible libsumo interface [5]. This keeps the full signal sequence, which the default SUMO-RL phase-switching setup would change. The reward becomes lower when more vehicles or pedestrians are waiting, including vehicles held outside the model. Waiting is counted every five seconds, with equal weight for each road user. A penalty is added if trips are unfinished when an episode ends. Each episode uses the full two-hour training period and allows up to one extra hour for traffic to clear."
+        ],
+        [
+          "Model settings.",
+          "This was a small pilot with one preset configuration per algorithm and one documented baseline plan. I trained each method three times, using seeds 101, 202, and 303, for 2,048 cycle decisions per run. Table II lists the settings. Inputs use fixed scales rather than values fitted from dev. Runs used Windows, Python 3.14.6, an Intel CPU with 20 logical processors, and PyTorch 2.15.0; no GPU was used."
+        ],
+        [
+          "How delay is measured.",
+          "For vehicles, I add two SUMO outputs: time lost while traveling below the ideal speed, and time spent waiting to enter the network [6]. I call this sum vehicle delay in the results below. Including entry waiting matters because queues can extend beyond the short modeled roads. Pedestrian delay is the time lost during the modeled walk, reported separately. These are simulated delay measures, not observed delay at the real intersection. Every run starts with an empty network and no warm-up period. I also record unfinished trips, collisions, and emergency braking."
+        ]
+      ]
+    ],
+    [
+      "FIRST EXPERIMENTS",
+      [
+        [
+          "Baseline and checks.",
+          "The baseline now runs from the traffic-count files to the final delay outputs. I repeated the dev simulation using five random seeds: 11, 22, 33, 44, and 55. All 3,594 vehicles and 518 pedestrians finished in every run. Average vehicle delay was 166.21 +/- 10.16 seconds per vehicle. Of that average, 55.12 seconds occurred inside the network and 111.09 seconds was waiting to enter. Pedestrian delay was 46.93 +/- 1.43 seconds per person. Here, +/- gives the sample standard deviation across the five runs."
+        ],
+        [
+          "Checking the signals.",
+          "Before comparing the learning methods, I checked that the new Python interface reproduced the fixed-time result exactly. I also checked every allowed timing choice for a complete cycle. The saved signal trace matched the expected timings for 60 cycles, and all 518 pedestrians used the intended crossing. No conflicting movements were given protected green together in SUMO's conflict checks."
+        ],
+        [
+          "Pilot comparison.",
+          "I evaluated each of the six trained models on the same five dev traffic patterns used for the baseline. This gave 15 evaluations for DQN and 15 for PPO. I used the last saved model from each training run rather than picking a favorable checkpoint. Table III shows the average results. DQN chose the baseline's 31/8-second WALK split in every dev cycle, so its delays were exactly the same as fixed-time control."
+        ],
+        [
+          "Differences between training runs.",
+          "PPO did not give a consistent improvement. Across its three training runs, average vehicle delay was 211.31 seconds, with a standard deviation of 52.60 seconds between the run means. One run did better than the baseline, but two did worse. Reporting only the best run would therefore be misleading. PPO's average pedestrian delay was slightly lower, at 46.61 seconds per person."
+        ],
+        [
+          "How certain are these differences?",
+          "I checked the paired results by resampling the three training seeds and five traffic seeds 4,000 times. This bootstrap check gave a 95% interval from -12.28 to +87.64 seconds for PPO's vehicle-delay difference from fixed-time control. Negative values mean less delay; positive values mean more delay. The pedestrian interval was -0.92 to +0.24 seconds. Both ranges include zero, so this pilot does not show a clear improvement. Across all 35 dev evaluations, there were no collisions or teleports, although emergency braking was recorded. These repeated simulations use the same observed dev hour; they are not evidence from additional traffic days."
+        ],
+        [
+          "Free-flow speed check.",
+          "I reran all 35 dev evaluations using 1.39 m/s desired free-flow walking speed [9]. Counts, arrivals, routes, clearance times, and saved models stayed fixed. Fixed-time and DQN both gave 156.13 s/vehicle and 46.79 s/person; fixed-time standard deviations were 6.58 and 1.41 seconds across five demand seeds. PPO gave 202.72 s/vehicle and 46.50 s/person. These policies were trained at 1.2 m/s, so this is a sensitivity check, not retraining. It again shows no clear learning benefit."
+        ]
+      ]
+    ],
+    [
+      "EVIDENCE, PROBLEMS, AND NEXT STEPS",
+      [
+        [
+          "Saved evidence.",
+          "The GitHub repository contains code, saved splits, six trained models, and results [8]. W&B contains six training runs, the original dev comparison [7], and the 1.39 m/s sensitivity check [9]. All eight uploaded records were verified."
+        ],
+        [
+          "Problems found and corrected.",
+          "The checks found two problems. First, 62 south-side pedestrians used a nearby crossing instead of the signalized crossing. I removed that shortcut and checked their routes again. An early training attempt also stopped because a diagnostic and training run shared a temporary file. I separated their output files and restarted training. The failed attempt was saved but excluded from the results."
+        ],
+        [
+          "Revised plan.",
+          "This check-in shows that the data load and the baseline runs, but the first learning experiment has not shown a clear benefit. Before submission, I need to confirm that the instructor can access both evidence links. Further work should investigate PPO's timing choices and the large entry queues. Changes to the reward or training settings will be compared on dev. Field checks and validation across separate time blocks remain unfinished. The test periods will stay unused until the final model and settings are chosen."
+        ]
+      ]
+    ]
+  ]
+}
