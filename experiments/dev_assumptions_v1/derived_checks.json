@@ -1,0 +1,221 @@
+{
+  "city_source": "https://www.toronto.ca/wp-content/uploads/2020/08/945f-TS_Traffic-Management_Pedestrian-Timing-Guidelines-2020.pdf",
+  "document_version": "May 6, 2019; version 2.0",
+  "interpretation": "Conditional check against Type A time inequalities using modeled crossing lengths; not a field survey, accessibility assessment or certification. Faster simulation desired walking speed is not substituted into the City clearance equations.",
+  "checks": [
+    {
+      "ew_walk_s": 7,
+      "leg": "n",
+      "walk_s": 7,
+      "modeled_crossing_length_m": 16.0,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 7,
+      "leg": "e",
+      "walk_s": 32,
+      "modeled_crossing_length_m": 21.6,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 7,
+      "leg": "s",
+      "walk_s": 7,
+      "modeled_crossing_length_m": 12.8,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 7,
+      "leg": "w",
+      "walk_s": 32,
+      "modeled_crossing_length_m": 23.99,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 19,
+      "leg": "n",
+      "walk_s": 19,
+      "modeled_crossing_length_m": 16.0,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 19,
+      "leg": "e",
+      "walk_s": 20,
+      "modeled_crossing_length_m": 21.6,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 19,
+      "leg": "s",
+      "walk_s": 19,
+      "modeled_crossing_length_m": 12.8,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 19,
+      "leg": "w",
+      "walk_s": 20,
+      "modeled_crossing_length_m": 23.99,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 25,
+      "leg": "n",
+      "walk_s": 25,
+      "modeled_crossing_length_m": 16.0,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 25,
+      "leg": "e",
+      "walk_s": 14,
+      "modeled_crossing_length_m": 21.6,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 25,
+      "leg": "s",
+      "walk_s": 25,
+      "modeled_crossing_length_m": 12.8,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 25,
+      "leg": "w",
+      "walk_s": 14,
+      "modeled_crossing_length_m": 23.99,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 31,
+      "leg": "n",
+      "walk_s": 31,
+      "modeled_crossing_length_m": 16.0,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 31,
+      "leg": "e",
+      "walk_s": 8,
+      "modeled_crossing_length_m": 21.6,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 31,
+      "leg": "s",
+      "walk_s": 31,
+      "modeled_crossing_length_m": 12.8,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 31,
+      "leg": "w",
+      "walk_s": 8,
+      "modeled_crossing_length_m": 23.99,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 32,
+      "leg": "n",
+      "walk_s": 32,
+      "modeled_crossing_length_m": 16.0,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 32,
+      "leg": "e",
+      "walk_s": 7,
+      "modeled_crossing_length_m": 21.6,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 32,
+      "leg": "s",
+      "walk_s": 32,
+      "modeled_crossing_length_m": 12.8,
+      "fixed_clearance_s": 22,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    },
+    {
+      "ew_walk_s": 32,
+      "leg": "w",
+      "walk_s": 7,
+      "modeled_crossing_length_m": 23.99,
+      "fixed_clearance_s": 34,
+      "type_A_minimum_walk": true,
+      "type_A_fdw_traversal": true,
+      "type_A_total_crossing": true
+    }
+  ],
+  "training_only_pending_bounds": {
+    "n": 1280,
+    "s": 1262,
+    "e": 2038,
+    "w": 2136
+  },
+  "dev_generated_by_arm": {
+    "n": 675,
+    "s": 681,
+    "e": 1044,
+    "w": 1194
+  },
+  "pending_bound_derivation": "Pending vehicles assigned to an origin arm cannot exceed all vehicles generated from that arm within an episode. The candidate divisors are full training-period counts; they bound every possible train queue, and the dev per-arm totals are smaller.",
+  "candidate_status": "Proposed normalization change only; current models were trained with divisor 500 and have not been retrained with these divisors."
+}

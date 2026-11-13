@@ -37,6 +37,10 @@ refs.append('[8] J. Akkeh, "Toronto traffic signal RL check-in," GitHub. <link h
 refs.append('[9] Eclipse SUMO, "Persons: desired maximum walking speed." <link href="https://sumo.dlr.de/docs/Specification/Persons.html" color="blue">Default 1.39 m/s</link>, accessed Nov. 12, 2026.')
 refs.append('[10] TorontoSUMONetworks contributors, "TorontoSUMONetworks," GitHub, revision 35dee7b. <link href="https://github.com/Jahandad-Baloch/TorontoSUMONetworks" color="blue">Source project</link>, accessed Nov. 11, 2026.')
 refs.append('[11] A. Raffin et al., "Stable-Baselines3: Reliable Reinforcement Learning Implementations," JMLR, vol. 22, no. 268, pp. 1-8, 2021. <link href="https://jmlr.org/papers/v22/20-1364.html" color="blue">Software paper</link>.')
+refs.append('[12] P. Henderson et al., "Deep Reinforcement Learning that Matters," AAAI, 2018. <link href="https://arxiv.org/abs/1709.06560" color="blue">Reproducibility and random seeds</link>.')
+refs.append('[13] J. Ault and G. Sharon, "Reinforcement Learning Benchmarks for Traffic Signal Control," NeurIPS Datasets and Benchmarks, 2021. <link href="https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/f0935e4cd5920aa6c7c996a5ee53a70f-Paper-round1.pdf" color="blue">Five-seed evaluation</link>.')
+refs.append('[14] City of Toronto, "Pedestrian Timing at Signalised Intersections," version 2.0, May 6, 2019, sec. 2.2. <link href="https://www.toronto.ca/wp-content/uploads/2020/08/945f-TS_Traffic-Management_Pedestrian-Timing-Guidelines-2020.pdf" color="blue">Usual-conditions WALK minimum</link>.')
+refs.append('[15] J. Akkeh, "Assumption/source register and development validation," Nov. 13, 2026. <link href="https://github.com/joelles-work/toronto-traffic-signal-rl/blob/master/output/literature/Assumption_and_Source_Register.md" color="blue">All assumptions and sources</link>; <link href="https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/wcirpdsc" color="blue">25-case validation</link>.')
 tables={}
 tables['Study periods.']=('I','STUDY PERIODS AND COUNTS (2024)',[
     ['Set / date / time','Intervals','Vehicles','People'],
@@ -77,7 +81,7 @@ def renumber(text):
 sections=[(name,[(lead,renumber(text)) for lead,text in paragraphs]) for name,paragraphs in sections]
 refs=[renumber(refs[old-1]) for old in citation_order]
 
-body=ParagraphStyle('body',fontName='Times-Roman',fontSize=10,leading=11.5,alignment=TA_JUSTIFY,spaceAfter=5)
+body=ParagraphStyle('body',fontName='Times-Roman',fontSize=10,leading=11.5,alignment=TA_JUSTIFY,spaceAfter=4)
 small=ParagraphStyle('small',parent=body,fontSize=8,leading=9.2,alignment=0,spaceAfter=3)
 heading=ParagraphStyle('heading',parent=body,alignment=TA_CENTER,spaceBefore=7,spaceAfter=6,keepWithNext=True)
 caption=ParagraphStyle('caption',parent=small,alignment=TA_CENTER,spaceBefore=5,spaceAfter=5,keepWithNext=True)
@@ -115,7 +119,7 @@ def first(canvas,doc):
     for text in ['Jowel Akkeh','Department of Civil Engineering, Lassonde School of Engineering','York University, Toronto, Canada']:
         canvas.setFont('Times-Roman',10);canvas.drawCentredString(W/2,y,text);y-=12
     canvas.setFont('Times-Italic',9)
-    canvas.drawCentredString(W/2,y-3,'GS/ESS 5420 - Individual check-in - November 12, 2026')
+    canvas.drawCentredString(W/2,y-3,'GS/ESS 5420 - Individual check-in - November 13, 2026')
     footer(canvas,doc)
 doc=BaseDocTemplate(str(OUT/'Progress_Report_Jowel_Akkeh.pdf'),pagesize=(W,H),title=title,author='Jowel Akkeh')
 first_frames=[Frame(left+i*(col+gap),bottom,col,554,id=f'f{i}',leftPadding=0,rightPadding=0,topPadding=0,bottomPadding=0) for i in range(2)]
@@ -130,7 +134,7 @@ def plain(s):return html.unescape(re.sub('<[^>]+>','',s))
 def tex(s):
     return ''.join({'&':r'\&','%':r'\%','$':r'\$','#':r'\#','_':r'\_','{':r'\{','}':r'\}'}.get(c,c) for c in plain(s)).replace('+/-',r'$\pm$')
 source=[r'\documentclass[conference]{IEEEtran}',r'\usepackage[T1]{fontenc}',r'\usepackage{url}',r'\begin{document}',r'\title{'+tex(title)+'}',r'\author{\IEEEauthorblockN{Jowel Akkeh}\IEEEauthorblockA{Department of Civil Engineering, Lassonde School of Engineering\\York University, Toronto, Canada}}',r'\maketitle',r'\begin{abstract}'+tex(abstract)+r'\end{abstract}']
-markdown=['# '+title,'','Jowel Akkeh - GS/ESS 5420 - November 12, 2026','',abstract]
+markdown=['# '+title,'','Jowel Akkeh - GS/ESS 5420 - November 13, 2026','',abstract]
 for section,paragraphs in sections:
     source.append(r'\section{'+tex(section)+'}')
     markdown+=['','## '+section]
@@ -144,7 +148,7 @@ for section,paragraphs in sections:
             source += [r'\hline\end{tabular}\end{table}']
             markdown+=['','Table '+number+': '+cap,'','| '+' | '.join(str(c) for c in data[0])+' |','| '+' | '.join('---' for c in data[0])+' |']
             markdown += ['| '+' | '.join(str(c) for c in row)+' |' for row in data[1:]]
-source.append(r'\begin{thebibliography}{11}')
+source.append(r'\begin{thebibliography}{15}')
 for i,r in enumerate(refs,1):
     source.append(r'\bibitem{r'+str(i)+'} '+tex(reference_text(re.sub(r'^\[\d+\] ','',r))))
 source += [r'\end{thebibliography}',r'\end{document}']

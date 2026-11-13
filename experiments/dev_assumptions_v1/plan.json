@@ -1,0 +1,37 @@
+{
+  "name": "dev_assumptions_v1",
+  "status": "declared before this validation",
+  "split": "dev",
+  "test_evaluated": false,
+  "flow_seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "constant_actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "pedestrian_reward_weights": [
+    0,
+    0.5,
+    1,
+    2
+  ],
+  "source_experiment": "experiments/freeflow_pilot_v1",
+  "source_experiment_sha256": "3b7691f2edf1e23950a1d0fba07ae8546c63a913f2f11465ca5affeae98dcd09",
+  "implementation_sha256": "bc7cdb81fe74e3a3025ad795260987d79b7daed1c7a503485e8b9c9cff322a95",
+  "protocol": "25 new constant-action evaluations at 1.39 m/s. All five timing plans and all five paired flow seeds are reported. Source frozen inputs and existing policies remain unchanged.",
+  "questions": [
+    "Does a simple constant allowed plan improve on the documented 31/8 baseline on dev?",
+    "Are any of the 20 numerical observation features clipped above their fixed upper scale?",
+    "Does rescoring the same completed trajectories with pedestrian weights 0, 0.5, 1 or 2 change the reward-preferred constant plan?"
+  ],
+  "ranking_rules": "Only plans with all demand completed and no collisions/teleports receive all-demand delay rankings. Report vehicle and pedestrian metrics separately; no combined-delay winner is assumed. Paired flow-seed intervals are exploratory dev checks, not held-out confirmation or multiplicity-corrected tests.",
+  "limitations": "Constant plans do not establish optimal adaptive actions; five repeats are one observed dev hour. Rescoring rewards does not measure the effect of retraining a controller with new weights. No new hyperparameter or convergence claim follows."
+}

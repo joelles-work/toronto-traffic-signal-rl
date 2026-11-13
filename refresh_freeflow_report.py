@@ -49,11 +49,46 @@ def main():
             ['Revised plan.', "Further development will examine PPO's timing choices, entry queues, and the reward definition on dev. One final test period and additional development periods would support broader model checks after a documented split revision; the results here retain the original split. Validation against additional observed periods and field conditions remains future work, and the test periods stay unused until the final model is selected."],
         ]],
     ]
+    for _, paragraphs in sections:
+        for item in paragraphs:
+            if item[0] == 'Study periods.':
+                item[1] = item[1][:-1] + ' [8].'
+            elif item[0] == 'Model settings.':
+                item[1] += ' Seeded repetitions follow RL reproducibility guidance [12]; the protocol [8] and source register [15] identify every numerical preset and its evidence.'
+            elif item[0] == 'Building the simulation.':
+                item[1] = item[1].replace('pedestrian directions balanced across each crossing.', 'pedestrian directions balanced across each crossing as declared in the protocol [8].')
+            elif item[0] == 'What the learning controllers change.':
+                item[1] += " The grid is declared in the protocol [8], with a 7-s floor from the City's usual-conditions guidance [14]."
+            elif item[0] == 'Training setup.':
+                item[1] = item[1][:-1] + ' [8].'
+            elif item[0] == 'Baseline and checks.':
+                item[1] = item[1].replace('the same observed counts for every controller.', 'the same observed counts for every controller [8], using five-run evaluation with benchmark precedent [13].')
+            elif item[0] == 'Saved evidence.':
+                item[1] += ' The full assumption/source register and follow-up dev validation are also linked [15].'
+            elif item[0] == 'Revised plan.':
+                item[1] = 'The next revision should replace the pending-entry scale with train-derived origin-count bounds and retrain before evaluating its effect [15]. Further work will examine training length, reward design and an adaptive baseline on dev. Additional development periods require a documented split revision; test periods remain unused until final model selection.'
+        if _ == 'FIRST EXPERIMENTS':
+            paragraphs.append(['Small validation study.', 'A dev-only follow-up tested all five timing choices as constant plans on five shared traffic patterns [15]. The 32/7 plan gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person, while 7/32 left 540 vehicles unfinished across five cases. The west pending-entry feature clipped in 29 of 1,149 decision observations, all in those incomplete cases. Reward weights 0, 0.5, 1 and 2 preferred the same completed constant plan when rescoring these trajectories; this does not measure retraining with those weights.'])
+    compact = {
+        'How delay is measured.': "Vehicle delay combines SUMO timeLoss and departDelay, retaining queues outside the modeled approaches [6]. Pedestrian delay uses walking timeLoss, while completion, collisions, teleports and emergency braking are recorded alongside both measures.",
+        'Differences between training runs.': f"PPO averaged {vp['mean']:.2f} s/vehicle and {pp['mean']:.2f} s/person, with a between-training-run vehicle-delay standard deviation of {vp['sample_std_of_five_demand_seed_means']:.2f} seconds; {better} runs had lower vehicle delay than fixed-time. Possible explanations include the short training budget and a reward based on waiting rather than travel delay, but neither explanation has been tested separately.",
+        'Existing software.': "TorontoSUMONetworks provides a reference for Toronto data and SUMO network preparation [10]. Study-specific scripts build the intersection, convert counts into trips and apply the signal plan, while Stable-Baselines3 [11] supplies DQN/PPO implementations paired with traffic/pedestrian observations, timing choices, a waiting reward, and matched evaluation scripts [8].",
+        'Model settings.': "Each algorithm used seeds 101, 202 and 303 with 2,048 timing decisions per run [8]. Seeded repetitions assess variability [12]; these integer identifiers were fixed in advance. Table II explains the shared presets, used without a parameter search [4]. Runs used Windows, Python 3.14.6 and an Intel CPU with 20 logical processors, without a GPU. The source register documents every preset and evidence limit [15].",
+        'Building the simulation.': "The OpenStreetMap layout [2] was checked against Google Maps and includes turning lanes, sidewalks and four crossings. Observed vehicle and pedestrian counts come from Toronto Open Data [1]; within-interval arrivals and balanced walking directions follow the declared protocol [8]. Training and evaluation use SUMO's 1.39 m/s desired free-flow pedestrian speed [9].",
+        'Checking the signals.': "Before training, the Python interface reproduced fixed-time results exactly and passed checks for all five timing choices. Earlier traces matched the signal sequence for 60 cycles and the intended crossing for all 518 pedestrians, with no conflicting protected greens in SUMO's checks [8].",
+        'Pilot comparison.': "The six final saved models were evaluated on the baseline's five traffic patterns, giving 15 evaluations per algorithm. Table III reports means. " + dqn_sentence,
+        'Baseline and checks.': f"Traffic seeds 11, 22, 33, 44 and 55 were fixed in the protocol [8] for paired comparisons, with five-run benchmark precedent [13]. Results use mean +/- sample standard deviation across these patterns. All 3,594 vehicles and 518 pedestrians finished each fixed-time run, giving {vf['mean']:.2f} +/- {vf['sample_std']:.2f} s/vehicle and {pf['mean']:.2f} +/- {pf['sample_std']:.2f} s/person.",
+        'Small validation study.': "A dev-only check tested the five timing choices as constant plans on five shared traffic patterns [15]. The 32/7 plan gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person; 7/32 left 540 vehicles unfinished. Pending-entry observations clipped 29 times, all in incomplete cases. Rescoring pedestrian weights 0, 0.5, 1 and 2 preferred the same completed constant plan, without testing retraining at these weights.",
+    }
+    for _, paragraphs in sections:
+        for item in paragraphs:
+            if item[0] in compact:
+                item[1] = compact[item[0]]
     method = sections[0][1]
     settings = next(item for item in method if item[0] == 'Model settings.')
     method.remove(settings)
     method.insert(3, settings)
-    abstract = "This study compares Deep Q-Network (DQN), Proximal Policy Optimization (PPO), and fixed-time signal control at Eglinton Avenue East and Danforth Road using SUMO and observed Toronto vehicle and pedestrian counts. Training and evaluation use 1.39 m/s pedestrian free-flow speed, with six trained models evaluated on five shared development traffic patterns. " + finding + " The check-in documents the method, results, implementation problems, and next steps, with GitHub and W&B evidence."
+    abstract = "This study compares Deep Q-Network (DQN), Proximal Policy Optimization (PPO), and fixed-time signal control at Eglinton Avenue East and Danforth Road using SUMO and observed Toronto vehicle and pedestrian counts. Training and evaluation use 1.39 m/s pedestrian free-flow speed, with six trained models evaluated on five shared development traffic patterns. " + finding + " Methods, validation and code are documented with linked evidence."
     (ROOT / 'output/checkin/report_text.json').write_text(json.dumps({'abstract': abstract, 'sections': sections}, indent=2), encoding='utf-8')
 
 

@@ -21,3 +21,5 @@ Both hosted links are included in the report. Confirm instructor access before s
 The previous report under `output/report/` documents an earlier prototype and is superseded for this check-in by the current paper under `output/checkin/`.
 
 Current report: training and evaluation both use 1.39 m/s pedestrian desired free-flow speed in experiments/freeflow_pilot_v1. Six new trained models and 35 matched dev cases are complete; all seven records are verified online. Earlier speed experiments are archived. The first seed-202 logging failure was excluded and restarted with unchanged settings.
+
+November 13 validation/source update: the paper includes citations for repeated training seeds and five-run traffic evaluation, City usual-conditions WALK guidance, and the complete assumption/source register. A separate 25-case dev study is uploaded and reported, including incomplete demand and clipping. Proposed normalization changes are not relabeled as current trained-model settings.

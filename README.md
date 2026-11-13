@@ -114,3 +114,9 @@ The targeted review dated November 13, 2026 compares ten research papers and aud
 - [Source links, verification locations and access limits](output/literature/sources_and_verification.json)
 
 The review includes paper-ready cited wording. Its main gaps for future development are training-budget adequacy, algorithm-specific tuning, the exact action grid, reward/normalization sensitivity, additional adaptive baselines, and independent observed traffic periods.
+
+## Small dev validation and current source register
+
+A 25-case constant-plan follow-up tests action choices, observation clipping and reward-weight sensitivity on dev only. [Validation summary](output/literature/Dev_Validation_and_Assumption_Sources.pdf) and [all assumptions with source citations](output/literature/Assumption_and_Source_Register.md) are available, including a cited seed statement and official City guidance for the conditional WALK minimum. The source register supersedes the initial review where these new checks add evidence.
+
+[W&B validation](https://forge.coreweave.com/wandb/joelle1-york-university/toronto-tcs379/runs/wcirpdsc) records all 25 cases, including incomplete demand. A train-derived replacement for the pending-entry scale is proposed, but has not been adopted into the frozen trained models. See `experiments/dev_assumptions_v1/README.md`.
