@@ -1,0 +1,188 @@
+{
+  "review_date": "2026-11-13",
+  "scope": "Targeted method comparison, not exhaustive systematic review",
+  "experiment": "experiments\\freeflow_pilot_v1",
+  "experiment_sha256": "3b7691f2edf1e23950a1d0fba07ae8546c63a913f2f11465ca5affeae98dcd09",
+  "summary_sha256": "e4cf1eb175d4f73451d252e73867ed12e43932f1c758b145af4a12909c5de13d",
+  "source_records": [
+    {
+      "id": "P1",
+      "authors": "G. Han et al. (2022)",
+      "title": "Deep Reinforcement Learning for Intersection Signal Control Considering Pedestrian Behavior",
+      "citation": "Electronics 11(21), 3519. DOI: 10.3390/electronics11213519.",
+      "url": "https://www.mdpi.com/2079-9292/11/21/3519",
+      "verified_locations": "Sections 3.2.2-3.2.3; Tables 2 and 4. Publisher-indexed methods and tables inspected; direct page intermittently rate-limited.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P2",
+      "authors": "L. Wang, Z. Ma, C. Dong and H. Wang (2023)",
+      "title": "Human-centric multimodal deep (HMD) traffic signal control",
+      "citation": "IET Intelligent Transport Systems 17, 744-753. DOI: 10.1049/itr2.12300. Online first: October 2022.",
+      "url": "https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/itr2.12300",
+      "verified_locations": "Sections 4.1, 4.3 and 5.1; Table 1. Full publisher methods inspected.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P3",
+      "authors": "Y. Fu, Z. Cheng, B. Fang and X. Di (2026)",
+      "title": "PedSLight: pedestrian and safety-aware reinforcement learning for mixed pedestrian-vehicle signal control",
+      "citation": "Frontiers in Future Transportation 7, 1953597. Published September 22, 2026. DOI: 10.3389/ffutr.2026.1953597.",
+      "url": "https://www.frontiersin.org/journals/future-transportation/articles/10.3389/ffutr.2026.1953597/full",
+      "verified_locations": "Sections 4.1, 4.3 and 5.1-5.4; Table 2, PDF printed page 7. Learning rate verified in PDF text because HTML omitted its equation.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P4",
+      "authors": "J. Ault and G. Sharon (2021)",
+      "title": "Reinforcement Learning Benchmarks for Traffic Signal Control",
+      "citation": "NeurIPS Datasets and Benchmarks, RESCO.",
+      "url": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/f0935e4cd5920aa6c7c996a5ee53a70f-Paper-round1.pdf",
+      "verified_locations": "Sections 3.4 and 4.1-4.3; Figure 4. Full proceedings PDF inspected.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P5",
+      "authors": "A. Cabrejas-Egea, S. Howell, M. Knutins and C. Connaughton (2020)",
+      "title": "Assessment of Reward Functions for Reinforcement Learning Traffic Signal Control under Real-World Limitations",
+      "citation": "Author manuscript accepted at IEEE SMC 2020; arXiv:2008.11634v2.",
+      "url": "https://arxiv.org/abs/2008.11634",
+      "verified_locations": "Sections 4.1-4.4 and 6.1-6.2; author full text at https://arxiv.org/html/2008.11634.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P6",
+      "authors": "B. Koohy, S. Stein, E. Gerding and G. Manla (2022)",
+      "title": "Reward Function Design in Multi-Agent Reinforcement Learning for Traffic Signal Control",
+      "citation": "ATT 2022 workshop proceedings, CEUR-WS volume 3173.",
+      "url": "https://ceur-ws.org/Vol-3173/1.pdf",
+      "verified_locations": "Section 5, printed page 7; Sections 6-7. Full proceedings PDF inspected.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P7",
+      "authors": "G. Zheng et al. (2019)",
+      "title": "Diagnosing Reinforcement Learning for Traffic Signal Control",
+      "citation": "Author preprint arXiv:1905.04716; cited as the inspected preprint, not using its placeholder manuscript DOI.",
+      "url": "https://arxiv.org/abs/1905.04716",
+      "verified_locations": "Sections 4.3, 5.1 and 5.7; full author text at https://arxiv.org/html/1905.04716.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P8",
+      "authors": "K. Othman, X. Wang, A. Shalaby and B. Abdulhai (2025)",
+      "title": "Multimodal adaptive traffic signal control: A decentralized multiagent reinforcement learning approach",
+      "citation": "Multimodal Transportation 4(1), 100190. DOI: 10.1016/j.multra.2025.100190.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2772586325000048",
+      "verified_locations": "Publisher-indexed Sections 3.3-3.4 and Table 1 inspected. Direct full-page retrieval returned 403; only verified indexed details are used.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P9",
+      "authors": "P. Henderson et al. (2018)",
+      "title": "Deep Reinforcement Learning that Matters",
+      "citation": "Proceedings of AAAI 2018.",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/11694/11553",
+      "verified_locations": "Primary conference paper; methodology and reproducibility discussion.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "P10",
+      "authors": "R. Agarwal et al. (2021)",
+      "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+      "citation": "NeurIPS 34.",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/f514cec81cb148559cf475e7426eed5e-Paper.pdf",
+      "verified_locations": "Primary conference paper; few-run uncertainty and interval-estimation methodology.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D1",
+      "authors": "A. Raffin et al. (2021)",
+      "title": "Stable-Baselines3: Reliable Reinforcement Learning Implementations",
+      "citation": "JMLR 22(268), 1-8.",
+      "url": "https://jmlr.org/papers/v22/20-1364.html",
+      "verified_locations": "Software paper; shared interface and tested reference implementations.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D2",
+      "authors": "Stable-Baselines3",
+      "title": "PPO documentation",
+      "citation": "Version 2.9.2, checked November 12, 2026.",
+      "url": "https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html",
+      "verified_locations": "Parameter defaults, MlpPolicy and supported action spaces; checked against the installed saved model.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D3",
+      "authors": "Stable-Baselines3",
+      "title": "DQN documentation",
+      "citation": "Version 2.9.2, checked November 12, 2026.",
+      "url": "https://stable-baselines3.readthedocs.io/en/master/modules/dqn.html",
+      "verified_locations": "Parameter defaults, vanilla DQN and discrete action support; checked against the installed saved model.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D4",
+      "authors": "Eclipse SUMO",
+      "title": "Persons specification",
+      "citation": "Checked November 12, 2026.",
+      "url": "https://sumo.dlr.de/docs/Specification/Persons.html",
+      "verified_locations": "Person-type desired maximum speed and walking model.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D5",
+      "authors": "Eclipse SUMO",
+      "title": "TripInfo output",
+      "citation": "Checked November 12, 2026.",
+      "url": "https://sumo.dlr.de/docs/Simulation/Output/TripInfo.html",
+      "verified_locations": "timeLoss, departDelay, unfinished-trip handling and person walk outputs.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D6",
+      "authors": "City of Toronto",
+      "title": "Traffic volumes - multimodal intersection turning movement counts",
+      "citation": "Toronto Open Data Portal; frozen 2024 rows used in the pilot.",
+      "url": "https://open.toronto.ca/dataset/traffic-volumes-at-intersections-for-all-modes/",
+      "verified_locations": "Local frozen data, row indices and source dictionary audited; not a research paper.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D7",
+      "authors": "City of Toronto",
+      "title": "Current Signal Timing Information: TCS 379",
+      "citation": "October 31, 2019, reproduced in WSP transportation report, February 2020.",
+      "url": "https://320mccowan.ca/wp-content/uploads/2020/04/TransportationReport_320McCowan.pdf",
+      "verified_locations": "PDF page 147; local phase and runtime validation records. Site-specific source, not a universal timing standard.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D8",
+      "authors": "TorontoSUMONetworks contributors",
+      "title": "TorontoSUMONetworks",
+      "citation": "GitHub revision 35dee7bf8c9963c2105c17befb673be9a9ce597d.",
+      "url": "https://github.com/Jahandad-Baloch/TorontoSUMONetworks",
+      "verified_locations": "Downloaded source and README; starting software reference, not a peer-reviewed validation of our implementation.",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "D9",
+      "authors": "K. Wunderlich, M. Vasudevan and P. Wang / FHWA (2019)",
+      "title": "Traffic Analysis Toolbox Volume III: Guidelines for Applying Traffic Microsimulation Modeling Software",
+      "citation": "2019 update, FHWA-HOP-18-036.",
+      "url": "https://highways.dot.gov/media/88726",
+      "verified_locations": "Chapters 2, 5 and 6; Appendix A printed page 91 uses a warm-up and post-peak completion period. The example duration is not a universal prescription.",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "screened_not_used_for_parameter_claims": [
+    {
+      "title": "An adaptive traffic signal control scheme with Proximal Policy Optimization based on deep reinforcement learning for a single intersection",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0952197625004403",
+      "reason": "Full-text retrieval blocked; no unverified hyperparameter values used."
+    }
+  ],
+  "implementation_audit": "Frozen configuration, rl_freeflow/environment.py and saved DQN/PPO policies inspected. No training settings changed and no additional experiments run for this review."
+}

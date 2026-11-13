@@ -104,3 +104,13 @@ A vehicle-only prototype baseline is implemented and evaluated on dev. No calibr
 ## Pedestrian free-flow speed follow-up
 
 Pedestrian volumes are observed in the same 15-minute Toronto counts as vehicles; only exact arrival times and directions are modeled. `experiments/pedestrian_freeflow_v1/` records 35 matched dev evaluations at SUMO's 1.39 m/s desired free-flow walking speed. The original frozen pilot and policies remain at 1.2 m/s; this follow-up is an evaluation sensitivity check, not retraining. Mean vehicle/pedestrian delay: fixed and DQN 156.13/46.79 s; PPO 202.72/46.50 s. All cases completed all demand without collisions or teleports. `pedestrian_freeflow_check.py` reproduces the check. The current openable fixed-time simulation and `revised_demand.py` use 1.39 m/s; signal clearance timings are unchanged.
+
+## Literature review and method justification
+
+The targeted review dated November 13, 2026 compares ten research papers and audits the existing design and hyperparameters against primary literature, software defaults and site sources. It distinguishes published precedent from practical pilot choices and does not change the frozen experiment.
+
+- [Readable review and full method audit](output/literature/Literature_Review_and_Method_Justification.pdf)
+- [Editable review](output/literature/Literature_Review_and_Method_Justification.md)
+- [Source links, verification locations and access limits](output/literature/sources_and_verification.json)
+
+The review includes paper-ready cited wording. Its main gaps for future development are training-budget adequacy, algorithm-specific tuning, the exact action grid, reward/normalization sensitivity, additional adaptive baselines, and independent observed traffic periods.
