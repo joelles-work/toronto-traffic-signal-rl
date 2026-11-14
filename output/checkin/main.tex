@@ -52,7 +52,7 @@ Traffic seeds 11, 22, 33, 44 and 55 were fixed in the protocol [2] for paired co
 
 Before training, the Python interface reproduced fixed-time results exactly and passed checks for all five timing choices. Earlier traces matched the signal sequence for 60 cycles and the intended crossing for all 518 pedestrians, with no conflicting protected greens in SUMO's checks [2].
 
-The six final saved models were evaluated on the baseline's five traffic patterns, giving 15 evaluations per algorithm. Table III reports means. DQN selected the baseline's 31/8-second WALK split in every evaluated cycle and therefore produced identical delay.
+Each trained model was evaluated on the same five traffic patterns. Table III shows each PPO model's mean and the overall controller means. DQN selected the baseline's 31/8-second WALK split in every evaluated cycle and therefore produced identical delay.
 
 \begin{table}[ht]\centering\footnotesize
 \caption{AVERAGE DELAY ON THE DEVELOPMENT PERIOD}
@@ -60,20 +60,30 @@ The six final saved models were evaluated on the baseline's five traffic pattern
 Controller & Vehicle delay (s/vehicle) & Pedestrian delay (s/person) \\
 fixed & 156.13 & 46.79 \\
 DQN & 156.13 & 46.79 \\
-PPO & 178.95 & 46.66 \\
+PPO seed 101 & 241.03 & 46.15 \\
+PPO seed 202 & 147.70 & 46.80 \\
+PPO seed 303 & 148.10 & 47.03 \\
+PPO mean & 178.95 & 46.66 \\
 \hline\end{tabular}\end{table}
-PPO averaged 178.95 s/vehicle and 46.66 s/person, with a between-training-run vehicle-delay standard deviation of 53.77 seconds; 2 runs had lower vehicle delay than fixed-time. Possible explanations include the short training budget and a reward based on waiting rather than travel delay, but neither explanation has been tested separately.
+PPO increased average vehicle delay: two models improved on fixed-time, but seed 101 performed much worse, raising the mean. Pedestrian delay changed little. The short training budget and waiting-based reward may contribute to this variation; neither explanation has been tested separately.
 
-To assess uncertainty, the existing training runs and traffic patterns were randomly sampled with replacement 4,000 times. The resulting 95\% confidence intervals ranged from 11.17 seconds lower to 82.79 seconds higher vehicle delay with PPO, and from 0.67 seconds lower to 0.36 seconds higher pedestrian delay. Both intervals include lower and higher delay, so these limited runs do not establish a consistent advantage for PPO. Completion and safety-event counts for all 35 evaluations are saved [15].
+Table IV reports differences from fixed-time: lower means PPO improves delay; higher means it worsens delay. The 95\% intervals, estimated from 4,000 resamples [15], include both outcomes. These three training runs therefore provide no clear evidence that either controller consistently outperforms the other.
 
-Each timing option was held fixed across five dev traffic patterns [7]. East-west/north-south WALK durations of 32/7 seconds gave 142.97 $\pm$ 11.37 s/vehicle and 46.98 $\pm$ 1.44 s/person; 7/32 left 540 vehicles unfinished. In those runs, the queue exceeded the model input's limit 29 times, hiding further increases. Saved runs were also scored with each waiting pedestrian counting as 0, 0.5, 1 or 2 waiting vehicles. The 32/7 plan ranked first at every weight among plans where all trips finished; these scores do not show how retraining would change performance.
+\begin{table}[ht]\centering\footnotesize
+\caption{PPO DIFFERENCE FROM FIXED-TIME (SECONDS)}
+\setlength{\tabcolsep}{2pt}\begin{tabular}{p{68pt}p{68pt}p{104pt}}\hline
+Delay measure & Mean difference & 95\% confidence interval \\
+Vehicle & 22.81 higher & 11.17 lower to 82.79 higher \\
+Pedestrian & 0.14 lower & 0.67 lower to 0.36 higher \\
+\hline\end{tabular}\end{table}
+Testing each timing option without learning on five dev traffic patterns gave 142.97 $\pm$ 11.37 s/vehicle and 46.98 $\pm$ 1.44 s/person for 32/7-second east-west/north-south WALK durations; 7/32 left 540 vehicles unfinished. The supporting report [7] documents 29 queue measurements exceeding the model input limit and recalculated scores with different pedestrian weights; no models were retrained.
 
 \section{EVIDENCE, PROBLEMS, AND NEXT STEPS}
 GitHub contains the code, saved splits, models and results [2]; W\&B records the six training runs and dev comparison [15]. All reported runs use 1.39 m/s walking speed. The source register links assumptions and validation [7].
 
 A routing error sent 62 south-side pedestrians to a nearby crossing; correcting the network preserved Toronto's counts. A W\&B connection failure interrupted training seed 202; that attempt was excluded and restarted with unchanged settings.
 
-The next revision should replace the pending-entry scale with train-derived origin-count bounds and retrain before evaluating its effect [7]. Further work will examine training length, reward design and an adaptive baseline on dev. Additional development periods require a documented split revision; test periods remain unused until final model selection.
+Next, queue inputs should be rescaled using training counts and models retrained [7]. Longer training, alternative rewards and an adaptive baseline will be compared on dev; test periods remain unused until final model selection.
 
 \begin{thebibliography}{15}
 \bibitem{r1} City of Toronto, "Traffic volumes - multimodal intersection turning movement counts," Toronto Open Data. Dataset and dictionary (https://open.toronto.ca/dataset/traffic-volumes-at-intersections-for-all-modes/), accessed Nov. 11, 2026.

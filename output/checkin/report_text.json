@@ -55,19 +55,19 @@
         ],
         [
           "Pilot comparison.",
-          "The six final saved models were evaluated on the baseline's five traffic patterns, giving 15 evaluations per algorithm. Table III reports means. DQN selected the baseline's 31/8-second WALK split in every evaluated cycle and therefore produced identical delay."
+          "Each trained model was evaluated on the same five traffic patterns. Table III shows each PPO model's mean and the overall controller means. DQN selected the baseline's 31/8-second WALK split in every evaluated cycle and therefore produced identical delay."
         ],
         [
           "Differences between training runs.",
-          "PPO averaged 178.95 s/vehicle and 46.66 s/person, with a between-training-run vehicle-delay standard deviation of 53.77 seconds; 2 runs had lower vehicle delay than fixed-time. Possible explanations include the short training budget and a reward based on waiting rather than travel delay, but neither explanation has been tested separately."
+          "PPO increased average vehicle delay: two models improved on fixed-time, but seed 101 performed much worse, raising the mean. Pedestrian delay changed little. The short training budget and waiting-based reward may contribute to this variation; neither explanation has been tested separately."
         ],
         [
           "How certain are these differences?",
-          "To assess uncertainty, the existing training runs and traffic patterns were randomly sampled with replacement 4,000 times. The resulting 95% confidence intervals ranged from 11.17 seconds lower to 82.79 seconds higher vehicle delay with PPO, and from 0.67 seconds lower to 0.36 seconds higher pedestrian delay. Both intervals include lower and higher delay, so these limited runs do not establish a consistent advantage for PPO. Completion and safety-event counts for all 35 evaluations are saved [7]."
+          "Table IV reports differences from fixed-time: lower means PPO improves delay; higher means it worsens delay. The 95% intervals, estimated from 4,000 resamples [7], include both outcomes. These three training runs therefore provide no clear evidence that either controller consistently outperforms the other."
         ],
         [
           "Small validation study.",
-          "Each timing option was held fixed across five dev traffic patterns [15]. East-west/north-south WALK durations of 32/7 seconds gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person; 7/32 left 540 vehicles unfinished. In those runs, the queue exceeded the model input's limit 29 times, hiding further increases. Saved runs were also scored with each waiting pedestrian counting as 0, 0.5, 1 or 2 waiting vehicles. The 32/7 plan ranked first at every weight among plans where all trips finished; these scores do not show how retraining would change performance."
+          "Testing each timing option without learning on five dev traffic patterns gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person for 32/7-second east-west/north-south WALK durations; 7/32 left 540 vehicles unfinished. The supporting report [15] documents 29 queue measurements exceeding the model input limit and recalculated scores with different pedestrian weights; no models were retrained."
         ]
       ]
     ],
@@ -84,7 +84,7 @@
         ],
         [
           "Revised plan.",
-          "The next revision should replace the pending-entry scale with train-derived origin-count bounds and retrain before evaluating its effect [15]. Further work will examine training length, reward design and an adaptive baseline on dev. Additional development periods require a documented split revision; test periods remain unused until final model selection."
+          "Next, queue inputs should be rescaled using training counts and models retrained [15]. Longer training, alternative rewards and an adaptive baseline will be compared on dev; test periods remain unused until final model selection."
         ]
       ]
     ]

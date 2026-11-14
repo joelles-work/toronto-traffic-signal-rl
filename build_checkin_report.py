@@ -60,7 +60,15 @@ tables['Model settings.']=('II','TRAINING PRESETS AND THEIR PURPOSE',[
 tables['Pilot comparison.']=('III','AVERAGE DELAY ON THE DEVELOPMENT PERIOD',[
     ['Controller','Vehicle delay (s/vehicle)','Pedestrian delay (s/person)'],
     *[[a,*[f'{summary["controllers"][a]["pooled_case_metrics"][k]["mean"]:.2f}' for k in
-        ['vehicle_combined_delay_proxy_s','pedestrian_time_loss_s']]] for a in ['fixed','DQN','PPO']]], [72,90,90])
+        ['vehicle_combined_delay_proxy_s','pedestrian_time_loss_s']]] for a in ['fixed','DQN']],
+    *[[f'PPO seed {seed}',*[f'{metrics[k]["mean"]:.2f}' for k in
+        ['vehicle_combined_delay_proxy_s','pedestrian_time_loss_s']]] for seed,metrics in ppo['by_training_seed'].items()],
+    ['PPO mean',*[f'{ppo["pooled_case_metrics"][k]["mean"]:.2f}' for k in
+        ['vehicle_combined_delay_proxy_s','pedestrian_time_loss_s']]]], [72,90,90])
+tables['How certain are these differences?']=('IV','PPO DIFFERENCE FROM FIXED-TIME (SECONDS)',[
+    ['Delay measure','Mean difference','95% confidence interval'],
+    ['Vehicle','22.81 higher','11.17 lower to 82.79 higher'],
+    ['Pedestrian','0.14 lower','0.67 lower to 0.36 higher']], [72,72,108])
 policy_table=[['PPO training seed','Vehicle delay','Pedestrian delay']]
 for seed,metrics in ppo['by_training_seed'].items():
     a,b=metrics['vehicle_combined_delay_proxy_s'],metrics['pedestrian_time_loss_s']
@@ -91,7 +99,7 @@ story.append(Paragraph('<b>Abstract</b> - '+html.escape(abstract),body))
 
 def make_table(data,widths):
     obj=Table([[Paragraph(str(c),small) for c in row] for row in data],colWidths=widths,hAlign='CENTER')
-    obj.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,colors.black),('LINEBELOW',(0,0),(-1,0),.4,colors.black),('LINEBELOW',(0,-1),(-1,-1),.6,colors.black),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),3),('RIGHTPADDING',(0,0),(-1,-1),3),('TOPPADDING',(0,0),(-1,-1),3),('BOTTOMPADDING',(0,0),(-1,-1),2)]))
+    obj.setStyle(TableStyle([('LINEABOVE',(0,0),(-1,0),.6,colors.black),('LINEBELOW',(0,0),(-1,0),.4,colors.black),('LINEBELOW',(0,-1),(-1,-1),.6,colors.black),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),3),('RIGHTPADDING',(0,0),(-1,-1),3),('TOPPADDING',(0,0),(-1,-1),2),('BOTTOMPADDING',(0,0),(-1,-1),2)]))
     return obj
 
 for number,(section,paragraphs) in enumerate(sections,1):
