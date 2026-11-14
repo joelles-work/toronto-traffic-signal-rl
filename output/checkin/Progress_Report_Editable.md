@@ -8,7 +8,7 @@ This study compares Deep Q-Network (DQN), Proximal Policy Optimization (PPO), an
 
 The study models Eglinton Avenue East and Danforth Road (TCS 379) using vehicle turning movements and pedestrian crossing totals recorded every 15 minutes in the Toronto Open Data Portal [1]. Training uses June 19, 2024, 15:00-17:00, while development (dev) uses 17:00-18:00 to compare controllers and guide later changes. The rows in Table I were saved before experiments; neither reserved test period has been used to measure performance.
 
-Each simulation starts empty, with no shared trips between periods; repeated arrival patterns represent the same observed days [2].
+Each run begins with no vehicles or pedestrians in the network; trips do not carry over between periods. Repeated runs vary arrival times using the same recorded counts, rather than adding new observed days [2].
 
 Table I: STUDY PERIODS AND COUNTS (2024)
 
@@ -21,7 +21,7 @@ Table I: STUDY PERIODS AND COUNTS (2024)
 
 TorontoSUMONetworks provides a reference for Toronto data and SUMO network preparation [3]. Study-specific scripts build the intersection, convert counts into trips and apply the signal plan, while Stable-Baselines3 [4] supplies DQN/PPO implementations paired with traffic/pedestrian observations, timing choices, a waiting reward, and matched evaluation scripts [2].
 
-Each algorithm used seeds 101, 202 and 303 with 2,048 timing decisions per run [2]. Seeded repetitions assess variability [5]; these integer identifiers were fixed in advance. Table II explains the shared presets, used without a parameter search [6]. Runs used Windows, Python 3.14.6 and an Intel CPU with 20 logical processors, without a GPU. The source register documents every preset and evidence limit [7].
+Each algorithm used seeds 101, 202 and 303, fixed in advance, with 2,048 timing decisions per run [2]. Repeated training assesses variability [5]. Table II explains the settings, used without a parameter search [6]; the source register documents their support and limitations [7]. Runs used Windows and an Intel CPU, without a GPU.
 
 Table II: TRAINING PRESETS AND THEIR PURPOSE
 
@@ -36,11 +36,11 @@ Table II: TRAINING PRESETS AND THEIR PURPOSE
 | PPO collection | 256 new decisions per update gives eight collection blocks within the pilot budget. |
 | PPO updates | 10 passes through each block reuse its data; GAE 0.95 balances short- and longer-term reward estimates (library defaults). |
 
-The OpenStreetMap layout [8] was checked against Google Maps and includes turning lanes, sidewalks and four crossings. Observed vehicle and pedestrian counts come from Toronto Open Data [1]; within-interval arrivals and balanced walking directions follow the declared protocol [2]. Training and evaluation use SUMO's 1.39 m/s desired free-flow pedestrian speed [9].
+The OpenStreetMap layout [8] was checked against Google Maps and includes turning lanes, sidewalks and four crossings. Toronto Open Data provides the vehicle and pedestrian counts [1], but not exact arrival times or walking directions. The scripts assign random arrival times within each 15-minute interval and divide pedestrians as evenly as possible between the two crossing directions [2]. Training and evaluation use SUMO's 1.39 m/s desired free-flow walking speed [9].
 
 The fixed-time baseline follows a 120-second cycle based on the City's PM timing card [10]: east-west green includes 31 seconds of WALK and 22 seconds of crossing clearance, while north-south green includes 8 seconds of WALK and 34 seconds of clearance. The 7-second east-west left-turn advance, yellow, and all-red stages are retained. Vehicle-detector requests, which can extend or request a signal phase when traffic is detected, are disabled so the baseline repeats the same documented timing plan.
 
-At the beginning of each 120-second cycle, DQN or PPO reads vehicle queues, vehicles waiting to enter, and pedestrian waiting, then sets the east-west WALK duration to 7, 19, 25, 31, or 32 seconds. North-south receives the remainder of 39 seconds, so 31 seconds east-west leaves 8 seconds north-south and reproduces the baseline. The cycle length, stage order, yellow, all-red, and crossing clearance times stay fixed. The grid is declared in the protocol [2], with a 7-s floor from the City's usual-conditions guidance [11].
+At the beginning of each 120-second cycle, DQN or PPO reads vehicle queues, vehicles waiting to enter, and pedestrian waiting, then sets the east-west WALK duration to 7, 19, 25, 31, or 32 seconds. North-south receives the remainder of 39 seconds, so 31 seconds east-west leaves 8 seconds north-south and reproduces the baseline. The cycle length, stage order, yellow, all-red, and crossing clearance times stay fixed. These five timing options were fixed before training [2]; the 7-second minimum follows the City's guidance for usual conditions [11].
 
 The Stable-Baselines3 controllers [4] exchange traffic conditions and timing choices with SUMO through Python [12], using a reward that penalizes waiting vehicles and pedestrians equally every five seconds, includes vehicles waiting outside the network, and adds a penalty for unfinished trips. Each training episode covers the two-hour demand period and allows up to one extra hour for traffic to clear [2].
 
@@ -64,15 +64,15 @@ Table III: AVERAGE DELAY ON THE DEVELOPMENT PERIOD
 
 PPO averaged 178.95 s/vehicle and 46.66 s/person, with a between-training-run vehicle-delay standard deviation of 53.77 seconds; 2 runs had lower vehicle delay than fixed-time. Possible explanations include the short training budget and a reward based on waiting rather than travel delay, but neither explanation has been tested separately.
 
-The matched comparison was repeated 4,000 times by drawing training runs and traffic patterns from the existing results, allowing repeats. The estimated 95% range for PPO minus fixed-time was -11.17 to +82.79 s/vehicle and -0.67 to +0.36 s/person. These results do not establish a consistent improvement over fixed-time control. Across all 35 dev evaluations, completion and safety-event counts are retained in the evidence [15].
+To assess uncertainty, the existing training runs and traffic patterns were randomly sampled with replacement 4,000 times. The resulting 95% confidence intervals ranged from 11.17 seconds lower to 82.79 seconds higher vehicle delay with PPO, and from 0.67 seconds lower to 0.36 seconds higher pedestrian delay. Both intervals include lower and higher delay, so these limited runs do not establish a consistent advantage for PPO. Completion and safety-event counts for all 35 evaluations are saved [15].
 
-A dev-only check tested the five timing choices as constant plans on five shared traffic patterns [7]. The 32/7 plan gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person; 7/32 left 540 vehicles unfinished. Pending-entry observations clipped 29 times, all in incomplete cases. Rescoring pedestrian weights 0, 0.5, 1 and 2 preferred the same completed constant plan, without testing retraining at these weights.
+Each timing option was held fixed across five dev traffic patterns [7]. East-west/north-south WALK durations of 32/7 seconds gave 142.97 +/- 11.37 s/vehicle and 46.98 +/- 1.44 s/person; 7/32 left 540 vehicles unfinished. In those runs, the queue exceeded the model input's limit 29 times, hiding further increases. Saved runs were also scored with each waiting pedestrian counting as 0, 0.5, 1 or 2 waiting vehicles. The 32/7 plan ranked first at every weight among plans where all trips finished; these scores do not show how retraining would change performance.
 
 ## EVIDENCE, PROBLEMS, AND NEXT STEPS
 
-The GitHub repository contains the code, frozen splits, models, and results [2], while W&B records the six training runs and their matched dev comparison [15]. The report uses the consistent 1.39 m/s experiment under experiments/freeflow_pilot_v1; earlier experiments remain archived in the repository. The full assumption/source register and follow-up dev validation are also linked [7].
+GitHub contains the code, saved splits, models and results [2]; W&B records the six training runs and dev comparison [15]. All reported runs use 1.39 m/s walking speed. The source register links assumptions and validation [7].
 
-An initial routing error allowed 62 south-side pedestrians to use an unintended nearby crossing; the network was corrected and routes checked again without changing Toronto's counts. During the current experiment, a local W&B logging connection interrupted seed 202 before a final model was saved; that attempt was excluded and the seed restarted from scratch with the same settings.
+A routing error sent 62 south-side pedestrians to a nearby crossing; correcting the network preserved Toronto's counts. A W&B connection failure interrupted training seed 202; that attempt was excluded and restarted with unchanged settings.
 
 The next revision should replace the pending-entry scale with train-derived origin-count bounds and retrain before evaluating its effect [7]. Further work will examine training length, reward design and an adaptive baseline on dev. Additional development periods require a documented split revision; test periods remain unused until final model selection.
 

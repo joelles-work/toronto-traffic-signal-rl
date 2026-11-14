@@ -81,10 +81,10 @@ def renumber(text):
 sections=[(name,[(lead,renumber(text)) for lead,text in paragraphs]) for name,paragraphs in sections]
 refs=[renumber(refs[old-1]) for old in citation_order]
 
-body=ParagraphStyle('body',fontName='Times-Roman',fontSize=10,leading=11.5,alignment=TA_JUSTIFY,spaceAfter=4)
+body=ParagraphStyle('body',fontName='Times-Roman',fontSize=10,leading=11.5,alignment=TA_JUSTIFY,spaceAfter=3)
 small=ParagraphStyle('small',parent=body,fontSize=8,leading=9.2,alignment=0,spaceAfter=3)
-heading=ParagraphStyle('heading',parent=body,alignment=TA_CENTER,spaceBefore=7,spaceAfter=6,keepWithNext=True)
-caption=ParagraphStyle('caption',parent=small,alignment=TA_CENTER,spaceBefore=5,spaceAfter=5,keepWithNext=True)
+heading=ParagraphStyle('heading',parent=body,alignment=TA_CENTER,spaceBefore=6,spaceAfter=5,keepWithNext=True)
+caption=ParagraphStyle('caption',parent=small,alignment=TA_CENTER,spaceBefore=4,spaceAfter=4,keepWithNext=True)
 story=[]
 abstract=report_text['abstract']
 story.append(Paragraph('<b>Abstract</b> - '+html.escape(abstract),body))
